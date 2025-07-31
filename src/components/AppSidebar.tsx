@@ -32,6 +32,92 @@ const navigationItems: SidebarItem[] = [
     icon: 'dashboard.png',
     url: '/',
   },
+  { title: 'Agent Management', icon: 'agent.png', url: '/agents' },
+  {
+    title: 'Vendor Management',
+    icon: 'vendor.png',
+    url: '/vendors',
+  },
+  {
+    title: 'Corporate Management',
+    icon: 'corporate.png',
+    url: '/corporates',
+  },
+  {
+    title: 'Lender Management',
+    icon: 'lender.png',
+    url: '/lenders',
+  },
+  {
+    title: 'User Management',
+    icon: 'user.png',
+    url: '/users',
+  },
+  {
+    title: 'Employee Management',
+    icon: 'employee.png',
+    url: '/employees',
+  },
+  {
+    title: 'Wallet Management',
+    icon: 'wallet.png',
+    url: '/wallets',
+  },
+  {
+    title: 'Payroll Management',
+    icon: 'payroll.png',
+    url: '/payrolls',
+  },
+  {
+    title: 'User’s Loan Approval',
+    icon: 'loan-approval.png',
+    url: '/loan-approvals',
+  },
+  {
+    title: 'KYC Verification',
+    icon: 'kyc.png',
+    url: '/kyc',
+  },
+  {
+    title: 'Commission Management',
+    icon: 'commission.png',
+    url: '/commissions',
+  },
+  {
+    title: 'Crypto Management',
+    icon: 'crypto.png',
+    url: '/cryptos',
+  },
+  {
+    title: 'Crypto Transaction',
+    icon: 'crypto-transaction.png',
+    url: '/crypto-transactions',
+  },
+  {
+    title: 'Push Notification',
+    icon: 'push-notification.png',
+    url: '/push-notifications',
+  },
+  {
+    title: 'Chat',
+    icon: 'chat.png',
+    url: '/chat',
+  },
+  {
+    title: 'Settings',
+    icon: 'settings.png',
+    url: '/settings',
+  },
+  {
+    title: 'Complaints',
+    icon: 'complaints.png',
+    url: '/complaints',
+  },
+  {
+    title: 'Report',
+    icon: 'report.png',
+    url: '/reports',
+  },
 ];
 
 export function AppSidebar({ ...props }: AppSidebarProps) {
