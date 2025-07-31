@@ -124,7 +124,7 @@ export function AppSidebar({ ...props }: AppSidebarProps) {
   const { state } = useSidebar();
 
   return (
-    <Sidebar {...props}>
+    <Sidebar {...props} className="font-kumbh">
       <SidebarHeader>
         <div className="flex items-center justify-center">
           {state === 'collapsed' ? (
