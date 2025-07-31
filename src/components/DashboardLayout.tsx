@@ -47,7 +47,7 @@ export default function DashboardLayout() {
       <AppSidebar collapsible={sidebarProps.collapsible} />
       <SidebarInset className="@container relative flex flex-1 flex-col">
         <Header />
-        <div className="flex-1 p-5 md:p-10">
+        <div className="flex-1 p-5 md:px-8">
           {
             // Show sidebar trigger only on mobile devices
             isMobile && (
