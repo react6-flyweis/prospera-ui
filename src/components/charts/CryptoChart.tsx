@@ -1,3 +1,4 @@
+import { ArrowUpIcon } from 'lucide-react';
 import { Area, AreaChart, XAxis, YAxis } from 'recharts';
 import { Card } from '@/components/ui/card';
 import {
@@ -5,6 +6,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from '@/components/ui/chart';
+import { cn } from '@/lib/utils';
 
 export interface CryptoData {
   name: string;
@@ -77,14 +79,18 @@ export function CryptoChart({ crypto }: CryptoChartProps) {
       <div className="mb-3 flex justify-between">
         <div className="font-bold text-gray-800 text-xl">{crypto.price}</div>
         <div className="flex items-center gap-1 text-sm">
-          <span
-            className={crypto.isPositive ? 'text-green-600' : 'text-red-600'}
+          <span>{crypto.changePercent}</span>
+          <div
+            className="flex size-5 items-center justify-center rounded-full"
+            style={{ backgroundColor: crypto.color }}
           >
-            {crypto.changePercent}
-          </span>
-          <span className="text-gray-500">
-            {crypto.isPositive ? '📈' : '📉'}
-          </span>
+            <ArrowUpIcon
+              className={cn(
+                'size-4 text-white',
+                crypto.isPositive ? 'rotate-45' : '-rotate-[135deg]'
+              )}
+            />
+          </div>
         </div>
       </div>
     </Card>
