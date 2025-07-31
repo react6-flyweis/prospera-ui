@@ -11,6 +11,7 @@ import {
 
 import { useIsMobile } from '@/hooks/use-mobile';
 import { AppSidebar } from './AppSidebar';
+import { Header } from './Header';
 
 export default function DashboardLayout() {
   const isMobile = useIsMobile();
@@ -44,17 +45,20 @@ export default function DashboardLayout() {
   return (
     <SidebarProvider defaultOpen={sidebarProps.defaultOpen}>
       <AppSidebar collapsible={sidebarProps.collapsible} />
-      <SidebarInset className="@container relative flex flex-1 flex-col p-5 md:p-10">
-        {
-          // Show sidebar trigger only on mobile devices
-          isMobile && (
-            <SidebarTrigger
-              className="fixed top-0 left-0 size-7 rounded-t-none rounded-l-none rounded-br-xl md:hidden [&>svg]:size-5!"
-              variant="default"
-            />
-          )
-        }
-        <Outlet />
+      <SidebarInset className="@container relative flex flex-1 flex-col">
+        <Header />
+        <div className="flex-1 p-5 md:p-10">
+          {
+            // Show sidebar trigger only on mobile devices
+            isMobile && (
+              <SidebarTrigger
+                className="fixed top-0 left-0 size-7 rounded-t-none rounded-l-none rounded-br-xl md:hidden [&>svg]:size-5!"
+                variant="default"
+              />
+            )
+          }
+          <Outlet />
+        </div>
       </SidebarInset>
       {/* <Toaster /> */}
     </SidebarProvider>
