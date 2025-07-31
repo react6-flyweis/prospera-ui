@@ -177,7 +177,7 @@ export function AppSidebar({ ...props }: AppSidebarProps) {
                     ) : (
                       <SidebarMenuButton
                         className={cn(
-                          'm-0! transition-all duration-300 ease-in-out',
+                          'm-0! rounded transition-all duration-300 ease-in-out data-[active=true]:bg-[#509CDB]',
                           'pl-5 '
                         )}
                         isActive={isActive}
