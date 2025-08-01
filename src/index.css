@@ -55,7 +55,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: oklch(0.3964 0.1569 277.38);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -119,6 +119,10 @@
 @layer utilities {
   .bg-sidebar {
     @apply bg-gradient-to-br from-[#4196E3] to-[#373598];
+  }
+
+  .bg-primary-gradient {
+    @apply bg-gradient-to-b from-[#4196E3] to-[#373598];
   }
 }
 
