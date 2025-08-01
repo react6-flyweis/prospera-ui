@@ -4,6 +4,7 @@ import DashboardLayout from './components/DashboardLayout';
 
 const HomePage = lazy(() => import('@/pages/Home'));
 const AgentManagementPage = lazy(() => import('@/pages/AgentManagement'));
+const VendorManagementPage = lazy(() => import('@/pages/VendorManagement'));
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
 const routes: RouteObject[] = [
@@ -14,6 +15,10 @@ const routes: RouteObject[] = [
   {
     path: '/agents',
     element: <AgentManagementPage />,
+  },
+  {
+    path: '/vendors',
+    element: <VendorManagementPage />,
   },
   {
     path: '*',
