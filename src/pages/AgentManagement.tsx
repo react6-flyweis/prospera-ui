@@ -39,7 +39,7 @@ export default function AgentManagement() {
             </Button>
           </div>
           <Select onValueChange={setFilter} value={filter}>
-            <SelectTrigger className="w-[170px] rounded-full border px-3 py-1 font-medium text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <SelectTrigger className="rounded-full ">
               <SelectValue placeholder="All" />
             </SelectTrigger>
             <SelectContent>
@@ -51,6 +51,30 @@ export default function AgentManagement() {
           </Select>
         </div>
         <DataTable columns={agentsColumns} data={agentsData} showPagination />
+        {/* New Agents Table (reusing DataTable and agentsColumns/agentsData) */}
+        <div className="mt-10">
+          <div className="mb-2 flex items-center justify-between">
+            <h3 className="font-bold text-gray-800 text-lg">
+              New Agents <span className="font-normal text-gray-500">(15)</span>
+            </h3>
+            <Select defaultValue="30">
+              <SelectTrigger className="rounded-full">
+                <SelectValue placeholder="Last 30 Days" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="7">Last 7 Days</SelectItem>
+                <SelectItem value="15">Last 15 Days</SelectItem>
+                <SelectItem value="30">Last 30 Days</SelectItem>
+                <SelectItem value="all">All Time</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <DataTable
+            columns={agentsColumns}
+            data={agentsData.slice(0, 5)}
+            showPagination={false}
+          />
+        </div>
       </div>
     </div>
   );
