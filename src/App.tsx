@@ -3,12 +3,17 @@ import { Route, type RouteObject, Routes } from 'react-router';
 import DashboardLayout from './components/DashboardLayout';
 
 const HomePage = lazy(() => import('@/pages/Home'));
+const AgentManagementPage = lazy(() => import('@/pages/AgentManagement'));
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
 const routes: RouteObject[] = [
   {
     path: '/',
     element: <HomePage />,
+  },
+  {
+    path: '/agents',
+    element: <AgentManagementPage />,
   },
   {
     path: '*',
