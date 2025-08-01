@@ -1,4 +1,4 @@
-import type { Agent } from '@/components/AgentManagement/TotalAgentsColumns';
+import type { Agent } from '@/components/AgentManagement/agentsColumns';
 
 export const agentsData: Agent[] = [
   {
