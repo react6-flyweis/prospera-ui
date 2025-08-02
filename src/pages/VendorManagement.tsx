@@ -1,6 +1,7 @@
 import { PlusIcon } from 'lucide-react';
 import { useState } from 'react';
 import { DataTable } from '@/components/DataTable';
+import { PageLayout } from '@/components/Layout/PageLayout';
 import { Button } from '@/components/ui/button';
 import {
   Select,
@@ -16,7 +17,7 @@ export default function VendorManagement() {
   const [filter, setFilter] = useState('All');
 
   return (
-    <div>
+    <PageLayout title="Vendor Management">
       <div className="mb-6">
         <div className="mb-2 flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -81,6 +82,6 @@ export default function VendorManagement() {
           />
         </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }

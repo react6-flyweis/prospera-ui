@@ -1,9 +1,10 @@
 import { CryptoChart } from '@/components/charts/CryptoChart';
+import { PageLayout } from '@/components/Layout/PageLayout';
 import { cryptoData } from '@/data/cryptoData';
 
 export default function Home() {
   return (
-    <div className="">
+    <PageLayout className="" title="Home">
       <div className="mb-6">
         <h1 className="font-bold text-2xl text-gray-800">Good morning</h1>
         <p className="text-gray-600">Here's what's going on with your Name</p>
@@ -19,6 +20,6 @@ export default function Home() {
           ))}
         </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }
