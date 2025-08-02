@@ -1,4 +1,10 @@
-import { LogOutIcon, SearchIcon, SettingsIcon, UserIcon } from 'lucide-react';
+import {
+  LogOutIcon,
+  ReplyIcon,
+  SearchIcon,
+  SettingsIcon,
+  UserIcon,
+} from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import {
@@ -14,17 +20,20 @@ import { usePageStore } from '@/store/pageStore';
 import { Container } from './ui/Container';
 
 export function Header() {
-  const { title } = usePageStore();
+  const { title, showBackButton } = usePageStore();
   return (
     <header className="sticky top-0 z-50 w-full border-b-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <Container className="flex h-14 items-center">
         {/* Logo/Brand */}
-        <div className="mr-4 hidden md:flex">
-          <a className="mr-4 flex items-center space-x-2 lg:mr-6" href="/">
+        <div className="flex items-center justify-center gap-2">
+          {showBackButton && (
+            <ReplyIcon className="size-8 font-bold text-primary" />
+          )}
+          <div className="hidden md:flex">
             <div className="hidden font-bold text-xl sm:inline-block">
               {title || 'Prospera'}
             </div>
-          </a>
+          </div>
         </div>
 
         {/* Search */}
