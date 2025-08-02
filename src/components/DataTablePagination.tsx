@@ -1,5 +1,5 @@
 import type { Table } from '@tanstack/react-table';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 // import {
@@ -41,7 +41,7 @@ export function DataTablePagination<TData>({
             onClick={() => table.previousPage()}
             variant="ghost"
           >
-            <ChevronLeft className="size-7" />
+            <ChevronLeftIcon className="size-7" />
           </Button>
           {(() => {
             const pageCount = table.getPageCount();
@@ -82,7 +82,7 @@ export function DataTablePagination<TData>({
             onClick={() => table.nextPage()}
             variant="ghost"
           >
-            <ChevronRight className="size-7" />
+            <ChevronRightIcon className="size-7" />
           </Button>
         </div>
       </div>
