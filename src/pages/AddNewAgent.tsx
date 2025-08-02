@@ -1,4 +1,4 @@
-import AgentEditor from '@/components/AgentManagement/AgentEditor';
+import { AgentEditor } from '@/components/AgentManagement/AgentEditor';
 import { PageLayout } from '@/components/Layout/PageLayout';
 
 export default function AddNewAgent() {
