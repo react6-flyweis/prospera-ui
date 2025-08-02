@@ -3,6 +3,11 @@
   "extends": ["ultracite"],
   "linter": {
     "rules": {
+      "style": {
+        "useFilenamingConvention": {
+          "level": "warn"
+        }
+      },
       "performance": {
         "noImgElement": "off"
       }
