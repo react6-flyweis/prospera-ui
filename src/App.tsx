@@ -17,6 +17,7 @@ const CorporateManagementPage = lazy(
   () => import('@/pages/CorporateManagement')
 );
 const CorporateDetailsPage = lazy(() => import('@/pages/CorporateDetail'));
+const AddNewCorporatePage = lazy(() => import('@/pages/AddNewCorporate'));
 
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
@@ -56,6 +57,10 @@ const routes: RouteObject[] = [
   {
     path: '/corporates/:corporateId',
     element: <CorporateDetailsPage />,
+  },
+  {
+    path: '/corporates/new',
+    element: <AddNewCorporatePage />,
   },
   {
     path: '*',
