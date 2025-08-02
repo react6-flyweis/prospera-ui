@@ -1,5 +1,6 @@
 import { PlusIcon } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router';
 import { DataTable } from '@/components/DataTable';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { Button } from '@/components/ui/button';
@@ -28,16 +29,18 @@ export default function VendorManagement() {
               </span>
             </h2>
 
-            <Button
-              className="rounded-full text-sm"
-              type="button"
-              variant="outline"
-            >
-              Add A New Vendor
-              <div className="flex size-4 items-center justify-center rounded-full border">
-                <PlusIcon className="size-3" />
-              </div>
-            </Button>
+            <Link to="/vendors/new">
+              <Button
+                className="rounded-full text-sm"
+                type="button"
+                variant="outline"
+              >
+                Add A New Vendor
+                <div className="flex size-4 items-center justify-center rounded-full border">
+                  <PlusIcon className="size-3" />
+                </div>
+              </Button>
+            </Link>
           </div>
           <Select onValueChange={setFilter} value={filter}>
             <SelectTrigger className="rounded-full ">
