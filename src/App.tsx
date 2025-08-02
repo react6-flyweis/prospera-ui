@@ -6,6 +6,7 @@ const HomePage = lazy(() => import('@/pages/Home'));
 const AgentManagementPage = lazy(() => import('@/pages/AgentManagement'));
 const VendorManagementPage = lazy(() => import('@/pages/VendorManagement'));
 const AgentDetails = lazy(() => import('@/pages/AgentDetails'));
+const AddNewAgent = lazy(() => import('@/pages/AddNewAgent'));
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
 const routes: RouteObject[] = [
@@ -20,6 +21,10 @@ const routes: RouteObject[] = [
   {
     path: '/agents/:agentId',
     element: <AgentDetails />,
+  },
+  {
+    path: '/agents/new',
+    element: <AddNewAgent />,
   },
   {
     path: '/vendors',
