@@ -1,12 +1,16 @@
 import { lazy } from 'react';
 import { Route, type RouteObject, Routes } from 'react-router';
+
 import DashboardLayout from './components/DashboardLayout';
 
 const HomePage = lazy(() => import('@/pages/Home'));
+
 const AgentManagementPage = lazy(() => import('@/pages/AgentManagement'));
-const VendorManagementPage = lazy(() => import('@/pages/VendorManagement'));
 const AgentDetails = lazy(() => import('@/pages/AgentDetails'));
 const AddNewAgent = lazy(() => import('@/pages/AddNewAgent'));
+
+const VendorManagementPage = lazy(() => import('@/pages/VendorManagement'));
+const VendorDetails = lazy(() => import('@/pages/VendorDetails'));
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
 const routes: RouteObject[] = [
@@ -29,6 +33,10 @@ const routes: RouteObject[] = [
   {
     path: '/vendors',
     element: <VendorManagementPage />,
+  },
+  {
+    path: '/vendors/:vendorId',
+    element: <VendorDetails />,
   },
   {
     path: '*',
