@@ -12,9 +12,11 @@ const AddNewAgent = lazy(() => import('@/pages/AddNewAgent'));
 const VendorManagementPage = lazy(() => import('@/pages/VendorManagement'));
 const VendorDetails = lazy(() => import('@/pages/VendorDetails'));
 const AddNewVendorPage = lazy(() => import('@/pages/AddNewVendor'));
+
 const CorporateManagementPage = lazy(
   () => import('@/pages/CorporateManagement')
 );
+const CorporateDetailsPage = lazy(() => import('@/pages/CorporateDetail'));
 
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
@@ -50,6 +52,10 @@ const routes: RouteObject[] = [
   {
     path: '/corporates',
     element: <CorporateManagementPage />,
+  },
+  {
+    path: '/corporates/:corporateId',
+    element: <CorporateDetailsPage />,
   },
   {
     path: '*',
