@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import documentIcon from '@/assets/icons/document.png';
+import { ProfileImageUploader } from '../ProfileImageUploader';
 import { Button } from '../ui/button';
 import { FileInput } from '../ui/FileInput';
 import {
@@ -14,7 +15,6 @@ import {
   FormMessage,
 } from '../ui/form';
 import { Input } from '../ui/input';
-import { ProfileImageUploader } from './ProfileImageUploader';
 
 const agentSchema = z.object({
   name: z.string().min(1, 'Name is required'),
@@ -38,7 +38,7 @@ const agentSchema = z.object({
 
 type AgentFormValues = z.infer<typeof agentSchema>;
 
-export default function AgentEditor() {
+export function AgentEditor() {
   const form = useForm<AgentFormValues>({
     resolver: zodResolver(agentSchema),
     defaultValues: {},
