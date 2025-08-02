@@ -1,4 +1,10 @@
 import type { ColumnDef, Row } from '@tanstack/react-table';
+import { EyeIcon, Trash2Icon } from 'lucide-react';
+import { useState } from 'react';
+import { Link } from 'react-router';
+import checkIcon from '@/assets/icons/check.png';
+import { Button } from '../ui/button';
+import { Switch } from '../ui/switch';
 
 function AgentNameCell({ row }: { row: any }) {
   const [showDelete, setShowDelete] = useState(false);
@@ -31,18 +37,12 @@ function AgentNameCell({ row }: { row: any }) {
           style={{ position: 'absolute', left: '100%', top: 0, zIndex: 10 }}
           variant="ghost"
         >
-          <Trash2 className="mr-1 size-5" /> Delete This Profile
+          <Trash2Icon className="mr-1 size-5" /> Delete This Profile
         </Button>
       )}
     </div>
   );
 }
-
-import { EyeIcon, Trash2 } from 'lucide-react';
-import { useState } from 'react';
-import checkIcon from '@/assets/icons/check.png';
-import { Button } from '../ui/button';
-import { Switch } from '../ui/switch';
 
 export type Agent = {
   avatar: string;
@@ -95,9 +95,11 @@ export const agentsColumns: ColumnDef<Agent>[] = [
     id: 'action',
     cell: ({ row }) => (
       <div className="flex items-center gap-2">
-        <Button size="icon" variant="ghost">
-          <EyeIcon className="size-4 text-blue-600" />
-        </Button>
+        <Link to={`/agents/${row.original.id}`}>
+          <Button size="icon" variant="ghost">
+            <EyeIcon className="size-4 text-blue-600" />
+          </Button>
+        </Link>
         <Switch
           className="data-[state=checked]:bg-green-500 data-[state=unchecked]:bg-red-500"
           defaultChecked={row.original.active}
