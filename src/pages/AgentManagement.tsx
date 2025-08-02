@@ -1,5 +1,6 @@
 import { PlusIcon } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router';
 import { agentsColumns } from '@/components/AgentManagement/agentsColumns';
 import { DataTable } from '@/components/DataTable';
 import { PageLayout } from '@/components/Layout/PageLayout';
@@ -28,16 +29,18 @@ export default function AgentManagement() {
               </span>
             </h2>
 
-            <Button
-              className="rounded-full text-sm"
-              type="button"
-              variant="outline"
-            >
-              Add A New Agent
-              <div className="flex size-4 items-center justify-center rounded-full border">
-                <PlusIcon className="size-3" />
-              </div>
-            </Button>
+            <Link to="/agents/new">
+              <Button
+                className="rounded-full text-sm"
+                type="button"
+                variant="outline"
+              >
+                Add A New Agent
+                <div className="flex size-4 items-center justify-center rounded-full border">
+                  <PlusIcon className="size-3" />
+                </div>
+              </Button>
+            </Link>
           </div>
           <Select onValueChange={setFilter} value={filter}>
             <SelectTrigger className="rounded-full ">
