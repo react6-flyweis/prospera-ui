@@ -11,6 +11,8 @@ const AddNewAgent = lazy(() => import('@/pages/AddNewAgent'));
 
 const VendorManagementPage = lazy(() => import('@/pages/VendorManagement'));
 const VendorDetails = lazy(() => import('@/pages/VendorDetails'));
+const AddNewVendorPage = lazy(() => import('@/pages/AddNewVendor'));
+
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
 const routes: RouteObject[] = [
@@ -37,6 +39,10 @@ const routes: RouteObject[] = [
   {
     path: '/vendors/:vendorId',
     element: <VendorDetails />,
+  },
+  {
+    path: '/vendors/new',
+    element: <AddNewVendorPage />,
   },
   {
     path: '*',
