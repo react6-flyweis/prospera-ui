@@ -23,6 +23,10 @@ const LenderManagementPage = lazy(() => import('@/pages/LenderManagement'));
 const LenderDetails = lazy(() => import('@/pages/LenderDetails'));
 const AddNewLenderPage = lazy(() => import('@/pages/AddNewLender'));
 
+const UserManagement = lazy(
+  () => import('@/pages/UserManagement/UserManagement')
+);
+
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
 const routes: RouteObject[] = [
@@ -77,6 +81,10 @@ const routes: RouteObject[] = [
   {
     path: '/lenders/new',
     element: <AddNewLenderPage />,
+  },
+  {
+    path: '/users',
+    element: <UserManagement />,
   },
   {
     path: '*',
