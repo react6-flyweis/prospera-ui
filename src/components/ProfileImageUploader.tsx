@@ -26,7 +26,7 @@ export const ProfileImageUploader: React.FC<ProfileImageUploaderProps> = ({
           onChange={handleFileChange}
           type="file"
         />
-        <div className="group relative flex size-32 items-center justify-center rounded-full bg-gray-400 shadow-lg">
+        <div className="group relative flex size-28 items-center justify-center rounded-full bg-gray-400 shadow-lg">
           {value ? (
             <img
               alt="Profile Preview"
