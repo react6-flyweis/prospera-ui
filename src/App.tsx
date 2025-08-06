@@ -51,48 +51,48 @@ const routes: RouteObject[] = [
     element: <AgentManagementPage />,
   },
   {
-    path: '/agents/:agentId',
-    element: <AgentDetails />,
-  },
-  {
     path: '/agents/new',
     element: <AddNewAgent />,
+  },
+  {
+    path: '/agents/:agentId',
+    element: <AgentDetails />,
   },
   {
     path: '/vendors',
     element: <VendorManagementPage />,
   },
   {
-    path: '/vendors/:vendorId',
-    element: <VendorDetails />,
-  },
-  {
     path: '/vendors/new',
     element: <AddNewVendorPage />,
+  },
+  {
+    path: '/vendors/:vendorId',
+    element: <VendorDetails />,
   },
   {
     path: '/corporates',
     element: <CorporateManagementPage />,
   },
   {
-    path: '/corporates/:corporateId',
-    element: <CorporateDetailsPage />,
-  },
-  {
     path: '/corporates/new',
     element: <AddNewCorporatePage />,
+  },
+  {
+    path: '/corporates/:corporateId',
+    element: <CorporateDetailsPage />,
   },
   {
     path: '/lenders',
     element: <LenderManagementPage />,
   },
   {
-    path: '/lenders/:lenderId',
-    element: <LenderDetails />,
-  },
-  {
     path: '/lenders/new',
     element: <AddNewLenderPage />,
+  },
+  {
+    path: '/lenders/:lenderId',
+    element: <LenderDetails />,
   },
   {
     path: '/users',
