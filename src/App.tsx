@@ -29,6 +29,9 @@ const UserManagement = lazy(
 const EmployeeManagement = lazy(
   () => import('@/pages/EmployeeManagement/EmployeeManagement')
 );
+const EmployeeDetails = lazy(
+  () => import('@/pages/EmployeeManagement/EmployeeDetails')
+);
 
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
@@ -92,6 +95,10 @@ const routes: RouteObject[] = [
   {
     path: '/employees',
     element: <EmployeeManagement />,
+  },
+  {
+    path: '/employees/:employeeId',
+    element: <EmployeeDetails />,
   },
   {
     path: '*',
