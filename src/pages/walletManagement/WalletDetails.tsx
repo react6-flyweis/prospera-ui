@@ -1,8 +1,12 @@
-import { PenLineIcon } from 'lucide-react';
+import { DataTable } from '@/components/DataTable';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { transactionColumns } from '@/components/WalletManagement/transactionColumns';
+import { transactions } from '@/data/transactionsData';
+import { formatCurrency } from '@/utils/currency';
+
+// Transaction columns for DataTable
 
 const USER_MOCK = {
   name: 'Kalyan Sarkar',
@@ -12,6 +16,7 @@ const USER_MOCK = {
   dob: '20-08-94',
   email: 'example@gmail.com',
   userId: 'US124563',
+  walletBalance: 277_308,
   bank: {
     name: 'Lorem Ipsum',
     accountNo: '178458236900127842',
@@ -73,12 +78,22 @@ export default function WalletDetails() {
                 Joined : {USER_MOCK.joined}
               </div>
             </div>
-            <Button className="mt-2" size="icon" variant="ghost">
-              <PenLineIcon className="h-4 w-4" />
-            </Button>
           </div>
         </div>
       </Card>
+      <div className="my-4 space-y-2">
+        <h3 className="text-2xl">Current Wallet Balance</h3>
+        <p className="font-semibold text-3xl">
+          {formatCurrency(USER_MOCK.walletBalance)}
+        </p>
+      </div>
+
+      <DataTable
+        columns={transactionColumns}
+        data={transactions}
+        pageSize={8}
+        showPagination={true}
+      />
     </PageLayout>
   );
 }
