@@ -8,11 +8,12 @@ import {
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
+  type Table as ReactTable,
   type SortingState,
   useReactTable,
   type VisibilityState,
 } from '@tanstack/react-table';
-import { useState } from 'react';
+import { forwardRef, useImperativeHandle, useState } from 'react';
 import {
   Table,
   TableBody,
@@ -35,14 +36,17 @@ interface DataTableProps<TData, TValue> {
   pageSize?: number;
 }
 
-export function DataTable<TData, TValue>({
-  columns,
-  data,
-  //   searchableColumns,
-  // showToolbar,
-  showPagination = true,
-  pageSize = 10, // Default page size
-}: DataTableProps<TData, TValue>) {
+function DataTableInner<TData, TValue>(
+  {
+    columns,
+    data,
+    //   searchableColumns,
+    // showToolbar,
+    showPagination = true,
+    pageSize = 10, // Default page size
+  }: DataTableProps<TData, TValue>,
+  ref: React.ForwardedRef<ReactTable<TData>>
+) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
@@ -72,6 +76,7 @@ export function DataTable<TData, TValue>({
     },
   });
 
+  useImperativeHandle(ref, () => table, [table]);
   const pageCount = table.getPageCount();
   return (
     <div className="space-y-4 border shadow">
@@ -130,3 +135,11 @@ export function DataTable<TData, TValue>({
     </div>
   );
 }
+
+export type DataTableRef<TData> = ReactTable<TData>;
+const DataTable = forwardRef(DataTableInner) as <TData, TValue>(
+  props: DataTableProps<TData, TValue> & {
+    ref?: React.ForwardedRef<ReactTable<TData>>;
+  }
+) => ReturnType<typeof DataTableInner>;
+export { DataTable };
