@@ -28,6 +28,7 @@ const UserManagement = lazy(
 );
 const UserDetails = lazy(() => import('@/pages/UserManagement/UserDetails'));
 const AddNewUserPage = lazy(() => import('@/pages/UserManagement/AddNewUser'));
+const EditUserPage = lazy(() => import('@/pages/UserManagement/EditUser'));
 
 const EmployeeManagement = lazy(
   () => import('@/pages/EmployeeManagement/EmployeeManagement')
@@ -108,6 +109,10 @@ const routes: RouteObject[] = [
   {
     path: '/users/:userId',
     element: <UserDetails />,
+  },
+  {
+    path: '/users/:userId/edit',
+    element: <EditUserPage />,
   },
   {
     path: '/employees',

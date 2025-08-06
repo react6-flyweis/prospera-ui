@@ -37,11 +37,33 @@ const userSchema = z.object({
 
 type UserFormValues = z.infer<typeof userSchema>;
 
-export function UserEditor() {
+// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation>
+export function UserEditor({
+  initialData,
+}: {
+  initialData?: Partial<UserFormValues>;
+}) {
   const [profileImage, setProfileImage] = useState<string | File>('');
   const form = useForm<UserFormValues>({
     resolver: zodResolver(userSchema),
-    defaultValues: {},
+    defaultValues: {
+      name: initialData?.name || '',
+      email: initialData?.email || '',
+      joinDate: initialData?.joinDate || '',
+      gender: initialData?.gender || '',
+      address: initialData?.address || '',
+      presentAddress: initialData?.presentAddress || '',
+      postalCode: initialData?.postalCode || '',
+      mobile: initialData?.mobile || '',
+      lenderId: initialData?.lenderId || '',
+      dob: initialData?.dob || '',
+      language: initialData?.language || '',
+      city: initialData?.city || '',
+      country: initialData?.country || '',
+      bankName: initialData?.bankName || '',
+      branch: initialData?.branch || '',
+      accountHolderName: initialData?.accountHolderName || '',
+    },
   });
 
   function onSubmit(_data: UserFormValues) {
