@@ -42,8 +42,12 @@ const AddNewEmployee = lazy(
 const EditEmployee = lazy(
   () => import('@/pages/EmployeeManagement/EditEmployee')
 );
+
 const WalletManagement = lazy(
   () => import('@/pages/walletManagement/WalletManagement')
+);
+const WalletDetails = lazy(
+  () => import('@/pages/walletManagement/WalletDetails')
 );
 
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
@@ -136,6 +140,10 @@ const routes: RouteObject[] = [
   {
     path: '/wallets',
     element: <WalletManagement />,
+  },
+  {
+    path: '/wallets/:walletId',
+    element: <WalletDetails />,
   },
   {
     path: '*',
