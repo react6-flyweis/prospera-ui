@@ -49,6 +49,9 @@ const WalletManagement = lazy(
 const WalletDetails = lazy(
   () => import('@/pages/walletManagement/WalletDetails')
 );
+const TransactionDetails = lazy(
+  () => import('@/pages/walletManagement/TransactionDetails')
+);
 
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
@@ -144,6 +147,10 @@ const routes: RouteObject[] = [
   {
     path: '/wallets/:walletId',
     element: <WalletDetails />,
+  },
+  {
+    path: '/transaction/:transactionId',
+    element: <TransactionDetails />,
   },
   {
     path: '*',
