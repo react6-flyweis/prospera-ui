@@ -1,4 +1,5 @@
 import { PenLineIcon } from 'lucide-react';
+import { Link } from 'react-router';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
@@ -75,17 +76,20 @@ export default function UserDetails() {
                 Joined : {USER_MOCK.joined}
               </div>
             </div>
-            <Button className="mt-2" size="icon" variant="ghost">
-              <PenLineIcon className="h-4 w-4" />
-            </Button>
+            <Link to={`/users/${USER_MOCK.userId}/edit`}>
+              <Button className="mt-2" size="icon" variant="ghost">
+                <PenLineIcon className="h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </Card>
       {/* About Kalyan Card */}
       <Card className="mt-6 rounded-2xl p-6 shadow-sm">
         <div className="mb-6 font-semibold text-2xl">About Kalyan</div>
-        {(() => {
-          const aboutFields = [
+
+        <div className="grid grid-cols-2 gap-x-10 gap-y-6">
+          {[
             {
               label: 'Permanent Address',
               id: 'permanent-address',
@@ -99,28 +103,23 @@ export default function UserDetails() {
             { label: 'Postal Code', id: 'postal-code', value: '700012' },
             { label: 'City', id: 'city', value: 'San Jose' },
             { label: 'Country', id: 'country', value: 'USA' },
-          ];
-          return (
-            <div className="grid grid-cols-2 gap-x-10 gap-y-6">
-              {aboutFields.map((field) => (
-                <div key={field.id}>
-                  <Label
-                    className="mb-2 block font-medium text-sm"
-                    htmlFor={field.id}
-                  >
-                    {field.label}
-                  </Label>
-                  <Input
-                    className="w-full rounded border px-3 py-2 text-sm"
-                    id={field.id}
-                    readOnly
-                    value={field.value}
-                  />
-                </div>
-              ))}
+          ].map((field) => (
+            <div key={field.id}>
+              <Label
+                className="mb-2 block font-medium text-sm"
+                htmlFor={field.id}
+              >
+                {field.label}
+              </Label>
+              <Input
+                className="w-full rounded border px-3 py-2 text-sm"
+                id={field.id}
+                readOnly
+                value={field.value}
+              />
             </div>
-          );
-        })()}
+          ))}
+        </div>
       </Card>
     </PageLayout>
   );
