@@ -32,6 +32,7 @@ interface DataTableProps<TData, TValue> {
   }[];
   showToolbar?: boolean;
   showPagination?: boolean;
+  pageSize?: number;
 }
 
 export function DataTable<TData, TValue>({
@@ -40,6 +41,7 @@ export function DataTable<TData, TValue>({
   //   searchableColumns,
   // showToolbar,
   showPagination = true,
+  pageSize = 10, // Default page size
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
@@ -65,7 +67,7 @@ export function DataTable<TData, TValue>({
     },
     initialState: {
       pagination: {
-        pageSize: 5, // Change this value to your desired default per page
+        pageSize,
       },
     },
   });
