@@ -26,6 +26,9 @@ const AddNewLenderPage = lazy(() => import('@/pages/AddNewLender'));
 const UserManagement = lazy(
   () => import('@/pages/UserManagement/UserManagement')
 );
+const UserDetails = lazy(() => import('@/pages/UserManagement/UserDetails'));
+const AddNewUserPage = lazy(() => import('@/pages/UserManagement/AddNewUser'));
+
 const EmployeeManagement = lazy(
   () => import('@/pages/EmployeeManagement/EmployeeManagement')
 );
@@ -97,6 +100,14 @@ const routes: RouteObject[] = [
   {
     path: '/users',
     element: <UserManagement />,
+  },
+  {
+    path: '/users/new',
+    element: <AddNewUserPage />,
+  },
+  {
+    path: '/users/:userId',
+    element: <UserDetails />,
   },
   {
     path: '/employees',
