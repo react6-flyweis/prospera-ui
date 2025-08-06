@@ -52,7 +52,9 @@ const WalletDetails = lazy(
 const TransactionDetails = lazy(
   () => import('@/pages/walletManagement/TransactionDetails')
 );
-
+const PayrollManagement = lazy(
+  () => import('@/pages/payrollManagement/PayrollManagement')
+);
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
 const routes: RouteObject[] = [
@@ -151,6 +153,10 @@ const routes: RouteObject[] = [
   {
     path: '/transaction/:transactionId',
     element: <TransactionDetails />,
+  },
+  {
+    path: '/payrolls',
+    element: <PayrollManagement />,
   },
   {
     path: '*',
