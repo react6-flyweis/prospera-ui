@@ -167,6 +167,10 @@ const routes: RouteObject[] = [
     element: <ImportPayrollData />,
   },
   {
+    path: '/loan-approvals',
+    element: <LoanApprovalPage />,
+  },
+  {
     path: '*',
     element: <NotFoundPage />,
   },
