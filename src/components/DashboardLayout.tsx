@@ -10,6 +10,7 @@ import {
 // import { useIsMobile, useScreenSize } from '@/hooks/use-screen-size';
 
 import { useIsMobile } from '@/hooks/use-mobile';
+import { AlertToast } from './AlertToast';
 import { AppSidebar } from './AppSidebar';
 import { Header } from './Header';
 
@@ -61,6 +62,7 @@ export default function DashboardLayout() {
         </div>
       </SidebarInset>
       {/* <Toaster /> */}
+      <AlertToast />
     </SidebarProvider>
   );
 }
