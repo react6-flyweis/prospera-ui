@@ -58,6 +58,12 @@ const PayrollManagement = lazy(
 const ImportPayrollData = lazy(
   () => import('@/pages/PayrollManagement/ImportPayrollData')
 );
+const LoanApprovalPage = lazy(
+  () => import('@/pages/LoanApproval/LoanApproval')
+);
+const KYCVerificationPage = lazy(
+  () => import('@/pages/KYCVerification/KYCVerification')
+);
 
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
@@ -169,6 +175,10 @@ const routes: RouteObject[] = [
   {
     path: '/loan-approvals',
     element: <LoanApprovalPage />,
+  },
+  {
+    path: '/kyc',
+    element: <KYCVerificationPage />,
   },
   {
     path: '*',
