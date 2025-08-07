@@ -55,6 +55,10 @@ const TransactionDetails = lazy(
 const PayrollManagement = lazy(
   () => import('@/pages/PayrollManagement/PayrollManagement')
 );
+const ImportPayrollData = lazy(
+  () => import('@/pages/PayrollManagement/ImportPayrollData')
+);
+
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
 const routes: RouteObject[] = [
@@ -157,6 +161,10 @@ const routes: RouteObject[] = [
   {
     path: '/payrolls',
     element: <PayrollManagement />,
+  },
+  {
+    path: '/payrolls/import',
+    element: <ImportPayrollData />,
   },
   {
     path: '*',
