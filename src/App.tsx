@@ -64,6 +64,9 @@ const LoanApprovalPage = lazy(
 const KYCVerificationPage = lazy(
   () => import('@/pages/KYCVerification/KYCVerification')
 );
+const CryptoManagementPage = lazy(
+  () => import('@/pages/CryptoManagement/CryptoManagement')
+);
 const CommissionManagementPage = lazy(
   () => import('@/pages/CommissionManagement/CommissionManagement')
 );
@@ -186,6 +189,10 @@ const routes: RouteObject[] = [
   {
     path: '/commissions',
     element: <CommissionManagementPage />,
+  },
+  {
+    path: '/cryptos',
+    element: <CryptoManagementPage />,
   },
   {
     path: '*',
