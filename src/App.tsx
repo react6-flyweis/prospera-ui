@@ -203,6 +203,10 @@ const routes: RouteObject[] = [
     element: <CryptoTransactionsPage />,
   },
   {
+    path: '/crypto-portfolio/:userId',
+    element: <CryptoPortfolioPage />,
+  },
+  {
     path: '*',
     element: <NotFoundPage />,
   },
