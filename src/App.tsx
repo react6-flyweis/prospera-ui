@@ -71,8 +71,15 @@ const CryptoManagementPage = lazy(
 const CryptoTransactionsPage = lazy(
   () => import('@/pages/CryptoTransactions/CryptoTransactions')
 );
+const CryptoPortfolioPage = lazy(
+  () => import('@/pages/CryptoTransactions/CryptoPortfolio')
+);
 const CommissionManagementPage = lazy(
   () => import('@/pages/CommissionManagement/CommissionManagement')
+);
+
+const PushNotificationsPage = lazy(
+  () => import('@/pages/PushNotifications/PushNotifications')
 );
 
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
@@ -205,6 +212,10 @@ const routes: RouteObject[] = [
   {
     path: '/crypto-portfolio/:userId',
     element: <CryptoPortfolioPage />,
+  },
+  {
+    path: '/push-notifications',
+    element: <PushNotificationsPage />,
   },
   {
     path: '*',
