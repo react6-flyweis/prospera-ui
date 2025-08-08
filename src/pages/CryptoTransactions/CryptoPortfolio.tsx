@@ -1,4 +1,7 @@
+import { cryptoPortfolioColumns } from '@/components/CryptoTransaction/cryptoPortfolioColumns';
+import { cryptoPortfolioData } from '@/components/CryptoTransaction/cryptoPortfolioData';
 import { CryptoStackedBarChart } from '@/components/charts/CryptoStackedBarChart';
+import { DataTable } from '@/components/DataTable';
 import { PageLayout } from '@/components/Layout/PageLayout';
 
 export default function CryptoPortfolio() {
@@ -43,6 +46,12 @@ export default function CryptoPortfolio() {
         </div>
         {/* Chart and Table */}
         <CryptoStackedBarChart />
+        <DataTable
+          columns={cryptoPortfolioColumns}
+          data={cryptoPortfolioData}
+          pageSize={10}
+          showPagination={true}
+        />
       </div>
     </PageLayout>
   );
