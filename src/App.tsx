@@ -64,6 +64,9 @@ const LoanApprovalPage = lazy(
 const KYCVerificationPage = lazy(
   () => import('@/pages/KYCVerification/KYCVerification')
 );
+const CommissionManagementPage = lazy(
+  () => import('@/pages/CommissionManagement/CommissionManagement')
+);
 
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
@@ -179,6 +182,10 @@ const routes: RouteObject[] = [
   {
     path: '/kyc',
     element: <KYCVerificationPage />,
+  },
+  {
+    path: '/commissions',
+    element: <CommissionManagementPage />,
   },
   {
     path: '*',
