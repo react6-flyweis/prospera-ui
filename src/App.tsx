@@ -86,6 +86,8 @@ const PrivacyPolicyPage = lazy(() => import('@/pages/Settings/PrivacyPolicy'));
 
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
+const ComplaintsPage = lazy(() => import('@/pages/Complaints/Complaints'));
+
 const routes: RouteObject[] = [
   {
     path: '/',
@@ -226,6 +228,10 @@ const routes: RouteObject[] = [
   {
     path: '/settings/privacy-policy',
     element: <PrivacyPolicyPage />,
+  },
+  {
+    path: '/complaints',
+    element: <ComplaintsPage />,
   },
   {
     path: '*',
