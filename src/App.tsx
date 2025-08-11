@@ -82,6 +82,8 @@ const PushNotificationsPage = lazy(
   () => import('@/pages/PushNotifications/PushNotifications')
 );
 const SettingsPage = lazy(() => import('@/pages/Settings/Settings'));
+const HelpSupportPage = lazy(() => import('@/pages/Settings/HelpSupport'));
+
 const TermsConditionPage = lazy(
   () => import('@/pages/Settings/TermsCondition')
 );
@@ -235,6 +237,10 @@ const routes: RouteObject[] = [
   {
     path: '/settings/terms-condition',
     element: <TermsConditionPage />,
+  },
+  {
+    path: '/settings/help-support',
+    element: <HelpSupportPage />,
   },
   {
     path: '/complaints',
