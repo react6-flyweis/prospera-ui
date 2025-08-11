@@ -81,6 +81,7 @@ const CommissionManagementPage = lazy(
 const PushNotificationsPage = lazy(
   () => import('@/pages/PushNotifications/PushNotifications')
 );
+const SettingsPage = lazy(() => import('@/pages/Settings/Settings'));
 
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
@@ -216,6 +217,10 @@ const routes: RouteObject[] = [
   {
     path: '/push-notifications',
     element: <PushNotificationsPage />,
+  },
+  {
+    path: '/settings',
+    element: <SettingsPage />,
   },
   {
     path: '*',
