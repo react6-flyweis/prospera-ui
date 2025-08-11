@@ -82,6 +82,11 @@ const PushNotificationsPage = lazy(
   () => import('@/pages/PushNotifications/PushNotifications')
 );
 const SettingsPage = lazy(() => import('@/pages/Settings/Settings'));
+
+const ProfileDetailPage = lazy(
+  () => import('@/pages/UserManagement/ProfileDetail')
+);
+
 const HelpSupportPage = lazy(() => import('@/pages/Settings/HelpSupport'));
 
 const TermsConditionPage = lazy(
@@ -162,6 +167,10 @@ const routes: RouteObject[] = [
   {
     path: '/users/:userId/edit',
     element: <EditUserPage />,
+  },
+  {
+    path: '/profile',
+    element: <ProfileDetailPage />,
   },
   {
     path: '/employees',
