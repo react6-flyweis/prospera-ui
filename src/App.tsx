@@ -82,6 +82,9 @@ const PushNotificationsPage = lazy(
   () => import('@/pages/PushNotifications/PushNotifications')
 );
 const SettingsPage = lazy(() => import('@/pages/Settings/Settings'));
+const TermsConditionPage = lazy(
+  () => import('@/pages/Settings/TermsCondition')
+);
 const PrivacyPolicyPage = lazy(() => import('@/pages/Settings/PrivacyPolicy'));
 
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
@@ -228,6 +231,10 @@ const routes: RouteObject[] = [
   {
     path: '/settings/privacy-policy',
     element: <PrivacyPolicyPage />,
+  },
+  {
+    path: '/settings/terms-condition',
+    element: <TermsConditionPage />,
   },
   {
     path: '/complaints',
