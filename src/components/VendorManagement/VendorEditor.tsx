@@ -38,10 +38,33 @@ const vendorSchema = z.object({
 
 type VendorFormValues = z.infer<typeof vendorSchema>;
 
-export function VendorEditor() {
+type VendorEditorProps = {
+  initialData?: Partial<VendorFormValues>;
+};
+
+// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation>
+export function VendorEditor({ initialData }: VendorEditorProps) {
   const form = useForm<VendorFormValues>({
     resolver: zodResolver(vendorSchema),
-    defaultValues: {},
+    defaultValues: {
+      name: initialData?.name || '',
+      email: initialData?.email || '',
+      joinDate: initialData?.joinDate || '',
+      gender: initialData?.gender || '',
+      address: initialData?.address || '',
+      postalCode: initialData?.postalCode || '',
+      mobile: initialData?.mobile || '',
+      vendorId: initialData?.vendorId || '',
+      dob: initialData?.dob || '',
+      language: initialData?.language || '',
+      city: initialData?.city || '',
+      country: initialData?.country || '',
+      bankName: initialData?.bankName || '',
+      branch: initialData?.branch || '',
+      accountHolder: initialData?.accountHolder || '',
+      accountNumber: initialData?.accountNumber || '',
+      ifsc: initialData?.ifsc || '',
+    },
   });
 
   function onSubmit(_data: VendorFormValues) {
