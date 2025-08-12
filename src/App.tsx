@@ -22,10 +22,14 @@ const AddNewVendorPage = lazy(
 );
 
 const CorporateManagementPage = lazy(
-  () => import('@/pages/CorporateManagement')
+  () => import('@/pages/CorporateManagement/CorporateManagement')
 );
-const CorporateDetailsPage = lazy(() => import('@/pages/CorporateDetail'));
-const AddNewCorporatePage = lazy(() => import('@/pages/AddNewCorporate'));
+const CorporateDetailsPage = lazy(
+  () => import('@/pages/CorporateManagement/CorporateDetail')
+);
+const AddNewCorporatePage = lazy(
+  () => import('@/pages/CorporateManagement/AddNewCorporate')
+);
 
 const LenderManagementPage = lazy(() => import('@/pages/LenderManagement'));
 const LenderDetails = lazy(() => import('@/pages/LenderDetails'));
