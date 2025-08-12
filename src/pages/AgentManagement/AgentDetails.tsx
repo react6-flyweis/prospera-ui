@@ -1,4 +1,5 @@
 import { PenLineIcon } from 'lucide-react';
+import { Link } from 'react-router';
 import { DocumentGrid } from '@/components/DocumentGrid';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -75,9 +76,11 @@ export default function AgentDetails() {
                 Joined : {AGENT_MOCK.joined}
               </div>
             </div>
-            <Button className="mt-2" size="icon" variant="ghost">
-              <PenLineIcon className="h-4 w-4" />
-            </Button>
+            <Link to={`/agents/${AGENT_MOCK.agentId}/edit`}>
+              <Button className="mt-2" size="icon" variant="ghost">
+                <PenLineIcon className="h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </Card>

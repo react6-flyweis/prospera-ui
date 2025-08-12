@@ -38,10 +38,32 @@ const agentSchema = z.object({
 
 type AgentFormValues = z.infer<typeof agentSchema>;
 
-export function AgentEditor() {
+type AgentEditorProps = {
+  initialData?: Partial<AgentFormValues>;
+};
+
+export function AgentEditor({ initialData }: AgentEditorProps) {
   const form = useForm<AgentFormValues>({
     resolver: zodResolver(agentSchema),
-    defaultValues: {},
+    defaultValues: {
+      name: initialData?.name || '',
+      email: initialData?.email || '',
+      joinDate: initialData?.joinDate || '',
+      gender: initialData?.gender || '',
+      address: initialData?.address || '',
+      postalCode: initialData?.postalCode || '',
+      mobile: initialData?.mobile || '',
+      agentId: initialData?.agentId || '',
+      dob: initialData?.dob || '',
+      language: initialData?.language || '',
+      city: initialData?.city || '',
+      country: initialData?.country || '',
+      bankName: initialData?.bankName || '',
+      branch: initialData?.branch || '',
+      accountHolder: initialData?.accountHolder || '',
+      accountNumber: initialData?.accountNumber || '',
+      ifsc: initialData?.ifsc || '',
+    },
   });
 
   function onSubmit(_data: AgentFormValues) {
