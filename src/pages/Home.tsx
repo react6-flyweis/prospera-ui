@@ -1,6 +1,11 @@
 import { CryptoChart } from '@/components/charts/CryptoChart';
+import { GaugeProgress } from '@/components/charts/GaugeProgress';
+import { TotalMoneyApprovedChart } from '@/components/charts/TotalMoneyApprovedChart';
+import type { KycStatusRow } from '@/components/KYCVerification/KYCStatusTable';
+import { KYCStatusTable } from '@/components/KYCVerification/KYCStatusTable';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { cryptoData } from '@/data/cryptoData';
+import { kycStatusData } from '@/data/kycStatusData';
 
 export default function Home() {
   return (
@@ -19,6 +24,23 @@ export default function Home() {
             <CryptoChart crypto={crypto} key={crypto.symbol} />
           ))}
         </div>
+      </div>
+
+      {/* KYC Verification Status */}
+      <div className="mb-6 flex justify-between gap-8">
+        <KYCStatusTable rows={kycStatusData as KycStatusRow[]} />
+        <GaugeProgress
+          filter="All"
+          filterOptions={['All', 'Q1', 'Q2', 'Q3', 'Q4']}
+          label="Completed"
+          stats={{ total: 95, completed: 26, delayed: 35, ongoing: 35 }}
+          value={72}
+        />
+      </div>
+
+      {/* Total Money Approved Chart */}
+      <div className="mb-6">
+        <TotalMoneyApprovedChart />
       </div>
     </PageLayout>
   );
