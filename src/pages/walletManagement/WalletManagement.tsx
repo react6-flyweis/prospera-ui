@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { DataTable } from '@/components/DataTable';
+import { PageLayout } from '@/components/Layout/PageLayout';
 import {
   Select,
   SelectContent,
@@ -19,9 +20,11 @@ export default function WalletManagement() {
   const walletData = getWalletDataByType(selectedType);
 
   return (
-    <div className="p-6">
+    <PageLayout title="Wallet Management">
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="font-bold text-xl">Users Wallet</h2>
+        <h2 className="font-bold text-xl">
+          {selectedType.charAt(0).toUpperCase() + selectedType.slice(1)} Wallet
+        </h2>
         <Select
           onValueChange={(value) => setSelectedType(value as UserType)}
           value={selectedType}
@@ -45,6 +48,6 @@ export default function WalletManagement() {
         pageSize={8}
         showPagination={true}
       />
-    </div>
+    </PageLayout>
   );
 }
