@@ -5,13 +5,21 @@ import DashboardLayout from './components/DashboardLayout';
 
 const HomePage = lazy(() => import('@/pages/Home'));
 
-const AgentManagementPage = lazy(() => import('@/pages/AgentManagement'));
-const AgentDetails = lazy(() => import('@/pages/AgentDetails'));
-const AddNewAgent = lazy(() => import('@/pages/AddNewAgent'));
+const AgentManagementPage = lazy(
+  () => import('@/pages/AgentManagement/AgentManagement')
+);
+const AgentDetails = lazy(() => import('@/pages/AgentManagement/AgentDetails'));
+const AddNewAgent = lazy(() => import('@/pages/AgentManagement/AddNewAgent'));
 
-const VendorManagementPage = lazy(() => import('@/pages/VendorManagement'));
-const VendorDetails = lazy(() => import('@/pages/VendorDetails'));
-const AddNewVendorPage = lazy(() => import('@/pages/AddNewVendor'));
+const VendorManagementPage = lazy(
+  () => import('@/pages/VendorManagement/VendorManagement')
+);
+const VendorDetails = lazy(
+  () => import('@/pages/VendorManagement/VendorDetails')
+);
+const AddNewVendorPage = lazy(
+  () => import('@/pages/VendorManagement/AddNewVendor')
+);
 
 const CorporateManagementPage = lazy(
   () => import('@/pages/CorporateManagement')
