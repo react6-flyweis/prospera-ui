@@ -29,7 +29,7 @@ const corporateSchema = z.object({
   address: z.string(),
   postalCode: z.string(),
   mobile: z.string(),
-  vendorId: z.string(),
+  corporateId: z.string(),
   dob: z.string(),
   language: z.string(),
   city: z.string(),
@@ -60,11 +60,42 @@ const corporateSchema = z.object({
 
 type CorporateFormValues = z.infer<typeof corporateSchema>;
 
-export function CorporateEditor() {
+type CorporateEditorProps = {
+  initialData?: Partial<CorporateFormValues>;
+};
+
+// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation>
+export function CorporateEditor({ initialData }: CorporateEditorProps) {
   const [profileImage, setProfileImage] = useState<string | File>('');
   const form = useForm<CorporateFormValues>({
     resolver: zodResolver(corporateSchema),
-    defaultValues: {},
+    defaultValues: {
+      name: initialData?.name || '',
+      email: initialData?.email || '',
+      joinDate: initialData?.joinDate || '',
+      gender: initialData?.gender || '',
+      address: initialData?.address || '',
+      postalCode: initialData?.postalCode || '',
+      mobile: initialData?.mobile || '',
+      corporateId: initialData?.corporateId || '',
+      dob: initialData?.dob || '',
+      language: initialData?.language || '',
+      city: initialData?.city || '',
+      country: initialData?.country || '',
+      bankName: initialData?.bankName || '',
+      branch: initialData?.branch || '',
+      accountHolder: initialData?.accountHolder || '',
+      accountNumber: initialData?.accountNumber || '',
+      ifsc: initialData?.ifsc || '',
+      employeesCount: initialData?.employeesCount || '',
+      businessSetting: initialData?.businessSetting || '',
+      payrollDescription: initialData?.payrollDescription || '',
+      hasCompanyBankAccount: initialData?.hasCompanyBankAccount || '',
+      africaTeamMembers: initialData?.africaTeamMembers || '',
+      industry: initialData?.industry || '',
+      desiredFirstPayday: initialData?.desiredFirstPayday || '',
+      needClockInOut: initialData?.needClockInOut || '',
+    },
   });
 
   function onSubmit(_data: CorporateFormValues) {
@@ -242,7 +273,7 @@ export function CorporateEditor() {
                   type: 'text',
                 },
                 {
-                  name: 'vendorId',
+                  name: 'corporateId',
                   label: 'Give A ID',
                   placeholder: 'Enter ID',
                   type: 'text',
