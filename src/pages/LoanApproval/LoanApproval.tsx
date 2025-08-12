@@ -1,10 +1,10 @@
 import { InfoIcon, RefreshCwIcon, SearchIcon } from 'lucide-react';
 import type React from 'react';
 import { useRef, useState } from 'react';
-import { CreditScoreDialog } from '@/components/CreditScoreDialog';
 import type { DataTableRef } from '@/components/DataTable';
 import { DataTable } from '@/components/DataTable';
 import { PageLayout } from '@/components/Layout/PageLayout';
+import { CreditScoreDialog } from '@/components/LoanApproval/CreditScoreDialog';
 import { loanApprovalColumns } from '@/components/LoanApproval/loanApprovalColumns';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
