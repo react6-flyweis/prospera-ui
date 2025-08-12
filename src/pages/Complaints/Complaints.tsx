@@ -1,4 +1,4 @@
-import { ComplaintsCard } from '@/components/ComplaintsCard';
+import { ComplaintsCard } from '@/components/Complaints/ComplaintsCard';
 import { PageLayout } from '@/components/Layout/PageLayout';
 
 const complaintsData = [
