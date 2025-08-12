@@ -32,11 +32,29 @@ const lenderSchema = z.object({
 
 type LenderFormValues = z.infer<typeof lenderSchema>;
 
-export function LenderEditor() {
+type LenderEditorProps = {
+  initialData?: Partial<LenderFormValues>;
+};
+
+export function LenderEditor({ initialData }: LenderEditorProps) {
   const [profileImage, setProfileImage] = useState<string | File>('');
   const form = useForm<LenderFormValues>({
     resolver: zodResolver(lenderSchema),
-    defaultValues: {},
+    defaultValues: {
+      name: initialData?.name || '',
+      email: initialData?.email || '',
+      joinDate: initialData?.joinDate || '',
+      gender: initialData?.gender || '',
+      address: initialData?.address || '',
+      presentAddress: initialData?.presentAddress || '',
+      postalCode: initialData?.postalCode || '',
+      mobile: initialData?.mobile || '',
+      lenderId: initialData?.lenderId || '',
+      dob: initialData?.dob || '',
+      language: initialData?.language || '',
+      city: initialData?.city || '',
+      country: initialData?.country || '',
+    },
   });
 
   function onSubmit(_data: LenderFormValues) {
