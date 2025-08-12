@@ -31,9 +31,15 @@ const AddNewCorporatePage = lazy(
   () => import('@/pages/CorporateManagement/AddNewCorporate')
 );
 
-const LenderManagementPage = lazy(() => import('@/pages/LenderManagement'));
-const LenderDetails = lazy(() => import('@/pages/LenderDetails'));
-const AddNewLenderPage = lazy(() => import('@/pages/AddNewLender'));
+const LenderManagementPage = lazy(
+  () => import('@/pages/LenderManagement/LenderManagement')
+);
+const LenderDetails = lazy(
+  () => import('@/pages/LenderManagement/LenderDetails')
+);
+const AddNewLenderPage = lazy(
+  () => import('@/pages/LenderManagement/AddNewLender')
+);
 
 const UserManagement = lazy(
   () => import('@/pages/UserManagement/UserManagement')
