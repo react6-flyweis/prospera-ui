@@ -1,4 +1,5 @@
 import { LogOutIcon, ReplyIcon, SearchIcon, UserIcon } from 'lucide-react';
+import { Link } from 'react-router';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import {
@@ -70,9 +71,11 @@ export function Header() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-56" forceMount>
-                <DropdownMenuItem>
-                  <UserIcon className="mr-2 h-4 w-4" />
-                  <span>Profile</span>
+                <DropdownMenuItem asChild>
+                  <Link className="flex w-full items-center" to="/profile">
+                    <UserIcon className="mr-2 h-4 w-4" />
+                    <span>Profile</span>
+                  </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="text-red-500">
                   <LogOutIcon className="mr-2 h-4 w-4 text-red-500" />
