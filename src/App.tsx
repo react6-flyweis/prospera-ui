@@ -116,6 +116,7 @@ const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
 const ComplaintsPage = lazy(() => import('@/pages/Complaints/Complaints'));
 const ReportsPage = lazy(() => import('@/pages/Reports/Reports'));
+const NewReportPage = lazy(() => import('@/pages/Reports/NewReport'));
 
 const routes: RouteObject[] = [
   {
@@ -277,6 +278,10 @@ const routes: RouteObject[] = [
   {
     path: '/reports',
     element: <ReportsPage />,
+  },
+  {
+    path: '/reports/new',
+    element: <NewReportPage />,
   },
   {
     path: '*',
