@@ -1,10 +1,11 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import { EyeIcon } from 'lucide-react';
+import { EyeIcon, PencilIcon } from 'lucide-react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { ProfileImageUploader } from '@/components/ProfileImageUploader';
+import { ChangePasswordDialog } from '@/components/UserManagement/ChangePasswordDialog';
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -37,6 +38,7 @@ type ProfileFormValues = z.infer<typeof profileSchema>;
 export default function ProfileDetail() {
   const [profileImage, setProfileImage] = useState<string | File>('');
   const [showPassword, setShowPassword] = useState(false);
+  // Removed unused showChangePassword state
   const form = useForm<ProfileFormValues>({
     resolver: zodResolver(profileSchema),
     defaultValues: {
@@ -260,14 +262,25 @@ export default function ProfileDetail() {
                             type={showPassword ? 'text' : 'password'}
                             {...field}
                           />
-                          <button
-                            className="absolute top-2 right-2 text-gray-500"
-                            onClick={() => setShowPassword((v) => !v)}
-                            tabIndex={-1}
-                            type="button"
-                          >
-                            <EyeIcon size={18} />
-                          </button>
+                          <div className="absolute top-0 right-2 flex h-full items-center gap-2">
+                            <button
+                              className="text-gray-500"
+                              onClick={() => setShowPassword((v) => !v)}
+                              tabIndex={-1}
+                              type="button"
+                            >
+                              <EyeIcon size={18} />
+                            </button>
+                            <ChangePasswordDialog>
+                              <button
+                                aria-label="Edit Password"
+                                className="rounded-full p-1 text-primary hover:bg-primary/10"
+                                type="button"
+                              >
+                                <PencilIcon size={16} />
+                              </button>
+                            </ChangePasswordDialog>
+                          </div>
                         </div>
                       </FormControl>
                       <FormMessage />
