@@ -2,7 +2,7 @@ import supportIcon from '@/assets/icons/help-support.png';
 import privacyIcon from '@/assets/icons/privacy-policy.png';
 import termsIcon from '@/assets/icons/terms-condition.png';
 import { PageLayout } from '@/components/Layout/PageLayout';
-import { SettingsInfoCard } from '@/components/SettingsInfoCard';
+import { SettingsInfoCard } from '@/components/Settings/SettingsInfoCard';
 
 const cards = [
   {
