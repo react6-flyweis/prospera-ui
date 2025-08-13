@@ -123,6 +123,9 @@ const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 const ComplaintsPage = lazy(() => import('@/pages/Complaints/Complaints'));
 const ReportsPage = lazy(() => import('@/pages/Reports/Reports'));
 const NewReportPage = lazy(() => import('@/pages/Reports/NewReport'));
+
+const ChatPage = lazy(() => import('@/pages/Chat/ChatPage'));
+
 const LoginPage = lazy(() => import('@/pages/auth/LoginPage'));
 const RegisterPage = lazy(() => import('@/pages/auth/RegisterPage'));
 
@@ -325,6 +328,10 @@ const routes: RouteObject[] = [
   {
     path: '/reports/new',
     element: <NewReportPage />,
+  },
+  {
+    path: '/chat',
+    element: <ChatPage />,
   },
   {
     path: '*',
