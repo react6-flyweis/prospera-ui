@@ -10,6 +10,7 @@ const AgentManagementPage = lazy(
 );
 const AgentDetails = lazy(() => import('@/pages/AgentManagement/AgentDetails'));
 const AddNewAgent = lazy(() => import('@/pages/AgentManagement/AddNewAgent'));
+const EditAgent = lazy(() => import('@/pages/AgentManagement/EditAgent'));
 
 const VendorManagementPage = lazy(
   () => import('@/pages/VendorManagement/VendorManagement')
@@ -20,6 +21,7 @@ const VendorDetails = lazy(
 const AddNewVendorPage = lazy(
   () => import('@/pages/VendorManagement/AddNewVendor')
 );
+const EditVendor = lazy(() => import('@/pages/VendorManagement/EditVendor'));
 
 const CorporateManagementPage = lazy(
   () => import('@/pages/CorporateManagement/CorporateManagement')
@@ -29,6 +31,9 @@ const CorporateDetailsPage = lazy(
 );
 const AddNewCorporatePage = lazy(
   () => import('@/pages/CorporateManagement/AddNewCorporate')
+);
+const EditCorporate = lazy(
+  () => import('@/pages/CorporateManagement/EditCorporate')
 );
 
 const LenderManagementPage = lazy(
@@ -40,6 +45,7 @@ const LenderDetails = lazy(
 const AddNewLenderPage = lazy(
   () => import('@/pages/LenderManagement/AddNewLender')
 );
+const EditLender = lazy(() => import('@/pages/LenderManagement/EditLender'));
 
 const UserManagement = lazy(
   () => import('@/pages/UserManagement/UserManagement')
@@ -136,6 +142,10 @@ const routes: RouteObject[] = [
     element: <AgentDetails />,
   },
   {
+    path: '/agents/:agentId/edit',
+    element: <EditAgent />,
+  },
+  {
     path: '/vendors',
     element: <VendorManagementPage />,
   },
@@ -146,6 +156,10 @@ const routes: RouteObject[] = [
   {
     path: '/vendors/:vendorId',
     element: <VendorDetails />,
+  },
+  {
+    path: '/vendors/:vendorId/edit',
+    element: <EditVendor />,
   },
   {
     path: '/corporates',
@@ -160,6 +174,10 @@ const routes: RouteObject[] = [
     element: <CorporateDetailsPage />,
   },
   {
+    path: '/corporates/:corporateId/edit',
+    element: <EditCorporate />,
+  },
+  {
     path: '/lenders',
     element: <LenderManagementPage />,
   },
@@ -170,6 +188,10 @@ const routes: RouteObject[] = [
   {
     path: '/lenders/:lenderId',
     element: <LenderDetails />,
+  },
+  {
+    path: '/lenders/:lenderId/edit',
+    element: <EditLender />,
   },
   {
     path: '/users',
