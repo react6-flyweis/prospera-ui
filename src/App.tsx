@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 import { Route, type RouteObject, Routes } from 'react-router';
-
+import AuthLayout from './components/AuthLayout';
 import DashboardLayout from './components/DashboardLayout';
 
 const HomePage = lazy(() => import('@/pages/Home'));
@@ -123,6 +123,27 @@ const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 const ComplaintsPage = lazy(() => import('@/pages/Complaints/Complaints'));
 const ReportsPage = lazy(() => import('@/pages/Reports/Reports'));
 const NewReportPage = lazy(() => import('@/pages/Reports/NewReport'));
+const LoginPage = lazy(() => import('@/pages/auth/LoginPage'));
+const RegisterPage = lazy(() => import('@/pages/auth/RegisterPage'));
+
+const authRoutes: RouteObject[] = [
+  {
+    path: '/login',
+    element: <LoginPage />,
+  },
+  {
+    path: '/register',
+    element: <RegisterPage />,
+  },
+  // {
+  //   path: '/forgot-password',
+  //   element: <ForgotPasswordPage />,
+  // },
+  // {
+  //   path: '/reset-password/:token',
+  //   element: <ResetPasswordPage />,
+  // },
+];
 
 const routes: RouteObject[] = [
   {
@@ -314,6 +335,12 @@ const routes: RouteObject[] = [
 function App() {
   return (
     <Routes>
+      <Route element={<AuthLayout />}>
+        {authRoutes.map((route) => (
+          <Route element={route.element} key={route.path} path={route.path} />
+        ))}
+      </Route>
+
       {/* Define your routes here */}
       <Route element={<DashboardLayout />}>
         {routes.map((route) => (
