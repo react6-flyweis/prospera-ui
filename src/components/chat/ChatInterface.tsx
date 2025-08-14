@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import ChatHeader from './ChatHeader';
 import ChatInput from './ChatInput';
 import MessageBubble from './MessageBubble';
-import { useTranslation } from 'react-i18next';
 
 interface User {
   id: string;

@@ -1,6 +1,6 @@
+import { useTranslation } from 'react-i18next';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
-import { useTranslation } from 'react-i18next';
 
 interface Message {
   id: string;
