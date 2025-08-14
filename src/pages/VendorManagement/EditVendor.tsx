@@ -1,8 +1,10 @@
+import { useTranslation } from 'react-i18next';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { VendorEditor } from '@/components/VendorManagement/VendorEditor';
 
 // Static mock vendor data
 export default function EditVendor() {
+  const { t } = useTranslation();
   // Get vendorId from route params
   //   const { vendorId } = useParams();
   const mockVendor = {
@@ -26,7 +28,7 @@ export default function EditVendor() {
   };
 
   return (
-    <PageLayout title="Edit Vendor" withBack>
+    <PageLayout title={t('editVendorPage.title')} withBack>
       <VendorEditor initialData={mockVendor} />
     </PageLayout>
   );

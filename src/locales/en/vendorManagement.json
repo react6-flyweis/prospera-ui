@@ -1,0 +1,38 @@
+{
+  "vendorManagementPage": {
+    "title": "Vendor Management",
+    "totalVendors": "Total Vendors",
+    "addNewVendorButton": "Add A New Vendor",
+    "filter": {
+      "all": "All",
+      "verifiedVendors": "Verified Vendors",
+      "blockedVendors": "Blocked Vendors",
+      "unblockedVendors": "Unblocked Vendors"
+    },
+    "newVendorsSection": {
+      "title": "New Vendors",
+      "last30Days": "Last 30 Days",
+      "last7Days": "Last 7 Days",
+      "last15Days": "Last 15 Days",
+      "allTime": "All Time"
+    }
+  },
+  "addNewVendorPage": {
+    "title": "Add a New Vendor"
+  },
+  "editVendorPage": {
+    "title": "Edit Vendor"
+  },
+  "vendorColumns": {
+    "deleteProfile": "Delete This Profile",
+    "vendorName": "Vendor Name",
+    "vendorId": "Vendor ID",
+    "emailAddress": "Email Address",
+    "mobileNumber": "Mobile Number",
+    "documents": "Documents",
+    "action": "Action",
+    "complete": "Complete",
+    "active": "Active",
+    "inactive": "Inactive"
+  }
+}

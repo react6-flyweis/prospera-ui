@@ -1,4 +1,5 @@
 import { PenLineIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 import { DocumentGrid } from '@/components/DocumentGrid';
 import { PageLayout } from '@/components/Layout/PageLayout';
@@ -25,6 +26,7 @@ const VENDOR_MOCK = {
 };
 
 export default function VendorDetails() {
+  const { t } = useTranslation();
   return (
     <PageLayout title={VENDOR_MOCK.name} withBack>
       <Card className=" flex items-center gap-6 rounded-2xl p-4 shadow-sm">
@@ -43,37 +45,39 @@ export default function VendorDetails() {
               <div className="font-semibold text-lg">{VENDOR_MOCK.name}</div>
               <div className="text-gray-500 text-sm">{VENDOR_MOCK.phone}</div>
               <div className="text-gray-500 text-sm">
-                Country : {VENDOR_MOCK.country}
+                {t('vendorDetailsPage.country')} {VENDOR_MOCK.country}
               </div>
             </div>
           </div>
           <div>
-            <div className="text-gray-500 text-sm">DOB : {VENDOR_MOCK.dob}</div>
             <div className="text-gray-500 text-sm">
-              Email ID : {VENDOR_MOCK.email}
+              {t('vendorDetailsPage.dob')} {VENDOR_MOCK.dob}
             </div>
             <div className="text-gray-500 text-sm">
-              Vendor ID: {VENDOR_MOCK.vendorId}
+              {t('vendorDetailsPage.emailId')} {VENDOR_MOCK.email}
+            </div>
+            <div className="text-gray-500 text-sm">
+              {t('vendorDetailsPage.vendorId')} {VENDOR_MOCK.vendorId}
             </div>
           </div>
           <div>
             <div className="text-gray-500 text-sm">
-              Bank Name: {VENDOR_MOCK.bank.name}
+              {t('vendorDetailsPage.bankName')} {VENDOR_MOCK.bank.name}
             </div>
             <div className="text-gray-500 text-sm">
-              Account No: {VENDOR_MOCK.bank.accountNo}
+              {t('vendorDetailsPage.accountNo')} {VENDOR_MOCK.bank.accountNo}
             </div>
             <div className="text-gray-500 text-sm">
-              Branch: {VENDOR_MOCK.bank.branch}
+              {t('vendorDetailsPage.branch')} {VENDOR_MOCK.bank.branch}
             </div>
           </div>
           <div className="flex gap-3">
             <div className="">
               <div className="text-gray-500 text-sm">
-                IFSC Code: {VENDOR_MOCK.bank.ifsc}
+                {t('vendorDetailsPage.ifscCode')} {VENDOR_MOCK.bank.ifsc}
               </div>
               <div className="text-gray-400 text-xs">
-                Joined : {VENDOR_MOCK.joined}
+                {t('vendorDetailsPage.joined')} {VENDOR_MOCK.joined}
               </div>
             </div>
             <Link to={`/vendors/${VENDOR_MOCK.vendorId}/edit`}>
