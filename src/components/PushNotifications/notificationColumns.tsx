@@ -1,4 +1,5 @@
 import type { ColumnDef } from '@tanstack/react-table';
+import type { TFunction } from 'i18next';
 import { Trash2Icon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -10,29 +11,35 @@ type Notification = {
   delete: string;
 };
 
-export const notificationColumns: ColumnDef<Notification>[] = [
+export const getNotificationColumns = (
+  t: TFunction
+): ColumnDef<Notification>[] => [
   {
     accessorKey: 'title',
-    header: 'Notification Title',
+    header: t('notificationColumns.notificationTitle'),
   },
   {
     accessorKey: 'content',
-    header: 'Notification Content',
+    header: t('notificationColumns.notificationContent'),
   },
   {
     accessorKey: 'status',
-    header: 'Notification Status',
+    header: t('notificationColumns.notificationStatus'),
   },
   {
     accessorKey: 'date',
-    header: 'Date',
+    header: t('notificationColumns.date'),
   },
   {
     id: 'delete',
-    header: 'Delete',
+    header: t('notificationColumns.delete'),
     cell: () => {
       return (
-        <Button aria-label="Delete notification" size="icon" variant="ghost">
+        <Button
+          aria-label={t('notificationColumns.deleteNotificationAriaLabel')}
+          size="icon"
+          variant="ghost"
+        >
           <Trash2Icon color="red" />
         </Button>
       );

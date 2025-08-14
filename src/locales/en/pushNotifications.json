@@ -1,0 +1,55 @@
+{
+  "pushNotificationsPage": {
+    "title": "Push Notifications",
+    "deleteAllButton": "Delete All"
+  },
+  "notificationColumns": {
+    "notificationTitle": "Notification Title",
+    "notificationContent": "Notification Content",
+    "notificationStatus": "Notification Status",
+    "date": "Date",
+    "delete": "Delete",
+    "deleteNotificationAriaLabel": "Delete notification"
+  },
+  "notificationForm": {
+    "validation": {
+      "titleRequired": "Title is required",
+      "contentRequired": "Content is required",
+      "selectWhomToSend": "Select whom to send"
+    },
+    "sendTo": {
+      "title": "Send To",
+      "all": "All",
+      "single": "Single"
+    },
+    "toWhom": {
+      "label": "To Whom Would You Send",
+      "placeholder": "Select...",
+      "options": {
+        "agents": "Agents",
+        "corporates": "Corporates",
+        "employees": "Employees",
+        "vendors": "Vendors",
+        "lenders": "Lenders"
+      }
+    },
+    "selectIndividual": {
+      "label": "Select The Individual",
+      "placeholder": "Select...",
+      "options": {
+        "user1": "User 1",
+        "user2": "User 2"
+      }
+    },
+    "notificationTitle": {
+      "label": "Notification Title",
+      "placeholder": "Write here"
+    },
+    "notificationContent": {
+      "label": "Notification Content",
+      "placeholder": "Write here"
+    },
+    "sendButton": "Send",
+    "cancelButton": "Cancel"
+  }
+}
