@@ -1,4 +1,5 @@
 import { ArrowRightIcon, PlusIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { Button } from '@/components/ui/button';
@@ -12,8 +13,9 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export default function Reports() {
+  const { t } = useTranslation();
   return (
-    <PageLayout title="Reports">
+    <PageLayout title={t('reportsPage.pageTitle')}>
       <Tabs className="w-full" defaultValue="new">
         <div className="mb-6 flex items-center justify-between">
           <TabsList className="flex gap-6 bg-transparent">
@@ -27,7 +29,7 @@ export default function Reports() {
                   <span className="absolute h-2.5 w-2.5 rounded-full bg-primary-gradient transition-opacity group-data-[state=active]:opacity-100 group-data-[state=inactive]:opacity-0" />
                 </span>
                 <span className="transition-colors group-data-[state=active]:font-bold group-data-[state=active]:text-primary">
-                  New Reports
+                  {t('reportsPage.newReportsTab')}
                 </span>
               </span>
             </TabsTrigger>
@@ -43,7 +45,7 @@ export default function Reports() {
                   </span>
                 </span>
                 <span className="transition-colors group-data-[state=active]:font-bold group-data-[state=active]:text-primary">
-                  Reports History
+                  {t('reportsPage.reportsHistoryTab')}
                 </span>
               </span>
             </TabsTrigger>
@@ -53,55 +55,55 @@ export default function Reports() {
               className="rounded-lg border-primary-gradient px-6 py-2 font-semibold text-primary transition-colors hover:bg-primary-gradient/10"
               variant="outline"
             >
-              Learn more
+              {t('reportsPage.learnMoreButton')}
             </Button>
             <Link to="/reports/new">
               <Button className="flex items-center gap-2 rounded-lg bg-primary-gradient px-6 py-2 font-semibold text-white shadow-md transition-colors hover:opacity-90">
                 <PlusIcon size={18} />
-                New custom report
+                {t('reportsPage.newCustomReportButton')}
               </Button>
             </Link>
           </div>
         </div>
         <TabsContent value="new">
-          <h2 className="mb-4 font-semibold text-lg">Recommended reports</h2>
+          <h2 className="mb-4 font-semibold text-lg">
+            {t('reportsPage.recommendedReportsTitle')}
+          </h2>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <Card className="rounded-md border border-muted-foreground">
               <CardHeader>
-                <CardTitle>Custom report</CardTitle>
+                <CardTitle>{t('reportsPage.customReportCardTitle')}</CardTitle>
                 <CardDescription>
-                  Build a custom report with your employees' Payroll, HR, and/or
-                  Benefits data, all in one place.
+                  {t('reportsPage.customReportCardDescription')}
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <a
-                  aria-label="View custom report"
+                <Link
+                  aria-label={t('reportsPage.viewCustomReportAriaLabel')}
                   className="flex items-center gap-1 font-medium text-primary hover:underline"
-                  href="/reports/custom"
+                  to="/reports/custom"
                 >
-                  View report
+                  {t('reportsPage.viewReportButton')}
                   <ArrowRightIcon className="inline-block" size={16} />
-                </a>
+                </Link>
               </CardContent>
             </Card>
             <Card className="rounded-md border border-muted-foreground">
               <CardHeader>
-                <CardTitle>Payroll trends</CardTitle>
+                <CardTitle>{t('reportsPage.payrollTrendsCardTitle')}</CardTitle>
                 <CardDescription>
-                  Identify and monitor payroll trends over a specified time
-                  period.
+                  {t('reportsPage.payrollTrendsCardDescription')}
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <a
-                  aria-label="View payroll trends report"
+                <Link
+                  aria-label={t('reportsPage.viewPayrollTrendsReportAriaLabel')}
                   className="flex items-center gap-1 font-medium text-primary hover:underline"
-                  href="/reports/payroll-trends"
+                  to="/reports/payroll-trends"
                 >
-                  View report
+                  {t('reportsPage.viewReportButton')}
                   <ArrowRightIcon className="inline-block" size={16} />
-                </a>
+                </Link>
               </CardContent>
             </Card>
           </div>
@@ -111,74 +113,85 @@ export default function Reports() {
               <table className="min-w-full text-left text-sm">
                 <thead className="rounded bg-primary-gradient text-white">
                   <tr>
-                    <th className="px-4 py-1 font-semibold">Report</th>
-                    <th className="px-4 py-1 font-semibold">Category</th>
-                    <th className="px-4 py-1 font-semibold">Last Viewed</th>
+                    <th className="px-4 py-1 font-semibold">
+                      {t('reportsPage.reportsTable.reportHeader')}
+                    </th>
+                    <th className="px-4 py-1 font-semibold">
+                      {t('reportsPage.reportsTable.categoryHeader')}
+                    </th>
+                    <th className="px-4 py-1 font-semibold">
+                      {t('reportsPage.reportsTable.lastViewedHeader')}
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-muted-foreground/20">
                   <tr>
                     <td className="px-4 py-3">
-                      <a
+                      <Link
                         className="font-medium text-primary hover:underline"
-                        href="/#"
+                        to="/#"
                       >
-                        Bank transactions
-                      </a>
+                        {t('reportsPage.reportsTable.bankTransactions')}
+                      </Link>
                       <div className="text-muted-foreground text-xs">
-                        View your federal tax filings
+                        {t('reportsPage.reportsTable.viewFederalTaxFilings')}
                       </div>
                     </td>
-                    <td className="px-4 py-3">Payroll, Taxes and compliance</td>
+                    <td className="px-4 py-3">
+                      {t('reportsPage.reportsTable.payrollTaxesCompliance')}
+                    </td>
                     <td className="px-4 py-3" />
                   </tr>
                   <tr>
                     <td className="px-4 py-3">
-                      <a
+                      <Link
                         className="font-medium text-primary hover:underline"
-                        href="/#"
+                        to="/#"
                       >
-                        Custom report
-                      </a>
+                        {t('reportsPage.reportsTable.customReport')}
+                      </Link>
                       <div className="text-muted-foreground text-xs">
                         Build a custom report with your employees' Payroll, HR,
                         and/or Benefits data, all in one place.
                       </div>
                     </td>
                     <td className="px-4 py-3">
-                      Payroll, Taxes and compliance, Employee details, Benefits
+                      {t(
+                        'reportsPage.reportsTable.payrollTaxesComplianceEmployeeDetailsBenefits'
+                      )}
                     </td>
                     <td className="px-4 py-3" />
                   </tr>
                   <tr>
                     <td className="px-4 py-3">
-                      <a
+                      <Link
                         className="flex items-center gap-1 font-medium text-primary hover:underline"
-                        href="/#"
+                        to="/#"
                       >
-                        Tax documents{' '}
-                        <span className="inline-block">
-                          <ArrowRightIcon size={14} />
-                        </span>
-                      </a>
+                        {t('reportsPage.reportsTable.taxDocuments')}
+                        <ArrowRightIcon size={14} />
+                      </Link>
                       <div className="text-muted-foreground text-xs">
-                        View your federal tax filings
+                        {t('reportsPage.reportsTable.viewFederalTaxFilings')}
                       </div>
                     </td>
-                    <td className="px-4 py-3">Taxes and compliance</td>
+                    <td className="px-4 py-3">
+                      {t('reportsPage.reportsTable.taxesCompliance')}
+                    </td>
                     <td className="px-4 py-3" />
                   </tr>
                   <tr>
                     <td className="px-4 py-3">
-                      <a
+                      <Link
                         className="font-medium text-primary hover:underline"
-                        href="/#"
+                        to="/#"
                       >
-                        Prospera Recruiting applicants
-                      </a>
+                        {t(
+                          'reportsPage.reportsTable.prosperaRecruitingApplicants'
+                        )}
+                      </Link>
                       <div className="text-muted-foreground text-xs">
-                        View information, status, and responses for your job
-                        posting applicants
+                        {t('reportsPage.reportsTable.viewJobPostingApplicants')}
                       </div>
                     </td>
                     <td className="px-4 py-3" />
@@ -186,12 +199,12 @@ export default function Reports() {
                   </tr>
                   <tr>
                     <td className="px-4 py-3">
-                      <a
+                      <Link
                         className="font-medium text-primary hover:underline"
-                        href="/#"
+                        to="/#"
                       >
-                        Payroll trends
-                      </a>
+                        {t('reportsPage.reportsTable.payrollTrends')}
+                      </Link>
                     </td>
                     <td className="px-4 py-3" />
                     <td className="px-4 py-3" />
@@ -206,11 +219,21 @@ export default function Reports() {
             <table className="min-w-full text-left text-sm">
               <thead className="rounded bg-primary-gradient py-2 text-white">
                 <tr>
-                  <th className="px-4 py-1 font-semibold">Report title</th>
-                  <th className="px-4 py-1 font-semibold">Report type</th>
-                  <th className="px-4 py-1 font-semibold">Date</th>
-                  <th className="px-4 py-1 font-semibold">Status </th>
-                  <th className="px-4 py-1 font-semibold">Actions</th>
+                  <th className="px-4 py-1 font-semibold">
+                    {t('reportsPage.reportsTable.reportTitleHeader')}
+                  </th>
+                  <th className="px-4 py-1 font-semibold">
+                    {t('reportsPage.reportsTable.reportTypeHeader')}
+                  </th>
+                  <th className="px-4 py-1 font-semibold">
+                    {t('reportsPage.reportsTable.dateHeader')}
+                  </th>
+                  <th className="px-4 py-1 font-semibold">
+                    {t('reportsPage.reportsTable.statusHeader')}{' '}
+                  </th>
+                  <th className="px-4 py-1 font-semibold">
+                    {t('reportsPage.reportsTable.actionsHeader')}
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-muted-foreground/20">

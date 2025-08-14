@@ -4,6 +4,7 @@ import {
   DownloadIcon,
   FilterIcon,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { AddColumnsDrawer } from '@/components/Reports/AddColumnsDrawer';
 import { FiltersDialog } from '@/components/Reports/FiltersDialog';
@@ -13,15 +14,16 @@ import { TimePeriodMenu } from '@/components/Reports/TimePeriodMenu';
 import { Button } from '@/components/ui/button';
 
 export default function NewReport() {
+  const { t } = useTranslation();
   return (
-    <PageLayout className="space-y-4" title="New Custom Report" withBack>
+    <PageLayout className="space-y-4" title={t('newReportPage.title')} withBack>
       <div className="flex justify-between gap-2">
         <Button className="rounded px-3 py-1 font-semibold" variant="outline">
-          Save as template
+          {t('newReportPage.saveAsTemplateButton')}
         </Button>
         <Button className="flex items-center gap-2 rounded bg-primary-gradient px-4 py-1 font-semibold text-white">
           <DownloadIcon size={16} />
-          Download
+          {t('newReportPage.downloadButton')}
         </Button>
       </div>
 
@@ -32,7 +34,7 @@ export default function NewReport() {
             variant="link"
           >
             <FilterIcon size={16} />
-            Filter
+            {t('newReportPage.filterButton')}
           </Button>
         </FiltersDialog>
         <AddColumnsDrawer>
@@ -41,7 +43,7 @@ export default function NewReport() {
             variant="link"
           >
             <ColumnsIcon size={16} />
-            Columns
+            {t('newReportPage.columnsButton')}
           </Button>
         </AddColumnsDrawer>
         <TimePeriodMenu>
@@ -49,7 +51,7 @@ export default function NewReport() {
             className="rounded px-3 py-1 text-primary underline"
             variant="link"
           >
-            Time period: Last 30 days
+            {t('newReportPage.timePeriodButton')}
           </Button>
         </TimePeriodMenu>
         <GroupByMenu>
@@ -57,7 +59,7 @@ export default function NewReport() {
             className="rounded px-3 py-1 text-primary underline"
             variant="link"
           >
-            Group by
+            {t('newReportPage.groupByButton')}
           </Button>
         </GroupByMenu>
         <ScheduleReportDrawer>
@@ -66,31 +68,36 @@ export default function NewReport() {
             variant="link"
           >
             <CalendarDaysIcon size={16} />
-            Schedule
+            {t('newReportPage.scheduleButton')}
           </Button>
         </ScheduleReportDrawer>
       </div>
 
       {/* Tab Bar */}
       <div className="flex w-full bg-primary-gradient text-white">
-        <div className="px-4 py-2">Gross earning</div>
-        <div className="px-4 py-2">Total employee deductions</div>
-        <div className="px-4 py-2">Total employer contributions</div>
-        <div className="px-4 py-2">Employee taxes</div>
-        <div className="px-4 py-2">Employee net pay</div>
+        <div className="px-4 py-2">{t('newReportPage.grossEarning')}</div>
+        <div className="px-4 py-2">
+          {t('newReportPage.totalEmployeeDeductions')}
+        </div>
+        <div className="px-4 py-2">
+          {t('newReportPage.totalEmployerContributions')}
+        </div>
+        <div className="px-4 py-2">{t('newReportPage.employeeTaxes')}</div>
+        <div className="px-4 py-2">{t('newReportPage.employeeNetPay')}</div>
       </div>
 
       {/* No Results Found */}
       <div className="flex flex-col items-center justify-center py-20">
         <img
-          alt="No results"
+          alt={t('newReportPage.noResultsAlt')}
           className="mb-4 h-12 w-12 opacity-80"
           src="/icons/report.png"
         />
-        <h2 className="mb-2 font-bold text-xl">No results found</h2>
+        <h2 className="mb-2 font-bold text-xl">
+          {t('newReportPage.noResultsFound')}
+        </h2>
         <p className="text-center text-muted-foreground">
-          Consider widening your time period or adjusting your filters and
-          columns.
+          {t('newReportPage.noResultsMessage')}
         </p>
       </div>
     </PageLayout>

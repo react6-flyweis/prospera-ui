@@ -1,6 +1,8 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import type { TFunction } from 'i18next';
 import type { PropsWithChildren } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -23,14 +25,25 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 
-const scheduleReportSchema = z.object({
-  reportName: z.string().min(1, 'Report name is required'),
-  startDate: z.string().min(1, 'Start date is required'),
-  frequency: z.string().min(1, 'Frequency is required'),
-  format: z.string().min(1, 'Format is required'),
-});
+const createScheduleReportSchema = (t: TFunction) =>
+  z.object({
+    reportName: z
+      .string()
+      .min(1, t('reportsPage.scheduleReportDrawer.reportNameRequired')),
+    startDate: z
+      .string()
+      .min(1, t('reportsPage.scheduleReportDrawer.startDateRequired')),
+    frequency: z
+      .string()
+      .min(1, t('reportsPage.scheduleReportDrawer.frequencyRequired')),
+    format: z
+      .string()
+      .min(1, t('reportsPage.scheduleReportDrawer.formatRequired')),
+  });
 
 export function ScheduleReportDrawer({ children }: PropsWithChildren) {
+  const { t } = useTranslation();
+  const scheduleReportSchema = createScheduleReportSchema(t);
   const methods = useForm({
     resolver: zodResolver(scheduleReportSchema),
     mode: 'onSubmit',
@@ -55,24 +68,29 @@ export function ScheduleReportDrawer({ children }: PropsWithChildren) {
       <SheetTrigger asChild>{children}</SheetTrigger>
       <SheetContent className="w-full px-6 sm:max-w-md" side="right">
         <SheetHeader className="px-3">
-          <SheetTitle className="text-xl">Schedule a report</SheetTitle>
+          <SheetTitle className="text-xl">
+            {t('reportsPage.scheduleReportDrawer.title')}
+          </SheetTitle>
           <SheetDescription>
-            Schedule a custom report template to run and have it automatically
-            emailed to your inbox.
+            {t('reportsPage.scheduleReportDrawer.description')}
             <a className="ml-1 text-primary underline" href="/#">
-              Learn more
+              {t('reportsPage.scheduleReportDrawer.learnMore')}
             </a>
           </SheetDescription>
         </SheetHeader>
         <FormProvider {...methods}>
           <form className="space-y-4 py-2" id="schedule-report-form">
             <div>
-              <Label htmlFor="reportName">Report name</Label>
+              <Label htmlFor="reportName">
+                {t('reportsPage.scheduleReportDrawer.reportNameLabel')}
+              </Label>
               <div className="mt-1">
                 <Input
                   id="reportName"
                   {...register('reportName')}
-                  placeholder=""
+                  placeholder={t(
+                    'reportsPage.scheduleReportDrawer.reportNamePlaceholder'
+                  )}
                 />
               </div>
               {errors.reportName && (
@@ -82,13 +100,17 @@ export function ScheduleReportDrawer({ children }: PropsWithChildren) {
               )}
             </div>
             <div>
-              <Label htmlFor="startDate">Delivery start date</Label>
+              <Label htmlFor="startDate">
+                {t('reportsPage.scheduleReportDrawer.startDateLabel')}
+              </Label>
               <div className="mt-1">
                 <Input
                   id="startDate"
                   type="date"
                   {...register('startDate')}
-                  placeholder="mm/dd/yyyy"
+                  placeholder={t(
+                    'reportsPage.scheduleReportDrawer.startDatePlaceholder'
+                  )}
                 />
               </div>
               {errors.startDate && (
@@ -98,19 +120,37 @@ export function ScheduleReportDrawer({ children }: PropsWithChildren) {
               )}
             </div>
             <div>
-              <Label htmlFor="frequency">Frequency</Label>
+              <Label htmlFor="frequency">
+                {t('reportsPage.scheduleReportDrawer.frequencyLabel')}
+              </Label>
               <div className="mt-1">
                 <Select
                   onValueChange={(val) => setValue('frequency', val)}
                   value={frequency}
                 >
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Please select..." />
+                    <SelectValue
+                      placeholder={t(
+                        'reportsPage.scheduleReportDrawer.frequencyPlaceholder'
+                      )}
+                    />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="daily">Daily</SelectItem>
-                    <SelectItem value="weekly">Weekly</SelectItem>
-                    <SelectItem value="monthly">Monthly</SelectItem>
+                    <SelectItem value="daily">
+                      {t(
+                        'reportsPage.scheduleReportDrawer.frequencyOptions.daily'
+                      )}
+                    </SelectItem>
+                    <SelectItem value="weekly">
+                      {t(
+                        'reportsPage.scheduleReportDrawer.frequencyOptions.weekly'
+                      )}
+                    </SelectItem>
+                    <SelectItem value="monthly">
+                      {t(
+                        'reportsPage.scheduleReportDrawer.frequencyOptions.monthly'
+                      )}
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -121,19 +161,31 @@ export function ScheduleReportDrawer({ children }: PropsWithChildren) {
               )}
             </div>
             <div>
-              <Label htmlFor="format">Format</Label>
+              <Label htmlFor="format">
+                {t('reportsPage.scheduleReportDrawer.formatLabel')}
+              </Label>
               <div className="mt-1">
                 <Select
                   onValueChange={(val) => setValue('format', val)}
                   value={format}
                 >
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Please select..." />
+                    <SelectValue
+                      placeholder={t(
+                        'reportsPage.scheduleReportDrawer.formatPlaceholder'
+                      )}
+                    />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="pdf">PDF</SelectItem>
-                    <SelectItem value="csv">CSV</SelectItem>
-                    <SelectItem value="xlsx">Excel (.xlsx)</SelectItem>
+                    <SelectItem value="pdf">
+                      {t('reportsPage.scheduleReportDrawer.formatOptions.pdf')}
+                    </SelectItem>
+                    <SelectItem value="csv">
+                      {t('reportsPage.scheduleReportDrawer.formatOptions.csv')}
+                    </SelectItem>
+                    <SelectItem value="xlsx">
+                      {t('reportsPage.scheduleReportDrawer.formatOptions.xlsx')}
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -148,7 +200,7 @@ export function ScheduleReportDrawer({ children }: PropsWithChildren) {
         <SheetFooter className="flex-row justify-end gap-2">
           <SheetClose asChild>
             <Button className="border-primary sm:w-32" variant="outline">
-              Cancel
+              {t('reportsPage.scheduleReportDrawer.cancelButton')}
             </Button>
           </SheetClose>
           <Button
@@ -156,7 +208,7 @@ export function ScheduleReportDrawer({ children }: PropsWithChildren) {
             form="schedule-report-form"
             type="submit"
           >
-            Schedule
+            {t('reportsPage.scheduleReportDrawer.scheduleButton')}
           </Button>
         </SheetFooter>
       </SheetContent>

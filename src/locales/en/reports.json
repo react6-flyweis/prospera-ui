@@ -1,0 +1,498 @@
+{
+  "reportsPage": {
+    "pageTitle": "Reports",
+    "newReportsTab": "New Reports",
+    "reportsHistoryTab": "Reports History",
+    "learnMoreButton": "Learn more",
+    "newCustomReportButton": "New custom report",
+    "recommendedReportsTitle": "Recommended reports",
+    "customReportCardTitle": "Custom report",
+    "customReportCardDescription": "Build a custom report with your employees' Payroll, HR, and/or Benefits data, all in one place.",
+    "viewCustomReportAriaLabel": "View custom report",
+    "viewReportButton": "View report",
+    "payrollTrendsCardTitle": "Payroll trends",
+    "payrollTrendsCardDescription": "Identify and monitor payroll trends over a specified time period.",
+    "viewPayrollTrendsReportAriaLabel": "View payroll trends report",
+    "reportsTable": {
+      "reportHeader": "Report",
+      "categoryHeader": "Category",
+      "lastViewedHeader": "Last Viewed",
+      "bankTransactions": "Bank transactions",
+      "viewFederalTaxFilings": "View your federal tax filings",
+      "payrollTaxesCompliance": "Payroll, Taxes and compliance",
+      "customReport": "Custom report",
+      "payrollTaxesComplianceEmployeeDetailsBenefits": "Payroll, Taxes and compliance, Employee details, Benefits",
+      "taxDocuments": "Tax documents",
+      "taxesCompliance": "Taxes and compliance",
+      "prosperaRecruitingApplicants": "Prospera Recruiting applicants",
+      "viewJobPostingApplicants": "View information, status, and responses for your job posting applicants",
+      "payrollTrends": "Payroll trends",
+      "reportTitleHeader": "Report title",
+      "reportTypeHeader": "Report type",
+      "dateHeader": "Date",
+      "statusHeader": "Status",
+      "actionsHeader": "Actions"
+    },
+    "groupByMenu": {
+      "groupBy": "Group by",
+      "payroll": "Payroll",
+      "employee": "Employee",
+      "workAddress": "Work address",
+      "workAddressState": "Work address (state)"
+    },
+    "scheduleReportDrawer": {
+      "title": "Schedule a report",
+      "description": "Schedule a custom report template to run and have it automatically emailed to your inbox.",
+      "learnMore": "Learn more",
+      "cancelButton": "Cancel",
+      "scheduleButton": "Schedule",
+      "reportNameLabel": "Report name",
+      "reportNamePlaceholder": "Enter report name",
+      "startDateLabel": "Delivery start date",
+      "startDatePlaceholder": "mm/dd/yyyy",
+      "frequencyLabel": "Frequency",
+      "frequencyPlaceholder": "Please select...",
+      "frequencyOptions": {
+        "daily": "Daily",
+        "weekly": "Weekly",
+        "monthly": "Monthly"
+      },
+      "formatLabel": "Format",
+      "formatPlaceholder": "Please select...",
+      "formatOptions": {
+        "pdf": "PDF",
+        "csv": "CSV",
+        "xlsx": "Excel (.xlsx)"
+      },
+      "reportNameRequired": "Report name is required",
+      "startDateRequired": "Start date is required",
+      "frequencyRequired": "Frequency is required",
+      "formatRequired": "Format is required"
+    }
+  },
+  "addColumnsDrawer": {
+    "title": "Add columns",
+    "searchColumnsLabel": "Search columns",
+    "searchColumnsPlaceholder": "Search columns",
+    "cancelButton": "Cancel",
+    "saveButton": "Save",
+    "columnsList": {
+      "grossEarnings": {
+        "label": "Search columns",
+        "description": "Total earnings before deductions, including salary, bonuses, and commissions"
+      },
+      "employeeDeductions": {
+        "label": "Employee deductions",
+        "description": "Sum of employee deductions, both pre- and post- tax"
+      },
+      "employerContributions": {
+        "label": "Employer contributions",
+        "description": "Sum of employer benefit contributions"
+      },
+      "totalEmployeeTaxes": {
+        "label": "Total employee taxes",
+        "description": "Sum of taxes withheld from an employee’s paycheck"
+      },
+      "totalEmployerTaxes": {
+        "label": "Total employer taxes",
+        "description": "Sum of taxes that are paid by the employer"
+      },
+      "netPay": {
+        "label": "Net pay",
+        "description": "Employee earnings after deductions, representing the actual take-home pay"
+      },
+      "totalEmployerCost": {
+        "label": "Total employer cost",
+        "description": "Total cost for an employee"
+      },
+      "checkAmount": {
+        "label": "Check amount",
+        "description": ""
+      },
+      "bereavementEarnings": {
+        "label": "Bereavement earnings",
+        "description": ""
+      },
+      "bereavementHours": {
+        "label": "Bereavement hours",
+        "description": ""
+      },
+      "bereavementRateHourly": {
+        "label": "Bereavement rate (hourly)",
+        "description": ""
+      },
+      "bonus": {
+        "label": "Bonus",
+        "description": ""
+      },
+      "cashTips": {
+        "label": "Cash tips",
+        "description": ""
+      },
+      "commission": {
+        "label": "Commission",
+        "description": ""
+      },
+      "currentDepartment": {
+        "label": "Current department",
+        "description": ""
+      },
+      "dismissalReason": {
+        "label": "Dismissal reason",
+        "description": ""
+      },
+      "doubleOvertimeEarnings": {
+        "label": "Double overtime earnings",
+        "description": ""
+      },
+      "doubleOvertimeHours": {
+        "label": "Double overtime hours",
+        "description": ""
+      },
+      "doubleOvertimeRateHourly": {
+        "label": "Double overtime rate (hourly)",
+        "description": ""
+      },
+      "employeeAdditionalMedicareTax": {
+        "label": "Employee additional medicare tax",
+        "description": ""
+      },
+      "employeeBankAccount": {
+        "label": "Employee bank account",
+        "description": ""
+      },
+      "employeeBankAccountNumber": {
+        "label": "Employee bank account (account number)",
+        "description": ""
+      },
+      "employeeBankAccountRouting": {
+        "label": "Employee bank account (routing number)",
+        "description": ""
+      },
+      "employeeBankAccountType": {
+        "label": "Employee bank account (type)",
+        "description": ""
+      },
+      "employeeDonations": {
+        "label": "Employee donations",
+        "description": ""
+      },
+      "employeeEmail": {
+        "label": "Employee email",
+        "description": ""
+      },
+      "employeeEmergencyContact": {
+        "label": "Employee emergency contact",
+        "description": ""
+      },
+      "employeeEmergencyContactEmail": {
+        "label": "Employee emergency contact (email address)",
+        "description": ""
+      },
+      "employeeEmergencyContactName": {
+        "label": "Employee emergency contact (name)",
+        "description": ""
+      },
+      "employeeEmergencyContactPhone": {
+        "label": "Employee emergency contact (phone number)",
+        "description": ""
+      },
+      "employeeEmergencyContactRelationship": {
+        "label": "Employee emergency contact (relationship)",
+        "description": ""
+      },
+      "employeeEndDate": {
+        "label": "Employee end date",
+        "description": ""
+      },
+      "employeeFederalIncomeTax": {
+        "label": "Employee federal income tax",
+        "description": ""
+      },
+      "employeeFirstName": {
+        "label": "Employee first name",
+        "description": ""
+      },
+      "employeeFirstNamePreferred": {
+        "label": "Employee first name (preferred)",
+        "description": ""
+      },
+      "employeeHomeAddress": {
+        "label": "Employee home address",
+        "description": ""
+      },
+      "employeeHomeAddressCity": {
+        "label": "Employee home address (city)",
+        "description": ""
+      },
+      "employeeHomeAddressState": {
+        "label": "Employee home address (state)",
+        "description": ""
+      },
+      "employeeHomeAddressStreet": {
+        "label": "Employee home address (street)",
+        "description": ""
+      },
+      "employeeHomeAddressZip": {
+        "label": "Employee home address (zip)",
+        "description": ""
+      },
+      "employeeLastName": {
+        "label": "Employee last name",
+        "description": ""
+      },
+      "employeeMedicareTax": {
+        "label": "Employee medicare tax",
+        "description": ""
+      },
+      "employeeMiddleInitial": {
+        "label": "Employee middle initial",
+        "description": ""
+      },
+      "employeePhoneNumber": {
+        "label": "Employee phone number",
+        "description": ""
+      },
+      "employeePronouns": {
+        "label": "Employee pronouns",
+        "description": ""
+      },
+      "employeeRiskClassCode": {
+        "label": "Employee risk class code",
+        "description": ""
+      },
+      "employeeSocialSecurityTax": {
+        "label": "Employee Social Security tax",
+        "description": ""
+      },
+      "employeeSSN": {
+        "label": "Employee SSN",
+        "description": ""
+      },
+      "employeeSSNLast4": {
+        "label": "Employee SSN (last 4)",
+        "description": ""
+      },
+      "employeeStartDate": {
+        "label": "Employee start date",
+        "description": ""
+      },
+      "employeeWorkEmail": {
+        "label": "Employee work email",
+        "description": ""
+      },
+      "employeeDOB": {
+        "label": "Employee’s date of birth",
+        "description": ""
+      },
+      "employerFUTATax": {
+        "label": "Employer FUTA Tax",
+        "description": ""
+      },
+      "employerMedicareTax": {
+        "label": "Employer medicare tax",
+        "description": ""
+      },
+      "employerSocialSecurityTax": {
+        "label": "Employer Social Security tax",
+        "description": ""
+      },
+      "employerSUTATax": {
+        "label": "Employer SUTA Tax",
+        "description": ""
+      },
+      "employmentStatus": {
+        "label": "Employment status",
+        "description": ""
+      },
+      "employmentType": {
+        "label": "Employment type",
+        "description": ""
+      },
+      "employeeID": {
+        "label": "Employee ID",
+        "description": ""
+      },
+      "garnishments": {
+        "label": "Garnishments",
+        "description": ""
+      },
+      "holidayEarnings": {
+        "label": "Holiday earnings",
+        "description": ""
+      },
+      "holidayHours": {
+        "label": "Holiday hours",
+        "description": ""
+      },
+      "jobCompensationAmount": {
+        "label": "Job compensation amount",
+        "description": ""
+      },
+      "jobCompensationEffectiveDate": {
+        "label": "Job compensation effective date",
+        "description": ""
+      },
+      "jobCompensationRate": {
+        "label": "Job compensation rate",
+        "description": ""
+      },
+      "jobCompensationTimePeriod": {
+        "label": "Job compensation time period",
+        "description": ""
+      },
+      "juryDutyEarnings": {
+        "label": "Jury duty earnings",
+        "description": ""
+      },
+      "juryDutyHours": {
+        "label": "Jury duty hours",
+        "description": ""
+      },
+      "juryDutyRateHourly": {
+        "label": "Jury duty rate (hourly)",
+        "description": ""
+      },
+      "learningDevelopmentTimeOffEarnings": {
+        "label": "Learning and development time off earnings",
+        "description": ""
+      },
+      "learningDevelopmentTimeOffHours": {
+        "label": "Learning and development time off hours",
+        "description": ""
+      },
+      "manager": {
+        "label": "Manager",
+        "description": ""
+      },
+      "overtimeEarnings": {
+        "label": "Overtime earnings",
+        "description": ""
+      },
+      "overtimeHours": {
+        "label": "Overtime hours",
+        "description": ""
+      },
+      "overtimeRateHourly": {
+        "label": "Overtime rate (hourly)",
+        "description": ""
+      },
+      "paidTimeOffEarnings": {
+        "label": "Paid time off earnings",
+        "description": ""
+      },
+      "paidTimeOffHours": {
+        "label": "Paid time off hours",
+        "description": ""
+      },
+      "paidTimeOffRateHourly": {
+        "label": "Paid time off rate (hourly)",
+        "description": ""
+      },
+      "payPeriodEnd": {
+        "label": "Pay period end",
+        "description": ""
+      },
+      "payPeriodStart": {
+        "label": "Pay period start",
+        "description": ""
+      },
+      "paycheckTips": {
+        "label": "Paycheck tips",
+        "description": ""
+      },
+      "paymentMethod": {
+        "label": "Payment method",
+        "description": ""
+      },
+      "payrollPayDate": {
+        "label": "Payroll pay date",
+        "description": ""
+      },
+      "payrollType": {
+        "label": "Payroll type",
+        "description": ""
+      },
+      "primaryJobTitle": {
+        "label": "Primary job title",
+        "description": ""
+      },
+      "regularEarnings": {
+        "label": "Regular earnings",
+        "description": ""
+      },
+      "regularHours": {
+        "label": "Regular hours",
+        "description": ""
+      },
+      "regularRateHourly": {
+        "label": "Regular rate (hourly)",
+        "description": ""
+      },
+      "sickRateHourly": {
+        "label": "Sick rate (hourly)",
+        "description": ""
+      },
+      "sickTimeOffEarnings": {
+        "label": "Sick time off earnings",
+        "description": ""
+      },
+      "sickTimeOffHours": {
+        "label": "Sick time off hours",
+        "description": ""
+      },
+      "totalMedicareTax": {
+        "label": "Total medicare tax",
+        "description": ""
+      },
+      "totalOneTimeReimbursements": {
+        "label": "Total one time reimbursements",
+        "description": ""
+      },
+      "totalRecurringReimbursements": {
+        "label": "Total recurring reimbursements",
+        "description": ""
+      },
+      "totalReimbursements": {
+        "label": "Total reimbursements",
+        "description": ""
+      },
+      "totalSocialSecurityTax": {
+        "label": "Total Social Security tax",
+        "description": ""
+      },
+      "totalTimeOffEarnings": {
+        "label": "Total time off earnings",
+        "description": ""
+      },
+      "totalTimeOffHours": {
+        "label": "Total time off hours",
+        "description": ""
+      },
+      "volunteerEarnings": {
+        "label": "Volunteer earnings",
+        "description": ""
+      },
+      "volunteerHours": {
+        "label": "Volunteer hours",
+        "description": ""
+      },
+      "volunteerRateHourly": {
+        "label": "Volunteer rate (hourly)",
+        "description": ""
+      },
+      "workAddressCity": {
+        "label": "Work address (city)",
+        "description": ""
+      },
+      "workAddressStreet": {
+        "label": "Work address (street)",
+        "description": ""
+      },
+      "workAddressZip": {
+        "label": "Work address (zip)",
+        "description": ""
+      }
+    }
+  }
+}
