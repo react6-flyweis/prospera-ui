@@ -1,4 +1,5 @@
 import type { ColumnDef } from '@tanstack/react-table';
+import type { TFunction } from 'i18next';
 import { CheckIcon, EyeIcon, XIcon } from 'lucide-react';
 import { UserCell } from '../UserCell';
 import { Button } from '../ui/button';
@@ -17,9 +18,9 @@ export interface KYCDetail {
   kyc: KYCStatus;
 }
 
-export const kycColumns: ColumnDef<KYCDetail>[] = [
+export const getKycColumns = (t: TFunction): ColumnDef<KYCDetail>[] => [
   {
-    header: 'Agent Name',
+    header: t('kycColumns.agentName'),
     accessorKey: 'user',
     cell: (props) => (
       <UserCell
@@ -29,20 +30,20 @@ export const kycColumns: ColumnDef<KYCDetail>[] = [
     ),
   },
   {
-    header: 'ID',
+    header: t('kycColumns.id'),
     accessorKey: 'user.id',
   },
   {
     accessorKey: 'user.email',
-    header: 'Email Address',
+    header: t('kycColumns.emailAddress'),
   },
   {
     accessorKey: 'user.mobile',
-    header: 'Mobile Number',
+    header: t('kycColumns.mobileNumber'),
   },
   {
     accessorKey: 'kyc',
-    header: 'KYC',
+    header: t('kycColumns.kyc'),
     cell: ({ row }) => {
       return (
         <span
@@ -52,34 +53,34 @@ export const kycColumns: ColumnDef<KYCDetail>[] = [
               : 'font-semibold text-red-500'
           }
         >
-          {row.original.kyc}
+          {row.original.kyc === 'Verified'
+            ? t('kycColumns.verified')
+            : t('kycColumns.notVerified')}
         </span>
       );
     },
   },
   {
     id: 'action',
-    header: 'Action',
+    header: t('kycColumns.action'),
     cell: ({ row }) => {
       return (
         <div className="flex items-center gap-2">
           <Button
             className="text-green-600 hover:bg-green-50"
             disabled={row.original.kyc === 'Verified'}
-            size="icon"
             variant="ghost"
           >
             <CheckIcon size={18} />
-            Approve
+            {t('kycColumns.approve')}
           </Button>
           <Button
             className="text-red-500 hover:bg-red-50"
             disabled={row.original.kyc === 'Verified'}
-            size="icon"
             variant="ghost"
           >
             <XIcon size={18} />
-            Reject
+            {t('kycColumns.reject')}
           </Button>
           <Button size="icon" variant="ghost">
             <EyeIcon size={18} />

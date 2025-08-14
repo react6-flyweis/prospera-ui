@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { DataTable } from '@/components/DataTable';
-import { kycColumns } from '@/components/KYCVerification/kycColumns';
+import { getKycColumns } from '@/components/KYCVerification/kycColumns';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import {
   Select,
@@ -13,16 +14,20 @@ import type { UserType } from '@/components/WalletManagement/walletColumns';
 import { getKYCDataByType } from '@/data/kycData';
 
 export default function KYCVerification() {
+  const { t } = useTranslation();
   const [selectedType, setSelectedType] = useState<UserType>('agents');
+  const kycColumns = getKycColumns(t);
 
   const kycData = getKYCDataByType(selectedType);
 
   return (
-    <PageLayout className="" title="KYC Verification">
+    <PageLayout className="" title={t('kycVerificationPage.title')}>
       <div className="mb-4 flex items-center justify-between">
         <div className="">
           <p className="text-gray-500 text-sm">
-            The {selectedType} listed here are for verification purposes.
+            {t('kycVerificationPage.verificationPurpose', {
+              type: selectedType,
+            })}
           </p>
         </div>
         <Select
@@ -30,13 +35,23 @@ export default function KYCVerification() {
           value={selectedType}
         >
           <SelectTrigger className="w-40 rounded">
-            <SelectValue placeholder="Users" />
+            <SelectValue
+              placeholder={t('kycVerificationPage.usersPlaceholder')}
+            />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="agents">Agents</SelectItem>
-            <SelectItem value="vendors">Vendors</SelectItem>
-            <SelectItem value="corporates">Corporates</SelectItem>
-            <SelectItem value="lenders">Lenders</SelectItem>
+            <SelectItem value="agents">
+              {t('kycVerificationPage.agents')}
+            </SelectItem>
+            <SelectItem value="vendors">
+              {t('kycVerificationPage.vendors')}
+            </SelectItem>
+            <SelectItem value="corporates">
+              {t('kycVerificationPage.corporates')}
+            </SelectItem>
+            <SelectItem value="lenders">
+              {t('kycVerificationPage.lenders')}
+            </SelectItem>
           </SelectContent>
         </Select>
       </div>

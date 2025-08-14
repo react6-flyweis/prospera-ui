@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   Select,
   SelectContent,
@@ -26,6 +27,7 @@ export interface KycStatusRow {
 }
 
 function StatusBadge({ status }: { status: KycStatus }) {
+  const { t } = useTranslation();
   const styles: Record<KycStatus, string> = {
     Completed: 'border-green-200 bg-green-50 text-green-700',
     Delayed: 'border-yellow-200 bg-yellow-50 text-yellow-700',
@@ -36,7 +38,13 @@ function StatusBadge({ status }: { status: KycStatus }) {
     <span
       className={`inline-flex items-center rounded-full border px-3 py-1 font-medium text-xs ${styles[status]}`}
     >
-      {status}
+      {status === 'Completed'
+        ? t('kycStatusTable.status.completed')
+        : status === 'Delayed'
+          ? t('kycStatusTable.status.delayed')
+          : status === 'At risk'
+            ? t('kycStatusTable.status.atRisk')
+            : t('kycStatusTable.status.onGoing')}
     </span>
   );
 }
@@ -77,12 +85,13 @@ function ProgressRing({ value, status }: { value: number; status: KycStatus }) {
 }
 
 export function KYCStatusTable({
-  title = 'KYC Verification',
+  title,
   rows,
 }: {
   title?: string;
   rows: KycStatusRow[];
 }) {
+  const { t } = useTranslation();
   const [statusFilter, setStatusFilter] = useState<'All' | KycStatus>('All');
 
   const filtered = useMemo(() => {
@@ -93,7 +102,7 @@ export function KYCStatusTable({
   }, [rows, statusFilter]);
 
   return (
-    <div className="rounded-xl border bg-white p-4 shadow-sm">
+    <div className="w-full rounded-xl border bg-white p-4 shadow-sm">
       <div className="mb-3 flex items-center justify-between">
         <h3 className="font-bold text-gray-900 text-xl">{title}</h3>
         <Select
@@ -101,14 +110,24 @@ export function KYCStatusTable({
           value={statusFilter}
         >
           <SelectTrigger className="w-36 rounded-full">
-            <SelectValue placeholder="Status" />
+            <SelectValue placeholder={t('kycStatusTable.statusPlaceholder')} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="All">Status</SelectItem>
-            <SelectItem value="Completed">Completed</SelectItem>
-            <SelectItem value="Delayed">Delayed</SelectItem>
-            <SelectItem value="At risk">At risk</SelectItem>
-            <SelectItem value="On going">On going</SelectItem>
+            <SelectItem value="All">
+              {t('kycStatusTable.statusPlaceholder')}
+            </SelectItem>
+            <SelectItem value="Completed">
+              {t('kycStatusTable.status.completed')}
+            </SelectItem>
+            <SelectItem value="Delayed">
+              {t('kycStatusTable.status.delayed')}
+            </SelectItem>
+            <SelectItem value="At risk">
+              {t('kycStatusTable.status.atRisk')}
+            </SelectItem>
+            <SelectItem value="On going">
+              {t('kycStatusTable.status.onGoing')}
+            </SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -117,11 +136,21 @@ export function KYCStatusTable({
         <Table>
           <TableHeader>
             <TableRow className="h-12 ">
-              <TableHead className="px-5 text-gray-600">Name</TableHead>
-              <TableHead className="px-5 text-gray-600">ID</TableHead>
-              <TableHead className="px-5 text-gray-600">Date</TableHead>
-              <TableHead className="px-5 text-gray-600">Status</TableHead>
-              <TableHead className="px-5 text-gray-600">Progress</TableHead>
+              <TableHead className="px-5 text-gray-600">
+                {t('kycStatusTable.tableHeaders.name')}
+              </TableHead>
+              <TableHead className="px-5 text-gray-600">
+                {t('kycStatusTable.tableHeaders.id')}
+              </TableHead>
+              <TableHead className="px-5 text-gray-600">
+                {t('kycStatusTable.tableHeaders.date')}
+              </TableHead>
+              <TableHead className="px-5 text-gray-600">
+                {t('kycStatusTable.tableHeaders.status')}
+              </TableHead>
+              <TableHead className="px-5 text-gray-600">
+                {t('kycStatusTable.tableHeaders.progress')}
+              </TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
