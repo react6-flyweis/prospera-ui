@@ -3,5 +3,50 @@
     "title": "Paramètres",
     "language": "Langue",
     "theme": "Thème"
+  },
+  "cards": {
+    "privacyPolicy": {
+      "title": "Politique de confidentialité",
+      "description": "Lisez notre politique de confidentialité pour comprendre comment nous gérons vos données.",
+      "alt": "Icône de la politique de confidentialité"
+    },
+    "termsAndCondition": {
+      "title": "Conditions générales",
+      "description": "Consultez nos conditions générales d'utilisation de la plateforme.",
+      "alt": "Icône des conditions générales"
+    },
+    "helpAndSupport": {
+      "title": "Aide et support",
+      "description": "Obtenez de l'aide et du support pour tout problème ou question.",
+      "alt": "Icône d'aide et de support"
+    }
+  },
+  "privacyPolicyPage": {
+    "title": "Politique de confidentialité",
+    "description": "Gérez et consultez les politiques de confidentialité.",
+    "addButton": "Ajouter une politique",
+    "editAriaLabel": "Modifier la politique",
+    "deleteAriaLabel": "Supprimer la politique",
+    "noPolicies": "Aucune politique trouvée",
+    "noPoliciesMessage": "Il n'y a actuellement aucune politique de confidentialité disponible."
+  },
+  "helpSupportPage": {
+    "title": "Aide et support",
+    "description": "Contactez le support pour obtenir de l'aide.",
+    "addButton": "Ajouter un contact",
+    "editAriaLabel": "Modifier le contact",
+    "deleteAriaLabel": "Supprimer le contact",
+    "mobileNumber": "Numéro de mobile",
+    "emailId": "Adresse e-mail",
+    "region": "Région"
+  },
+  "termsConditionPage": {
+    "title": "Conditions générales",
+    "description": "Gérez et consultez les conditions générales.",
+    "addButton": "Ajouter des conditions",
+    "editAriaLabel": "Modifier les conditions",
+    "deleteAriaLabel": "Supprimer les conditions",
+    "noTerms": "Aucune condition trouvée",
+    "noTermsMessage": "Il n'y a actuellement aucune condition générale disponible."
   }
 }

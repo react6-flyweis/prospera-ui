@@ -3,5 +3,50 @@
     "title": "Settings",
     "language": "Language",
     "theme": "Theme"
+  },
+  "cards": {
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "description": "Read our privacy policy to understand how we handle your data.",
+      "alt": "Privacy Policy Icon"
+    },
+    "termsAndCondition": {
+      "title": "Terms & Conditions",
+      "description": "Review our terms and conditions for using the platform.",
+      "alt": "Terms and Conditions Icon"
+    },
+    "helpAndSupport": {
+      "title": "Help & Support",
+      "description": "Get help and support for any issues or questions.",
+      "alt": "Help and Support Icon"
+    }
+  },
+  "privacyPolicyPage": {
+    "title": "Privacy Policy",
+    "description": "Manage and review privacy policies.",
+    "addButton": "Add Policy",
+    "editAriaLabel": "Edit Policy",
+    "deleteAriaLabel": "Delete Policy",
+    "noPolicies": "No Policies Found",
+    "noPoliciesMessage": "There are currently no privacy policies available."
+  },
+  "helpSupportPage": {
+    "title": "Help & Support",
+    "description": "Contact support for assistance.",
+    "addButton": "Add Contact",
+    "editAriaLabel": "Edit Contact",
+    "deleteAriaLabel": "Delete Contact",
+    "mobileNumber": "Mobile Number",
+    "emailId": "Email ID",
+    "region": "Region"
+  },
+  "termsConditionPage": {
+    "title": "Terms & Conditions",
+    "description": "Manage and review terms and conditions.",
+    "addButton": "Add Terms",
+    "editAriaLabel": "Edit Terms",
+    "deleteAriaLabel": "Delete Terms",
+    "noTerms": "No Terms Found",
+    "noTermsMessage": "There are currently no terms and conditions available."
   }
 }

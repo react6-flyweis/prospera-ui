@@ -9,22 +9,22 @@ export default function Settings() {
   const { t } = useTranslation();
   const cards = [
     {
-      title: t('settingsPage.cards.privacyPolicy.title'),
-      description: t('settingsPage.cards.privacyPolicy.description'),
+      title: t('cards.privacyPolicy.title'),
+      description: t('cards.privacyPolicy.description'),
       icon: privacyIcon,
-      alt: t('settingsPage.cards.privacyPolicy.alt'),
+      alt: t('cards.privacyPolicy.alt'),
     },
     {
-      title: t('settingsPage.cards.termsAndCondition.title'),
-      description: t('settingsPage.cards.termsAndCondition.description'),
+      title: t('cards.termsAndCondition.title'),
+      description: t('cards.termsAndCondition.description'),
       icon: termsIcon,
-      alt: t('settingsPage.cards.termsAndCondition.alt'),
+      alt: t('cards.termsAndCondition.alt'),
     },
     {
-      title: t('settingsPage.cards.helpAndSupport.title'),
-      description: t('settingsPage.cards.helpAndSupport.description'),
+      title: t('cards.helpAndSupport.title'),
+      description: t('cards.helpAndSupport.description'),
       icon: supportIcon,
-      alt: t('settingsPage.cards.helpAndSupport.alt'),
+      alt: t('cards.helpAndSupport.alt'),
     },
   ];
   return (
