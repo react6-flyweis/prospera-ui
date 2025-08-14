@@ -1,1 +1,30 @@
-{}
+{
+  "homePage": {
+    "greeting": "Good morning",
+    "subtitle": "Here's what's going on with your {{name}}",
+    "recentCryptoTrends": "Recent Crypto Trends",
+    "kycStatus": "KYC Verification Status",
+    "totalMoneyApproved": "Total Money Approved",
+    "gaugeProgress": {
+      "completed": "Completed",
+      "total": "Total",
+      "delayed": "Delayed",
+      "ongoing": "Ongoing",
+      "filterAll": "All",
+      "filterQ1": "Q1",
+      "filterQ2": "Q2",
+      "filterQ3": "Q3",
+      "filterQ4": "Q4"
+    }
+  },
+  "totalMoneyApprovedChart": {
+    "title": "Total money approved",
+    "periods": {
+      "12months": "12 Months",
+      "6months": "6 Months",
+      "30days": "30 Days",
+      "7days": "7 Days"
+    },
+    "exportPdf": "Export PDF"
+  }
+}

@@ -11,15 +11,19 @@ import { kycStatusData } from '@/data/kycStatusData';
 export default function Home() {
   const { t } = useTranslation();
   return (
-    <PageLayout className="" title="Home">
+    <PageLayout className="" title={t('sidebar.dashboard')}>
       <div className="mb-6">
-        <h1 className="font-bold text-2xl text-gray-800">Good morning</h1>
-        <p className="text-gray-600">Here's what's going on with your Name</p>
+        <h1 className="font-bold text-2xl text-gray-800">
+          {t('homePage.greeting')}
+        </h1>
+        <p className="text-gray-600">
+          {t('homePage.subtitle', { name: 'Business' })}
+        </p>
       </div>
 
       <div className="mb-6">
         <h2 className="mb-4 font-semibold text-gray-800 text-lg">
-          Recent Crypto Trends
+          {t('homePage.recentCryptoTrends')}
         </h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {cryptoData.map((crypto) => (
@@ -37,9 +41,15 @@ export default function Home() {
           />
         </div>
         <GaugeProgress
-          filter="All"
-          filterOptions={['All', 'Q1', 'Q2', 'Q3', 'Q4']}
-          label="Completed"
+          filter={t('homePage.gaugeProgress.filterAll')}
+          filterOptions={[
+            t('homePage.gaugeProgress.filterAll'),
+            t('homePage.gaugeProgress.filterQ1'),
+            t('homePage.gaugeProgress.filterQ2'),
+            t('homePage.gaugeProgress.filterQ3'),
+            t('homePage.gaugeProgress.filterQ4'),
+          ]}
+          label={t('homePage.gaugeProgress.completed')}
           stats={{ total: 95, completed: 26, delayed: 35, ongoing: 35 }}
           value={72}
         />

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Card } from '@/components/ui/card';
 import {
   Select,
@@ -77,6 +78,7 @@ export function GaugeProgress({
   filterOptions = ['All'],
   onFilterChange,
 }: GaugeProgressProps) {
+  const { t } = useTranslation();
   const size = 320; // viewBox width
   const height = 220; // a bit taller to avoid clipping
   const cx = size / 2;
@@ -116,8 +118,8 @@ export function GaugeProgress({
             {`A semicircular gauge showing ${clamped}${unit} ${label?.toLowerCase()}.`}
           </desc>
           {/* subtle tick marks */}
-          {ticks.map((t, i) => {
-            const angle = 270 + t * 180;
+          {ticks.map((tick, i) => {
+            const angle = 270 + tick * 180;
             const isMajor = i % (tickCount / 8) === 0;
             const tickGap = 8; // space from the track/progress stroke
             const tickLenMajor = 12;
@@ -132,7 +134,7 @@ export function GaugeProgress({
             );
             return (
               <line
-                key={`tick-${(t * 100).toFixed(2)}`}
+                key={`tick-${(tick * 100).toFixed(2)}`}
                 stroke="#e5e7eb"
                 strokeWidth={isMajor ? 2 : 1}
                 x1={inner.x}
@@ -214,21 +216,23 @@ export function GaugeProgress({
         <div className="mt-2 grid grid-cols-4 text-center text-gray-600">
           <div>
             <div className="font-semibold text-gray-800">{stats.total}</div>
-            <div className="text-xs">Total</div>
+            <div className="text-xs">{t('homePage.gaugeProgress.total')}</div>
           </div>
           <div>
             <div className="font-semibold text-green-600">
               {stats.completed}
             </div>
-            <div className="text-xs">Completed</div>
+            <div className="text-xs">
+              {t('homePage.gaugeProgress.completed')}
+            </div>
           </div>
           <div>
             <div className="font-semibold text-amber-500">{stats.delayed}</div>
-            <div className="text-xs">Delayed</div>
+            <div className="text-xs">{t('homePage.gaugeProgress.delayed')}</div>
           </div>
           <div>
             <div className="font-semibold text-orange-500">{stats.ongoing}</div>
-            <div className="text-xs">On going</div>
+            <div className="text-xs">{t('homePage.gaugeProgress.ongoing')}</div>
           </div>
         </div>
       )}

@@ -1,4 +1,5 @@
 import { DownloadIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import {
   Area,
   AreaChart,
@@ -72,19 +73,29 @@ const chartData = months.map((month, idx) => ({
 }));
 
 export function TotalMoneyApprovedChart() {
+  const { t } = useTranslation();
+
   return (
     <div className="rounded-xl bg-white p-6 shadow">
       <div className="mb-4 flex items-center justify-between">
         <h2 className="font-bold text-2xl text-gray-800">
-          Total money approved
+          {t('totalMoneyApprovedChart.title')}
         </h2>
         <div className="flex gap-2">
-          <Button variant="outline">12 Months</Button>
-          <Button variant="ghost">6 Months</Button>
-          <Button variant="ghost">30 Days</Button>
-          <Button variant="ghost">7 Days</Button>
+          <Button variant="outline">
+            {t('totalMoneyApprovedChart.periods.12months')}
+          </Button>
+          <Button variant="ghost">
+            {t('totalMoneyApprovedChart.periods.6months')}
+          </Button>
+          <Button variant="ghost">
+            {t('totalMoneyApprovedChart.periods.30days')}
+          </Button>
+          <Button variant="ghost">
+            {t('totalMoneyApprovedChart.periods.7days')}
+          </Button>
           <Button className="flex items-center gap-2" variant="outline">
-            <DownloadIcon size={16} /> Export PDF
+            <DownloadIcon size={16} /> {t('totalMoneyApprovedChart.exportPdf')}
           </Button>
         </div>
       </div>
