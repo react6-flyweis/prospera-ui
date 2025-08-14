@@ -1,8 +1,10 @@
+import { useTranslation } from 'react-i18next';
 import { AgentEditor } from '@/components/AgentManagement/AgentEditor';
 import { PageLayout } from '@/components/Layout/PageLayout';
 
 // Static mock agent data
 export default function EditAgent() {
+  const { t } = useTranslation();
   // Get agentId from route params
   //   const { agentId } = useParams();
   const mockAgent = {
@@ -26,7 +28,7 @@ export default function EditAgent() {
   };
 
   return (
-    <PageLayout title="Edit Agent" withBack>
+    <PageLayout title={t('editAgentPage.title')} withBack>
       <AgentEditor initialData={mockAgent} />
     </PageLayout>
   );

@@ -1,6 +1,8 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import type { TFunction } from 'i18next';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 import documentIcon from '@/assets/icons/document.png';
 import { ProfileImageUploader } from '../ProfileImageUploader';
@@ -16,33 +18,39 @@ import {
 } from '../ui/form';
 import { Input } from '../ui/input';
 
-const agentSchema = z.object({
-  name: z.string().min(1, 'Name is required'),
-  email: z.email(),
-  joinDate: z.string(),
-  gender: z.string(),
-  address: z.string(),
-  postalCode: z.string(),
-  mobile: z.string(),
-  agentId: z.string(),
-  dob: z.string(),
-  language: z.string(),
-  city: z.string(),
-  country: z.string(),
-  bankName: z.string(),
-  branch: z.string(),
-  accountHolder: z.string(),
-  accountNumber: z.string(),
-  ifsc: z.string(),
-});
+function getAgentSchema(t: TFunction) {
+  return z.object({
+    name: z.string().min(1, t('agentEditor.validation.nameRequired')),
+    email: z.string().email(t('agentEditor.validation.emailRequired')),
+    joinDate: z.string(),
+    gender: z.string(),
+    address: z.string(),
+    postalCode: z.string(),
+    mobile: z.string(),
+    agentId: z.string(),
+    dob: z.string(),
+    language: z.string(),
+    city: z.string(),
+    country: z.string(),
+    bankName: z.string(),
+    branch: z.string(),
+    accountHolder: z.string(),
+    accountNumber: z.string(),
+    ifsc: z.string(),
+  });
+}
 
-type AgentFormValues = z.infer<typeof agentSchema>;
+type AgentFormValues = z.infer<ReturnType<typeof getAgentSchema>>;
 
 type AgentEditorProps = {
   initialData?: Partial<AgentFormValues>;
 };
 
+// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation>
 export function AgentEditor({ initialData }: AgentEditorProps) {
+  const { t } = useTranslation();
+
+  const agentSchema = getAgentSchema(t);
   const form = useForm<AgentFormValues>({
     resolver: zodResolver(agentSchema),
     defaultValues: {
@@ -68,25 +76,76 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
 
   function onSubmit(_data: AgentFormValues) {
     // handle submit
-    // console.log(data);
+    // console.log(_data);
   }
 
   const documentList = [
-    'Business License',
-    'Owner / Operator ID',
-    'Financial Statements',
-    'AML Training Periods',
-    'Sample KYC Records',
-    'Data Processing Agreements',
-    'Compliance Certifications',
-    'Business References',
-    'Certificate of incorporation',
-    'Proof of Address',
-    'AML Policy',
-    'KYC Policy',
-    'Data Protection Policy',
-    'Audit Reports',
-    'Liability Insurance',
+    {
+      key: 'businessLicense',
+      label: t('agentEditor.uploadDocuments.documentList.businessLicense'),
+    },
+    {
+      key: 'ownerOperatorId',
+      label: t('agentEditor.uploadDocuments.documentList.ownerOperatorId'),
+    },
+    {
+      key: 'financialStatements',
+      label: t('agentEditor.uploadDocuments.documentList.financialStatements'),
+    },
+    {
+      key: 'amlTrainingPeriods',
+      label: t('agentEditor.uploadDocuments.documentList.amlTrainingPeriods'),
+    },
+    {
+      key: 'sampleKycRecords',
+      label: t('agentEditor.uploadDocuments.documentList.sampleKycRecords'),
+    },
+    {
+      key: 'dataProcessingAgreements',
+      label: t(
+        'agentEditor.uploadDocuments.documentList.dataProcessingAgreements'
+      ),
+    },
+    {
+      key: 'complianceCertifications',
+      label: t(
+        'agentEditor.uploadDocuments.documentList.complianceCertifications'
+      ),
+    },
+    {
+      key: 'businessReferences',
+      label: t('agentEditor.uploadDocuments.documentList.businessReferences'),
+    },
+    {
+      key: 'certificateOfIncorporation',
+      label: t(
+        'agentEditor.uploadDocuments.documentList.certificateOfIncorporation'
+      ),
+    },
+    {
+      key: 'proofOfAddress',
+      label: t('agentEditor.uploadDocuments.documentList.proofOfAddress'),
+    },
+    {
+      key: 'amlPolicy',
+      label: t('agentEditor.uploadDocuments.documentList.amlPolicy'),
+    },
+    {
+      key: 'kycPolicy',
+      label: t('agentEditor.uploadDocuments.documentList.kycPolicy'),
+    },
+    {
+      key: 'dataProtectionPolicy',
+      label: t('agentEditor.uploadDocuments.documentList.dataProtectionPolicy'),
+    },
+    {
+      key: 'auditReports',
+      label: t('agentEditor.uploadDocuments.documentList.auditReports'),
+    },
+    {
+      key: 'liabilityInsurance',
+      label: t('agentEditor.uploadDocuments.documentList.liabilityInsurance'),
+    },
   ];
 
   // State for document files
@@ -114,16 +173,25 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
           />
         </div>
         <div className="">
-          <h2 className="mb-4 font-semibold text-lg">Profile Detail</h2>
+          <h2 className="mb-4 font-semibold text-lg">
+            {t('agentEditor.profileDetail.title')}
+          </h2>
           <div className="grid grid-cols-2 gap-5">
             <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name Of The Agent</FormLabel>
+                  <FormLabel>
+                    {t('agentEditor.profileDetail.nameLabel')}
+                  </FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter name" {...field} />
+                    <Input
+                      placeholder={t(
+                        'agentEditor.profileDetail.namePlaceholder'
+                      )}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -134,9 +202,16 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>
+                    {t('agentEditor.profileDetail.emailLabel')}
+                  </FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter email" {...field} />
+                    <Input
+                      placeholder={t(
+                        'agentEditor.profileDetail.emailPlaceholder'
+                      )}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -147,7 +222,9 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
               name="joinDate"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Join Date</FormLabel>
+                  <FormLabel>
+                    {t('agentEditor.profileDetail.joinDateLabel')}
+                  </FormLabel>
                   <FormControl>
                     <Input type="date" {...field} />
                   </FormControl>
@@ -160,9 +237,16 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
               name="gender"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Gender</FormLabel>
+                  <FormLabel>
+                    {t('agentEditor.profileDetail.genderLabel')}
+                  </FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter here" {...field} />
+                    <Input
+                      placeholder={t(
+                        'agentEditor.profileDetail.genderPlaceholder'
+                      )}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -173,9 +257,16 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
               name="address"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Permanent Address</FormLabel>
+                  <FormLabel>
+                    {t('agentEditor.profileDetail.addressLabel')}
+                  </FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter address" {...field} />
+                    <Input
+                      placeholder={t(
+                        'agentEditor.profileDetail.addressPlaceholder'
+                      )}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -186,9 +277,16 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
               name="postalCode"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Postal Code</FormLabel>
+                  <FormLabel>
+                    {t('agentEditor.profileDetail.postalCodeLabel')}
+                  </FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter here" {...field} />
+                    <Input
+                      placeholder={t(
+                        'agentEditor.profileDetail.postalCodePlaceholder'
+                      )}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -200,9 +298,16 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
               name="mobile"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Mobile Number</FormLabel>
+                  <FormLabel>
+                    {t('agentEditor.profileDetail.mobileNumberLabel')}
+                  </FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter number" {...field} />
+                    <Input
+                      placeholder={t(
+                        'agentEditor.profileDetail.mobilePlaceholder'
+                      )}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -213,9 +318,14 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
               name="agentId"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Give A ID</FormLabel>
+                  <FormLabel>
+                    {t('agentEditor.profileDetail.giveIdLabel')}
+                  </FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter ID" {...field} />
+                    <Input
+                      placeholder={t('agentEditor.profileDetail.idPlaceholder')}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -226,7 +336,9 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
               name="dob"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Date Of Birth</FormLabel>
+                  <FormLabel>
+                    {t('agentEditor.profileDetail.dobLabel')}
+                  </FormLabel>
                   <FormControl>
                     <Input type="date" {...field} />
                   </FormControl>
@@ -239,9 +351,16 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
               name="language"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Preferred language</FormLabel>
+                  <FormLabel>
+                    {t('agentEditor.profileDetail.languageLabel')}
+                  </FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter here" {...field} />
+                    <Input
+                      placeholder={t(
+                        'agentEditor.profileDetail.languagePlaceholder'
+                      )}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -252,9 +371,16 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
               name="city"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>City</FormLabel>
+                  <FormLabel>
+                    {t('agentEditor.profileDetail.cityLabel')}
+                  </FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter here" {...field} />
+                    <Input
+                      placeholder={t(
+                        'agentEditor.profileDetail.cityPlaceholder'
+                      )}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -265,9 +391,16 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
               name="country"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Country</FormLabel>
+                  <FormLabel>
+                    {t('agentEditor.profileDetail.countryLabel')}
+                  </FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter here" {...field} />
+                    <Input
+                      placeholder={t(
+                        'agentEditor.profileDetail.countryPlaceholder'
+                      )}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -275,16 +408,25 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
             />
           </div>
           <div className="mt-8">
-            <h2 className="mb-4 font-semibold text-lg">Bank Detail</h2>
+            <h2 className="mb-4 font-semibold text-lg">
+              {t('agentEditor.bankDetail.title')}
+            </h2>
             <div className="grid grid-cols-2 gap-5">
               <FormField
                 control={form.control}
                 name="bankName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Bank Name</FormLabel>
+                    <FormLabel>
+                      {t('agentEditor.bankDetail.bankNameLabel')}
+                    </FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter here" {...field} />
+                      <Input
+                        placeholder={t(
+                          'agentEditor.bankDetail.bankNamePlaceholder'
+                        )}
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -295,9 +437,16 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
                 name="accountHolder"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Account Holder Name</FormLabel>
+                    <FormLabel>
+                      {t('agentEditor.bankDetail.accountHolderNameLabel')}
+                    </FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter name" {...field} />
+                      <Input
+                        placeholder={t(
+                          'agentEditor.bankDetail.accountHolderNamePlaceholder'
+                        )}
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -308,9 +457,16 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
                 name="ifsc"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>IFSC Code</FormLabel>
+                    <FormLabel>
+                      {t('agentEditor.bankDetail.ifscCodeLabel')}
+                    </FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter here" {...field} />
+                      <Input
+                        placeholder={t(
+                          'agentEditor.bankDetail.ifscCodePlaceholder'
+                        )}
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -321,9 +477,16 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
                 name="branch"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Branch</FormLabel>
+                    <FormLabel>
+                      {t('agentEditor.bankDetail.branchLabel')}
+                    </FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter here" {...field} />
+                      <Input
+                        placeholder={t(
+                          'agentEditor.bankDetail.branchPlaceholder'
+                        )}
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -334,9 +497,16 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
                 name="accountNumber"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Account Number</FormLabel>
+                    <FormLabel>
+                      {t('agentEditor.bankDetail.accountNumberLabel')}
+                    </FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter number" {...field} />
+                      <Input
+                        placeholder={t(
+                          'agentEditor.bankDetail.accountNumberPlaceholder'
+                        )}
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -345,15 +515,17 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
             </div>
           </div>
           <div className="mt-8">
-            <h2 className="mb-4 font-semibold text-lg">Upload Documents</h2>
+            <h2 className="mb-4 font-semibold text-lg">
+              {t('agentEditor.uploadDocuments.title')}
+            </h2>
             <div className="grid grid-cols-2 gap-5">
               {documentList.map((doc) => (
                 <FileInput
                   accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
                   className="h-full cursor-pointer rounded-l-none"
-                  key={doc}
-                  onChange={(file) => handleFileChange(doc, file)}
-                  value={documentFiles[doc] || null}
+                  key={doc.key}
+                  onChange={(file) => handleFileChange(doc.key, file)}
+                  value={documentFiles[doc.key] || null}
                 >
                   <div className="flex h-14 items-center justify-between rounded-lg bg-white shadow">
                     <div className="flex items-center gap-3 p-2">
@@ -364,10 +536,10 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
                           src={documentIcon}
                         />
                       </div>
-                      <span className="font-medium">{doc}</span>
+                      <span className="font-medium">{doc.label}</span>
                     </div>
                     <div className="flex h-full items-center rounded-r-md bg-gray-400 px-5 text-sm text-white">
-                      upload
+                      {t('agentEditor.uploadDocuments.uploadButton')}
                     </div>
                   </div>
                 </FileInput>
@@ -375,7 +547,7 @@ export function AgentEditor({ initialData }: AgentEditorProps) {
             </div>
             <div className="mt-8 flex justify-center">
               <Button className="w-1/2 rounded-full bg-primary-gradient font-semibold text-white shadow">
-                Add
+                {t('agentEditor.addButton')}
               </Button>
             </div>
           </div>

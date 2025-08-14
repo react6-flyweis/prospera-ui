@@ -1,4 +1,5 @@
 import { PenLineIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 import { DocumentGrid } from '@/components/DocumentGrid';
 import { PageLayout } from '@/components/Layout/PageLayout';
@@ -25,6 +26,7 @@ const AGENT_MOCK = {
 };
 
 export default function AgentDetails() {
+  const { t } = useTranslation();
   return (
     <PageLayout title={AGENT_MOCK.name} withBack>
       <Card className=" flex items-center gap-6 rounded-2xl p-4 shadow-sm">
@@ -43,37 +45,39 @@ export default function AgentDetails() {
               <div className="font-semibold text-lg">{AGENT_MOCK.name}</div>
               <div className="text-gray-500 text-sm">{AGENT_MOCK.phone}</div>
               <div className="text-gray-500 text-sm">
-                Country : {AGENT_MOCK.country}
+                {t('agentDetailsPage.country')} {AGENT_MOCK.country}
               </div>
             </div>
           </div>
           <div>
-            <div className="text-gray-500 text-sm">DOB : {AGENT_MOCK.dob}</div>
             <div className="text-gray-500 text-sm">
-              Email ID : {AGENT_MOCK.email}
+              {t('agentDetailsPage.dob')} {AGENT_MOCK.dob}
             </div>
             <div className="text-gray-500 text-sm">
-              Agent ID: {AGENT_MOCK.agentId}
+              {t('agentDetailsPage.emailId')} {AGENT_MOCK.email}
+            </div>
+            <div className="text-gray-500 text-sm">
+              {t('agentDetailsPage.agentId')} {AGENT_MOCK.agentId}
             </div>
           </div>
           <div>
             <div className="text-gray-500 text-sm">
-              Bank Name: {AGENT_MOCK.bank.name}
+              {t('agentDetailsPage.bankName')} {AGENT_MOCK.bank.name}
             </div>
             <div className="text-gray-500 text-sm">
-              Account No: {AGENT_MOCK.bank.accountNo}
+              {t('agentDetailsPage.accountNo')} {AGENT_MOCK.bank.accountNo}
             </div>
             <div className="text-gray-500 text-sm">
-              Branch: {AGENT_MOCK.bank.branch}
+              {t('agentDetailsPage.branch')} {AGENT_MOCK.bank.branch}
             </div>
           </div>
           <div className="flex gap-3">
             <div className="">
               <div className="text-gray-500 text-sm">
-                IFSC Code: {AGENT_MOCK.bank.ifsc}
+                {t('agentDetailsPage.ifscCode')} {AGENT_MOCK.bank.ifsc}
               </div>
               <div className="text-gray-400 text-xs">
-                Joined : {AGENT_MOCK.joined}
+                {t('agentDetailsPage.joined')} {AGENT_MOCK.joined}
               </div>
             </div>
             <Link to={`/agents/${AGENT_MOCK.agentId}/edit`}>
