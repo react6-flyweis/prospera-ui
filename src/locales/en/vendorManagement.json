@@ -30,6 +30,7 @@
     "emailAddress": "Email Address",
     "mobileNumber": "Mobile Number",
     "documents": "Documents",
+    "status": "Status",
     "action": "Action",
     "complete": "Complete",
     "active": "Active",

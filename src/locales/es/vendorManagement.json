@@ -33,6 +33,7 @@
     "action": "Acción",
     "complete": "Completo",
     "active": "Activo",
-    "inactive": "Inactivo"
+    "inactive": "Inactivo",
+    "status": "Estado"
   }
 }
