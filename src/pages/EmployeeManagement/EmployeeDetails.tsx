@@ -1,4 +1,5 @@
 import { PenLineIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -25,6 +26,7 @@ const EMPLOYEE_MOCK = {
 };
 
 export default function EmployeeDetails() {
+  const { t } = useTranslation();
   return (
     <PageLayout title={EMPLOYEE_MOCK.name} withBack>
       <Card className=" flex items-center gap-6 rounded-2xl p-4 shadow-sm">
@@ -43,39 +45,40 @@ export default function EmployeeDetails() {
               <div className="font-semibold text-lg">{EMPLOYEE_MOCK.name}</div>
               <div className="text-gray-500 text-sm">{EMPLOYEE_MOCK.phone}</div>
               <div className="text-gray-500 text-sm">
-                Country : {EMPLOYEE_MOCK.country}
+                {t('employeeDetailsPage.country')} {EMPLOYEE_MOCK.country}
               </div>
             </div>
           </div>
           <div>
             <div className="text-gray-500 text-sm">
-              DOB : {EMPLOYEE_MOCK.dob}
+              {t('employeeDetailsPage.dob')} {EMPLOYEE_MOCK.dob}
             </div>
             <div className="text-gray-500 text-sm">
-              Email ID : {EMPLOYEE_MOCK.email}
+              {t('employeeDetailsPage.emailId')} {EMPLOYEE_MOCK.email}
             </div>
             <div className="text-gray-500 text-sm">
-              Employee ID: {EMPLOYEE_MOCK.employeeId}
+              {t('employeeDetailsPage.employeeId')} {EMPLOYEE_MOCK.employeeId}
             </div>
           </div>
           <div>
             <div className="text-gray-500 text-sm">
-              Bank Name: {EMPLOYEE_MOCK.bank.name}
+              {t('employeeDetailsPage.bankName')} {EMPLOYEE_MOCK.bank.name}
             </div>
             <div className="text-gray-500 text-sm">
-              Account No: {EMPLOYEE_MOCK.bank.accountNo}
+              {t('employeeDetailsPage.accountNo')}{' '}
+              {EMPLOYEE_MOCK.bank.accountNo}
             </div>
             <div className="text-gray-500 text-sm">
-              Branch: {EMPLOYEE_MOCK.bank.branch}
+              {t('employeeDetailsPage.branch')} {EMPLOYEE_MOCK.bank.branch}
             </div>
           </div>
           <div className="flex gap-3">
             <div className="">
               <div className="text-gray-500 text-sm">
-                IFSC Code: {EMPLOYEE_MOCK.bank.ifsc}
+                {t('employeeDetailsPage.ifscCode')} {EMPLOYEE_MOCK.bank.ifsc}
               </div>
               <div className="text-gray-400 text-xs">
-                Joined : {EMPLOYEE_MOCK.joined}
+                {t('employeeDetailsPage.joined')} {EMPLOYEE_MOCK.joined}
               </div>
             </div>
             <Link to={`/employees/${EMPLOYEE_MOCK.employeeId}/edit`}>
@@ -88,23 +91,37 @@ export default function EmployeeDetails() {
       </Card>
       {/* About Kalyan Card */}
       <Card className="mt-6 rounded-2xl p-6 shadow-sm">
-        <div className="mb-6 font-semibold text-2xl">About Kalyan</div>
+        <div className="mb-6 font-semibold text-2xl">
+          {t('employeeDetailsPage.about')} {EMPLOYEE_MOCK.name}
+        </div>
 
         <div className="grid grid-cols-2 gap-x-10 gap-y-6">
           {[
             {
-              label: 'Permanent Address',
+              label: t('employeeDetailsPage.permanentAddress'),
               id: 'permanent-address',
               value: 'San Jose, California, USA',
             },
             {
-              label: 'Present Address',
+              label: t('employeeDetailsPage.presentAddress'),
               id: 'present-address',
               value: 'San Jose, California, USA',
             },
-            { label: 'Postal Code', id: 'postal-code', value: '700012' },
-            { label: 'City', id: 'city', value: 'San Jose' },
-            { label: 'Country', id: 'country', value: 'USA' },
+            {
+              label: t('employeeDetailsPage.postalCode'),
+              id: 'postal-code',
+              value: '700012',
+            },
+            {
+              label: t('employeeDetailsPage.city'),
+              id: 'city',
+              value: 'San Jose',
+            },
+            {
+              label: t('employeeDetailsPage.country'),
+              id: 'country',
+              value: 'USA',
+            },
           ].map((field) => (
             <div key={field.id}>
               <Label

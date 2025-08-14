@@ -1,6 +1,8 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import type { TFunction } from 'i18next';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 import { ProfileImageUploader } from '../ProfileImageUploader';
 import { Button } from '../ui/button';
@@ -14,28 +16,29 @@ import {
 } from '../ui/form';
 import { Input } from '../ui/input';
 
-const employeeSchema = z.object({
-  name: z.string().min(1, 'Name is required'),
-  email: z.string().email(),
-  joinDate: z.string(),
-  gender: z.string(),
-  address: z.string(),
-  presentAddress: z.string(),
-  postalCode: z.string(),
-  mobile: z.string(),
-  employeeId: z.string(),
-  dob: z.string(),
-  language: z.string(),
-  city: z.string(),
-  country: z.string(),
-  bankName: z.string().optional(),
-  branch: z.string().optional(),
-  accountHolderName: z.string().optional(),
-  accountNumber: z.string().optional(),
-  ifscCode: z.string().optional(),
-});
+const createEmployeeSchema = (t: TFunction) =>
+  z.object({
+    name: z.string().min(1, t('employeeEditor.validation.nameRequired')),
+    email: z.string().email(),
+    joinDate: z.string(),
+    gender: z.string(),
+    address: z.string(),
+    presentAddress: z.string(),
+    postalCode: z.string(),
+    mobile: z.string(),
+    employeeId: z.string(),
+    dob: z.string(),
+    language: z.string(),
+    city: z.string(),
+    country: z.string(),
+    bankName: z.string().optional(),
+    branch: z.string().optional(),
+    accountHolderName: z.string().optional(),
+    accountNumber: z.string().optional(),
+    ifscCode: z.string().optional(),
+  });
 
-type EmployeeFormValues = z.infer<typeof employeeSchema>;
+type EmployeeFormValues = z.infer<ReturnType<typeof createEmployeeSchema>>;
 
 type EmployeeEditorProps = {
   initialData?: Partial<EmployeeFormValues>;
@@ -43,7 +46,9 @@ type EmployeeEditorProps = {
 
 // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation>
 export function EmployeeEditor({ initialData }: EmployeeEditorProps) {
+  const { t } = useTranslation();
   const [profileImage, setProfileImage] = useState<string | File>('');
+  const employeeSchema = createEmployeeSchema(t);
   const form = useForm<EmployeeFormValues>({
     resolver: zodResolver(employeeSchema),
     defaultValues: {
@@ -86,86 +91,102 @@ export function EmployeeEditor({ initialData }: EmployeeEditorProps) {
           />
         </div>
         <div className="w-full">
-          <h2 className="mb-4 font-semibold text-lg">Employee Detail</h2>
+          <h2 className="mb-4 font-semibold text-lg">
+            {t('employeeEditor.profileDetail.title')}
+          </h2>
           <div className="grid grid-cols-2 gap-5">
             {[
               {
                 name: 'name',
-                label: 'Name Of The Employee',
+                label: t('employeeEditor.profileDetail.nameLabel'),
                 type: 'text',
-                placeholder: 'Enter name',
+                placeholder: t('employeeEditor.profileDetail.namePlaceholder'),
               },
               {
                 name: 'email',
-                label: 'Email',
+                label: t('employeeEditor.profileDetail.emailLabel'),
                 type: 'email',
-                placeholder: 'Enter email',
+                placeholder: t('employeeEditor.profileDetail.emailPlaceholder'),
               },
               {
                 name: 'joinDate',
-                label: 'Join Date',
+                label: t('employeeEditor.profileDetail.joinDateLabel'),
                 type: 'date',
                 placeholder: '',
               },
               {
                 name: 'gender',
-                label: 'Gender',
+                label: t('employeeEditor.profileDetail.genderLabel'),
                 type: 'text',
-                placeholder: 'Enter gender',
+                placeholder: t(
+                  'employeeEditor.profileDetail.genderPlaceholder'
+                ),
               },
               {
                 name: 'address',
-                label: 'Permanent Address',
+                label: t('employeeEditor.profileDetail.permanentAddressLabel'),
                 type: 'text',
-                placeholder: 'Enter address',
+                placeholder: t(
+                  'employeeEditor.profileDetail.addressPlaceholder'
+                ),
               },
               {
                 name: 'presentAddress',
-                label: 'Present Address',
+                label: t('employeeEditor.profileDetail.presentAddressLabel'),
                 type: 'text',
-                placeholder: 'Enter address',
+                placeholder: t(
+                  'employeeEditor.profileDetail.addressPlaceholder'
+                ),
               },
               {
                 name: 'postalCode',
-                label: 'Postal Code',
+                label: t('employeeEditor.profileDetail.postalCodeLabel'),
                 type: 'text',
-                placeholder: 'Enter postal code',
+                placeholder: t(
+                  'employeeEditor.profileDetail.postalCodePlaceholder'
+                ),
               },
               {
                 name: 'mobile',
-                label: 'Mobile Number',
+                label: t('employeeEditor.profileDetail.mobileNumberLabel'),
                 type: 'text',
-                placeholder: 'Enter number',
+                placeholder: t(
+                  'employeeEditor.profileDetail.mobilePlaceholder'
+                ),
               },
               {
                 name: 'employeeId',
-                label: 'Employee ID',
+                label: t('employeeEditor.profileDetail.employeeIdLabel'),
                 type: 'text',
-                placeholder: 'Enter ID',
+                placeholder: t('employeeEditor.profileDetail.idPlaceholder'),
               },
               {
                 name: 'dob',
-                label: 'Date Of Birth',
+                label: t('employeeEditor.profileDetail.dobLabel'),
                 type: 'date',
                 placeholder: '',
               },
               {
                 name: 'language',
-                label: 'Preferred Language',
+                label: t('employeeEditor.profileDetail.preferredLanguageLabel'),
                 type: 'text',
-                placeholder: 'Enter language',
+                placeholder: t(
+                  'employeeEditor.profileDetail.languagePlaceholder'
+                ),
               },
               {
                 name: 'city',
-                label: 'City',
+                label: t('employeeEditor.profileDetail.cityLabel'),
                 type: 'text',
-                placeholder: 'Enter city',
+                placeholder: t('employeeEditor.profileDetail.cityPlaceholder'),
               },
               {
                 name: 'country',
-                label: 'Country',
+                label: t('employeeEditor.profileDetail.countryLabel'),
                 type: 'text',
-                placeholder: 'Enter country',
+                placeholder: t(
+                  'employeeEditor.profileDetail.countryPlaceholder'
+                ),
               },
             ].map((field) => (
               <FormField
@@ -192,39 +213,50 @@ export function EmployeeEditor({ initialData }: EmployeeEditorProps) {
           {/* Bank Details Section */}
           <div className="mt-10">
             <h2 className="mb-2 font-semibold text-lg">
-              Bank Detail <span className="font-normal text-sm">(if any)</span>
+              {t('employeeEditor.bankDetail.title')}{' '}
+              <span className="font-normal text-sm">
+                {t('employeeEditor.bankDetail.ifAny')}
+              </span>
             </h2>
             <div className="grid grid-cols-2 gap-5">
               {[
                 {
                   name: 'bankName',
-                  label: 'Bank Name',
+                  label: t('employeeEditor.bankDetail.bankNameLabel'),
                   type: 'text',
-                  placeholder: 'Enter here',
+                  placeholder: t(
+                    'employeeEditor.bankDetail.bankNamePlaceholder'
+                  ),
                 },
                 {
                   name: 'branch',
-                  label: 'Branch',
+                  label: t('employeeEditor.bankDetail.branchLabel'),
                   type: 'text',
-                  placeholder: 'Enter here',
+                  placeholder: t('employeeEditor.bankDetail.branchPlaceholder'),
                 },
                 {
                   name: 'accountHolderName',
-                  label: 'Account Holder Name',
+                  label: t('employeeEditor.bankDetail.accountHolderNameLabel'),
                   type: 'text',
-                  placeholder: 'Enter name',
+                  placeholder: t(
+                    'employeeEditor.bankDetail.accountHolderNamePlaceholder'
+                  ),
                 },
                 {
                   name: 'accountNumber',
-                  label: 'Account Number',
+                  label: t('employeeEditor.bankDetail.accountNumberLabel'),
                   type: 'text',
-                  placeholder: 'Enter number',
+                  placeholder: t(
+                    'employeeEditor.bankDetail.accountNumberPlaceholder'
+                  ),
                 },
                 {
                   name: 'ifscCode',
-                  label: 'IFSC Code',
+                  label: t('employeeEditor.bankDetail.ifscCodeLabel'),
                   type: 'text',
-                  placeholder: 'Enter here',
+                  placeholder: t(
+                    'employeeEditor.bankDetail.ifscCodePlaceholder'
+                  ),
                 },
               ].map((field) => (
                 <FormField
@@ -251,7 +283,7 @@ export function EmployeeEditor({ initialData }: EmployeeEditorProps) {
 
           <div className="mt-8 flex justify-center">
             <Button className="w-1/2 rounded-full bg-primary-gradient font-semibold text-white shadow">
-              Add
+              {t('employeeEditor.addButton')}
             </Button>
           </div>
         </div>

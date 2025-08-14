@@ -1,4 +1,5 @@
 import type { ColumnDef, Row } from '@tanstack/react-table';
+import type { TFunction } from 'i18next';
 import { EyeIcon } from 'lucide-react';
 import { Link } from 'react-router';
 import checkIcon from '@/assets/icons/check.png';
@@ -17,9 +18,9 @@ export type Employee = {
   active: boolean;
 };
 
-export const employeeColumns: ColumnDef<Employee>[] = [
+export const getEmployeeColumns = (t: TFunction): ColumnDef<Employee>[] => [
   {
-    header: 'Employee Name',
+    header: t('employeeColumns.employeeName'),
     accessorKey: 'name',
     cell: (props: { row: Row<Employee> }) => (
       <UserCell
@@ -29,19 +30,19 @@ export const employeeColumns: ColumnDef<Employee>[] = [
     ),
   },
   {
-    header: 'Employee ID',
+    header: t('employeeColumns.employeeId'),
     accessorKey: 'id',
   },
   {
-    header: 'Email Address',
+    header: t('employeeColumns.emailAddress'),
     accessorKey: 'email',
   },
   {
-    header: 'Mobile Number',
+    header: t('employeeColumns.mobileNumber'),
     accessorKey: 'mobile',
   },
   {
-    header: 'Documents',
+    header: t('employeeColumns.documents'),
     accessorKey: 'documents',
     cell: ({ row }) => (
       <div className="flex items-center gap-1">
@@ -51,14 +52,14 @@ export const employeeColumns: ColumnDef<Employee>[] = [
             alt="Complete"
             className="size-4"
             src={checkIcon}
-            title="Complete"
+            title={t('employeeColumns.complete')}
           />
         )}
       </div>
     ),
   },
   {
-    header: 'Action',
+    header: t('employeeColumns.action'),
     id: 'action',
     cell: ({ row }) => (
       <div className="flex items-center gap-2">
@@ -70,7 +71,11 @@ export const employeeColumns: ColumnDef<Employee>[] = [
         <Switch
           className="data-[state=checked]:bg-green-500 data-[state=unchecked]:bg-red-500"
           defaultChecked={row.original.active}
-          title={row.original.active ? 'Active' : 'Inactive'}
+          title={
+            row.original.active
+              ? t('employeeColumns.active')
+              : t('employeeColumns.inactive')
+          }
         />
       </div>
     ),

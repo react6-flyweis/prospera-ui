@@ -1,10 +1,13 @@
 // import { useParams } from 'react-router';
+
+import { useTranslation } from 'react-i18next';
 import { EmployeeEditor } from '@/components/EmployeeManagement/EmployeeEditor';
 import { PageLayout } from '@/components/Layout/PageLayout';
 
 // Static mock employee data
 
 export default function EditEmployee() {
+  const { t } = useTranslation();
   // Get employeeId from route params
   //   const { employeeId } = useParams();
   const mockEmployee = {
@@ -29,7 +32,7 @@ export default function EditEmployee() {
   };
 
   return (
-    <PageLayout title="Edit Employee" withBack>
+    <PageLayout title={t('editEmployeePage.title')} withBack>
       <EmployeeEditor initialData={mockEmployee} />
     </PageLayout>
   );

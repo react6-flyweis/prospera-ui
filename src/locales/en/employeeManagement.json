@@ -1,0 +1,99 @@
+{
+  "employeeManagementPage": {
+    "title": "Employee Management",
+    "totalEmployees": "Total Employees",
+    "addNewEmployeeButton": "Add A New Employee",
+    "filter": {
+      "all": "All",
+      "verified": "Verified",
+      "blocked": "Blocked",
+      "unblocked": "Unblocked"
+    },
+    "newEmployeesSection": {
+      "title": "New Employees",
+      "last30Days": "Last 30 Days",
+      "last7Days": "Last 7 Days",
+      "last15Days": "Last 15 Days",
+      "allTime": "All Time"
+    }
+  },
+  "addNewEmployeePage": {
+    "title": "Add a New Employee"
+  },
+  "employeeDetailsPage": {
+    "country": "Country",
+    "dob": "DOB :",
+    "emailId": "Email ID :",
+    "employeeId": "Employee ID:",
+    "bankName": "Bank Name:",
+    "accountNo": "Account No:",
+    "branch": "Branch:",
+    "ifscCode": "IFSC Code:",
+    "joined": "Joined :",
+    "about": "About",
+    "permanentAddress": "Permanent Address",
+    "presentAddress": "Present Address",
+    "postalCode": "Postal Code",
+    "city": "City"
+  },
+  "editEmployeePage": {
+    "title": "Edit Employee"
+  },
+  "employeeColumns": {
+    "employeeName": "Employee Name",
+    "employeeId": "Employee ID",
+    "emailAddress": "Email Address",
+    "mobileNumber": "Mobile Number",
+    "documents": "Documents",
+    "action": "Action",
+    "complete": "Complete",
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "employeeEditor": {
+    "validation": {
+      "nameRequired": "Name is required"
+    },
+    "profileDetail": {
+      "title": "Employee Detail",
+      "nameLabel": "Name Of The Employee",
+      "emailLabel": "Email",
+      "joinDateLabel": "Join Date",
+      "genderLabel": "Gender",
+      "permanentAddressLabel": "Permanent Address",
+      "presentAddressLabel": "Present Address",
+      "postalCodeLabel": "Postal Code",
+      "mobileNumberLabel": "Mobile Number",
+      "employeeIdLabel": "Employee ID",
+      "dobLabel": "Date Of Birth",
+      "preferredLanguageLabel": "Preferred Language",
+      "cityLabel": "City",
+      "countryLabel": "Country",
+      "namePlaceholder": "Enter name",
+      "emailPlaceholder": "Enter email",
+      "genderPlaceholder": "Enter gender",
+      "addressPlaceholder": "Enter address",
+      "postalCodePlaceholder": "Enter postal code",
+      "mobilePlaceholder": "Enter number",
+      "idPlaceholder": "Enter ID",
+      "languagePlaceholder": "Enter language",
+      "cityPlaceholder": "Enter city",
+      "countryPlaceholder": "Enter country"
+    },
+    "bankDetail": {
+      "title": "Bank Detail",
+      "ifAny": "(if any)",
+      "bankNameLabel": "Bank Name",
+      "branchLabel": "Branch",
+      "accountHolderNameLabel": "Account Holder Name",
+      "accountNumberLabel": "Account Number",
+      "ifscCodeLabel": "IFSC Code",
+      "bankNamePlaceholder": "Enter here",
+      "branchPlaceholder": "Enter here",
+      "accountHolderNamePlaceholder": "Enter name",
+      "accountNumberPlaceholder": "Enter number",
+      "ifscCodePlaceholder": "Enter here"
+    },
+    "addButton": "Add"
+  }
+}
