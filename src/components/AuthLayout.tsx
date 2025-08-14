@@ -1,12 +1,13 @@
 import { Outlet } from 'react-router';
 import abstractionImage from '@/assets/images/abstraction.png';
 import logoImage from '@/assets/images/logo.svg';
+import LanguageSelector from '@/components/LanguageSelector';
 
 export default function AuthLayout() {
   return (
     <div className="flex min-h-screen flex-col bg-primary-gradient md:flex-row">
       {/* Left Side: Branding & Image */}
-      <div className="hidden flex-col bg-primary-gradient p-10 text-white md:flex md:w-1/3">
+      <div className="relative hidden flex-col bg-primary-gradient p-10 text-white md:flex md:w-1/3">
         {/* Logo */}
         <div className="mb-2 flex gap-2">
           {/* Replace with your logo image */}
@@ -28,8 +29,14 @@ export default function AuthLayout() {
           src={abstractionImage}
         />
       </div>
+
       {/* Right Side: Auth Form Outlet */}
-      <div className="flex flex-1 items-center justify-center rounded-l-3xl bg-white shadow-lg">
+      <div className="relative flex flex-1 items-center justify-center rounded-l-3xl bg-white shadow-lg">
+        {/* Language Selector - positioned on the right side */}
+        <div className="absolute top-4 right-4 z-10">
+          <LanguageSelector />
+        </div>
+
         <div className="w-full max-w-md p-8">
           <Outlet />
         </div>

@@ -84,13 +84,33 @@ const resources = {
       ...notFoundTranslations,
     },
   },
+  // Add more languages as needed
+  fr: {
+    translation: {
+      // French translations would go here
+    },
+  },
+  es: {
+    translation: {
+      // Spanish translations would go here
+    },
+  },
 };
+
+export const languages = [
+  { code: 'en', name: 'English (UK)', flag: '🇬🇧' },
+  { code: 'fr', name: 'Français', flag: '🇫🇷' },
+  { code: 'es', name: 'Español', flag: '🇪🇸' },
+];
+
+// Get saved language from localStorage or default to 'en'
+const savedLanguage = localStorage.getItem('language') || 'en';
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     resources,
-    lng: 'en', // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
+    lng: savedLanguage, // use saved language or default
     // you can use the i18n.changeLanguage function to change the language later on.
     fallbackLng: 'en', // fallback language if a translation is not found for the current language
 
