@@ -1,4 +1,5 @@
 import type { ColumnDef, Row } from '@tanstack/react-table';
+import type { TFunction } from 'i18next';
 import { EyeIcon } from 'lucide-react';
 import { Link } from 'react-router';
 import checkIcon from '@/assets/icons/check.png';
@@ -17,9 +18,9 @@ export type IVendor = {
   active: boolean;
 };
 
-export const vendorColumns: ColumnDef<IVendor>[] = [
+export const getVendorColumns = (t: TFunction): ColumnDef<IVendor>[] => [
   {
-    header: 'Vendor Name',
+    header: t('vendorColumns.vendorName'),
     accessorKey: 'name',
     cell: (props: { row: Row<IVendor> }) => (
       <UserCell
@@ -29,37 +30,36 @@ export const vendorColumns: ColumnDef<IVendor>[] = [
     ),
   },
   {
-    header: 'Vendor ID',
+    header: t('vendorColumns.vendorId'),
     accessorKey: 'id',
   },
   {
-    header: 'Email Address',
+    header: t('vendorColumns.emailAddress'),
     accessorKey: 'email',
   },
   {
-    header: 'Mobile Number',
+    header: t('vendorColumns.mobileNumber'),
     accessorKey: 'mobile',
   },
   {
-    header: 'Documents',
+    header: t('vendorColumns.documents'),
     accessorKey: 'documents',
     cell: ({ row }) => (
       <div className="flex items-center gap-1">
         <span>{row.original.documents}</span>
         {row.original.documentsStatus === 'complete' && (
           <img
-            alt="Complete"
-            className="size-4"
+            alt={t('vendorColumns.documentComplete')}
+            className="h-4 w-4"
             src={checkIcon}
-            title="Complete"
           />
         )}
       </div>
     ),
   },
   {
-    header: 'Action',
-    id: 'action',
+    header: t('vendorColumns.status'),
+    accessorKey: 'active',
     cell: ({ row }) => (
       <div className="flex items-center gap-2">
         <Link to={`/vendors/${row.original.id}`}>

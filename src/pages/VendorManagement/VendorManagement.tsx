@@ -12,11 +12,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { vendorColumns } from '@/components/VendorManagement/vendorColumns';
+import { getVendorColumns } from '@/components/VendorManagement/vendorColumns';
 import { vendorData } from '@/data/vendorsData';
 
 export default function VendorManagement() {
   const { t } = useTranslation();
+  const vendorColumns = getVendorColumns(t);
   const [filter, setFilter] = useState('All');
 
   return (
