@@ -1,8 +1,9 @@
 import type { ColumnDef, Row } from '@tanstack/react-table';
-import { EyeIcon, Trash2Icon } from 'lucide-react';
-import { useState } from 'react';
+import type { TFunction } from 'i18next';
+import { EyeIcon } from 'lucide-react';
 import { Link } from 'react-router';
 import checkIcon from '@/assets/icons/check.png';
+import { UserCell } from '../UserCell';
 import { Button } from '../ui/button';
 import { Switch } from '../ui/switch';
 
@@ -17,64 +18,31 @@ export type ICorporate = {
   active: boolean;
 };
 
-function CorporateNameCell({ row }: { row: any }) {
-  const [showDelete, setShowDelete] = useState(false);
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      setShowDelete((v) => !v);
-    }
-  };
-  return (
-    <div className="relative flex items-center gap-2">
-      <img
-        alt={row.original.name}
-        className="h-7 w-7 rounded-full"
-        src={row.original.avatar}
-      />
-      <button
-        aria-label={`Show delete for ${row.original.name}`}
-        className="cursor-pointer font-medium text-blue-700 hover:underline focus:outline-none"
-        onClick={() => setShowDelete((v) => !v)}
-        onKeyDown={handleKeyDown}
-        style={{ background: 'none', border: 'none', padding: 0 }}
-        tabIndex={0}
-        type="button"
-      >
-        {row.original.name}
-      </button>
-      {showDelete && (
-        <Button
-          className="ml-2 flex items-center gap-1 rounded-lg border border-red-200 bg-white px-3 py-1 text-red-600 shadow hover:bg-red-50"
-          style={{ position: 'absolute', left: '100%', top: 0, zIndex: 10 }}
-          variant="ghost"
-        >
-          <Trash2Icon className="mr-1 size-5" /> Delete This Profile
-        </Button>
-      )}
-    </div>
-  );
-}
-
-export const corporateColumns: ColumnDef<ICorporate>[] = [
+export const getCorporateColumns = (t: TFunction): ColumnDef<ICorporate>[] => [
   {
-    header: 'Corporate Name',
+    header: t('corporateColumns.corporateName'),
     accessorKey: 'name',
-    cell: (props: { row: Row<ICorporate> }) => <CorporateNameCell {...props} />,
+    cell: (props: { row: Row<ICorporate> }) => (
+      <UserCell
+        avatar={props.row.original.avatar}
+        name={props.row.original.name}
+      />
+    ),
   },
   {
-    header: 'Corporate ID',
+    header: t('corporateColumns.corporateId'),
     accessorKey: 'id',
   },
   {
-    header: 'Email Address',
+    header: t('corporateColumns.emailAddress'),
     accessorKey: 'email',
   },
   {
-    header: 'Mobile Number',
+    header: t('corporateColumns.mobileNumber'),
     accessorKey: 'mobile',
   },
   {
-    header: 'Documents',
+    header: t('corporateColumns.documents'),
     accessorKey: 'documents',
     cell: ({ row }) => (
       <div className="flex items-center gap-1">
@@ -84,14 +52,14 @@ export const corporateColumns: ColumnDef<ICorporate>[] = [
             alt="Complete"
             className="size-4"
             src={checkIcon}
-            title="Complete"
+            title={t('corporateColumns.complete')}
           />
         )}
       </div>
     ),
   },
   {
-    header: 'Action',
+    header: t('corporateColumns.action'),
     id: 'action',
     cell: ({ row }) => (
       <div className="flex items-center gap-2">
@@ -103,7 +71,11 @@ export const corporateColumns: ColumnDef<ICorporate>[] = [
         <Switch
           className="data-[state=checked]:bg-green-500 data-[state=unchecked]:bg-red-500"
           defaultChecked={row.original.active}
-          title={row.original.active ? 'Active' : 'Inactive'}
+          title={
+            row.original.active
+              ? t('corporateColumns.active')
+              : t('corporateColumns.inactive')
+          }
         />
       </div>
     ),

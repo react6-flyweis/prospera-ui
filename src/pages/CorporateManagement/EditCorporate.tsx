@@ -1,8 +1,10 @@
+import { useTranslation } from 'react-i18next';
 import { CorporateEditor } from '@/components/CorporateManagement/CorporateEditor';
 import { PageLayout } from '@/components/Layout/PageLayout';
 
 // Static mock corporate data
 export default function EditCorporate() {
+  const { t } = useTranslation();
   // Get corporateId from route params
   //   const { corporateId } = useParams();
   const mockCorporate = {
@@ -43,7 +45,7 @@ export default function EditCorporate() {
   };
 
   return (
-    <PageLayout title="Edit Corporate" withBack>
+    <PageLayout title={t('editCorporatePage.title')} withBack>
       <CorporateEditor initialData={mockCorporate} />
     </PageLayout>
   );

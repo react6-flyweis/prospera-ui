@@ -1,7 +1,8 @@
 import { PlusIcon } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
-import { corporateColumns } from '@/components/CorporateManagement/corporateColumns';
+import { getCorporateColumns } from '@/components/CorporateManagement/corporateColumns';
 import { DataTable } from '@/components/DataTable';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { Button } from '@/components/ui/button';
@@ -15,15 +16,17 @@ import {
 import { corporateData } from '@/data/corporatesData';
 
 export default function CorporateManagement() {
+  const { t } = useTranslation();
+  const corporateColumns = getCorporateColumns(t);
   const [filter, setFilter] = useState('All');
 
   return (
-    <PageLayout title="Corporate Management">
+    <PageLayout title={t('corporateManagementPage.title')}>
       <div className="mb-6">
         <div className="mb-2 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <h2 className="font-bold text-gray-800 text-xl">
-              Total Corporates{' '}
+              {t('corporateManagementPage.totalCorporates')}{' '}
               <span className="font-normal text-gray-500">
                 ({corporateData.length})
               </span>
@@ -35,7 +38,7 @@ export default function CorporateManagement() {
                 type="button"
                 variant="outline"
               >
-                Add A New Corporate
+                {t('corporateManagementPage.addNewCorporateButton')}
                 <div className="flex size-4 items-center justify-center rounded-full border">
                   <PlusIcon className="size-3" />
                 </div>
@@ -47,15 +50,17 @@ export default function CorporateManagement() {
               <SelectValue placeholder="All" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="All">All</SelectItem>
+              <SelectItem value="All">
+                {t('corporateManagementPage.filter.all')}
+              </SelectItem>
               <SelectItem value="Verified Corporates">
-                Verified Corporates
+                {t('corporateManagementPage.filter.verifiedCorporates')}
               </SelectItem>
               <SelectItem value="Blocked Corporates">
-                Blocked Corporates
+                {t('corporateManagementPage.filter.blockedCorporates')}
               </SelectItem>
               <SelectItem value="Unblocked Corporates">
-                Unblocked Corporates
+                {t('corporateManagementPage.filter.unblockedCorporates')}
               </SelectItem>
             </SelectContent>
           </Select>
@@ -69,20 +74,32 @@ export default function CorporateManagement() {
         <div className="mt-10">
           <div className="mb-2 flex items-center justify-between">
             <h3 className="font-bold text-gray-800 text-lg">
-              New Corporates{' '}
+              {t('corporateManagementPage.newCorporatesSection.title')}{' '}
               <span className="font-normal text-gray-500">
                 ({corporateData.slice(0, 3).length})
               </span>
             </h3>
             <Select defaultValue="30">
               <SelectTrigger className="rounded-full">
-                <SelectValue placeholder="Last 30 Days" />
+                <SelectValue
+                  placeholder={t(
+                    'corporateManagementPage.newCorporatesSection.last30Days'
+                  )}
+                />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="7">Last 7 Days</SelectItem>
-                <SelectItem value="15">Last 15 Days</SelectItem>
-                <SelectItem value="30">Last 30 Days</SelectItem>
-                <SelectItem value="all">All Time</SelectItem>
+                <SelectItem value="7">
+                  {t('corporateManagementPage.newCorporatesSection.last7Days')}
+                </SelectItem>
+                <SelectItem value="15">
+                  {t('corporateManagementPage.newCorporatesSection.last15Days')}
+                </SelectItem>
+                <SelectItem value="30">
+                  {t('corporateManagementPage.newCorporatesSection.last30Days')}
+                </SelectItem>
+                <SelectItem value="all">
+                  {t('corporateManagementPage.newCorporatesSection.allTime')}
+                </SelectItem>
               </SelectContent>
             </Select>
           </div>

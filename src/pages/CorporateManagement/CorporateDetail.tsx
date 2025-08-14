@@ -1,4 +1,5 @@
 import { PenLineIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -25,70 +26,78 @@ const CORPORATE_MOCK = {
   joined: '11-28-2024',
 };
 
-const companyFields = [
-  [
-    {
-      label: 'How many employees does he/she has, including himself/herself?',
-      value: '89',
-    },
-    {
-      label: 'How would you describe his/her business setting?',
-      value: 'In office or remote',
-    },
-    {
-      label: 'Hoe dose his/her company currently run payroll?',
-      value: "We're new to running payroll",
-    },
-    { label: 'Do he/she has a company bank account?', value: 'Yes' },
-    {
-      label: 'How many team members in the Africa is he/she planning to pay?',
-      value: '89',
-    },
-    { label: 'What industry is he/she in?', value: 'Lorem Ipsum' },
-    { label: "What's his desired first payday?", value: '01/31/2024' },
-    {
-      label:
-        'Dose anyone in his/her company need to clock in and out or track the hours they work?',
-      value: 'Yes',
-    },
-  ],
-  [
-    {
-      label: 'How do he/she currently run payroll?',
-      value: "We're new to running payroll",
-    },
-    {
-      label: 'Who is his/her company planning to pay?',
-      value: 'Employee in the Africa, Non-Africa employee, Vendors',
-    },
-    {
-      label: 'Is his/her company registered as an employer with the IRS?',
-      value: 'Yes',
-    },
-    { label: 'Has he/she already hired your first team member?', value: 'Yes' },
-    {
-      label:
-        'In which African region(s) does he/she and his/her employees work?',
-      value: 'Lorem Ipsum',
-    },
-    {
-      label:
-        'Does he/she has an accountant or bookkeeper helping his/her business?',
-      value: 'Yes',
-    },
-    {
-      label:
-        'Dose his/her company want to offer health benefits to your employees?',
-      value: 'Yes',
-    },
-    {
-      label: 'Does his/her company has workers compensation insurance',
-      value: 'Yes',
-    },
-  ],
-];
-
-export default function AgentDetails() {
+export default function CorporateDetail() {
+  const { t } = useTranslation();
+  const companyFields = [
+    [
+      {
+        label: t('corporateDetailPage.companyFields.employeesCount'),
+        value: '89',
+      },
+      {
+        label: t('corporateDetailPage.companyFields.businessSetting'),
+        value: 'In office or remote',
+      },
+      {
+        label: t('corporateDetailPage.companyFields.payrollRun'),
+        value: "We're new to running payroll",
+      },
+      {
+        label: t('corporateDetailPage.companyFields.companyBankAccount'),
+        value: 'Yes',
+      },
+      {
+        label: t('corporateDetailPage.companyFields.teamMembersToPay'),
+        value: '89',
+      },
+      {
+        label: t('corporateDetailPage.companyFields.industry'),
+        value: 'Lorem Ipsum',
+      },
+      {
+        label: t('corporateDetailPage.companyFields.desiredFirstPayday'),
+        value: '01/31/2024',
+      },
+      {
+        label: t('corporateDetailPage.companyFields.clockInAndOut'),
+        value: 'Yes',
+      },
+    ],
+    [
+      {
+        label: t('corporateDetailPage.companyFields.howPayrollRun'),
+        value: "We're new to running payroll",
+      },
+      {
+        label: t('corporateDetailPage.companyFields.whoToPay'),
+        value: 'Employee in the Africa, Non-Africa employee, Vendors',
+      },
+      {
+        label: t('corporateDetailPage.companyFields.registeredWithIRS'),
+        value: 'Yes',
+      },
+      {
+        label: t('corporateDetailPage.companyFields.hiredFirstTeamMember'),
+        value: 'Yes',
+      },
+      {
+        label: t('corporateDetailPage.companyFields.africanRegions'),
+        value: 'Lorem Ipsum',
+      },
+      {
+        label: t('corporateDetailPage.companyFields.hasAccountant'),
+        value: 'Yes',
+      },
+      {
+        label: t('corporateDetailPage.companyFields.offerHealthBenefits'),
+        value: 'Yes',
+      },
+      {
+        label: t('corporateDetailPage.companyFields.hasWorkersCompInsurance'),
+        value: 'Yes',
+      },
+    ],
+  ];
   return (
     <PageLayout title={CORPORATE_MOCK.name} withBack>
       <Card className=" flex items-center gap-6 rounded-2xl p-4 shadow-sm">
@@ -109,39 +118,41 @@ export default function AgentDetails() {
                 {CORPORATE_MOCK.phone}
               </div>
               <div className="text-gray-500 text-sm">
-                Country : {CORPORATE_MOCK.country}
+                {t('corporateDetailPage.country')} {CORPORATE_MOCK.country}
               </div>
             </div>
           </div>
           <div>
             <div className="text-gray-500 text-sm">
-              DOB : {CORPORATE_MOCK.dob}
+              {t('corporateDetailPage.dob')} {CORPORATE_MOCK.dob}
             </div>
             <div className="text-gray-500 text-sm">
-              Email ID : {CORPORATE_MOCK.email}
+              {t('corporateDetailPage.emailId')} {CORPORATE_MOCK.email}
             </div>
             <div className="text-gray-500 text-sm">
-              Corporate ID: {CORPORATE_MOCK.corporateId}
+              {t('corporateDetailPage.corporateId')}{' '}
+              {CORPORATE_MOCK.corporateId}
             </div>
           </div>
           <div>
             <div className="text-gray-500 text-sm">
-              Bank Name: {CORPORATE_MOCK.bank.name}
+              {t('corporateDetailPage.bankName')} {CORPORATE_MOCK.bank.name}
             </div>
             <div className="text-gray-500 text-sm">
-              Account No: {CORPORATE_MOCK.bank.accountNo}
+              {t('corporateDetailPage.accountNo')}{' '}
+              {CORPORATE_MOCK.bank.accountNo}
             </div>
             <div className="text-gray-500 text-sm">
-              Branch: {CORPORATE_MOCK.bank.branch}
+              {t('corporateDetailPage.branch')} {CORPORATE_MOCK.bank.branch}
             </div>
           </div>
           <div className="flex gap-3">
             <div className="">
               <div className="text-gray-500 text-sm">
-                IFSC Code: {CORPORATE_MOCK.bank.ifsc}
+                {t('corporateDetailPage.ifscCode')} {CORPORATE_MOCK.bank.ifsc}
               </div>
               <div className="text-gray-400 text-xs">
-                Joined : {CORPORATE_MOCK.joined}
+                {t('corporateDetailPage.joined')} {CORPORATE_MOCK.joined}
               </div>
             </div>
             <Link to={`/corporates/${CORPORATE_MOCK.corporateId}/edit`}>
@@ -154,7 +165,9 @@ export default function AgentDetails() {
       </Card>
       {/* About Company Card */}
       <Card className="mt-6 rounded-2xl p-6 shadow-sm">
-        <div className="mb-4 font-semibold text-xl">About Company</div>
+        <div className="mb-4 font-semibold text-xl">
+          {t('corporateDetailPage.aboutCompany')}
+        </div>
         <form autoComplete="off" className="grid grid-cols-2 gap-6">
           {/* Left and Right Columns mapped dynamically */}
           {companyFields.map((column, colIdx) => (

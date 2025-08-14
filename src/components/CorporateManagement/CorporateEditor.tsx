@@ -1,6 +1,8 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import type { TFunction } from 'i18next';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 import { ProfileImageUploader } from '../ProfileImageUploader';
 import { Button } from '../ui/button';
@@ -21,44 +23,45 @@ import {
   SelectValue,
 } from '../ui/select';
 
-const corporateSchema = z.object({
-  name: z.string().min(1, 'Name is required'),
-  email: z.email(),
-  joinDate: z.string(),
-  gender: z.string(),
-  address: z.string(),
-  postalCode: z.string(),
-  mobile: z.string(),
-  corporateId: z.string(),
-  dob: z.string(),
-  language: z.string(),
-  city: z.string(),
-  country: z.string(),
-  bankName: z.string(),
-  branch: z.string(),
-  accountHolder: z.string(),
-  accountNumber: z.string(),
-  ifsc: z.string(),
-  // About Company fields
-  employeesCount: z.string(),
-  businessSetting: z.string(),
-  payrollDescription: z.string(),
-  hasCompanyBankAccount: z.string(),
-  africaTeamMembers: z.string(),
-  industry: z.string(),
-  desiredFirstPayday: z.string(),
-  needClockInOut: z.string(),
-  currentPayrollMethod: z.string(),
-  companyPaying: z.string(),
-  registeredWithIRS: z.string(),
-  hiredFirstTeamMember: z.string(),
-  africanRegions: z.string(),
-  hasAccountant: z.string(),
-  wantHealthBenefits: z.string(),
-  hasWorkersCompInsurance: z.string(),
-});
+const createCorporateSchema = (t: TFunction) =>
+  z.object({
+    name: z.string().min(1, t('corporateEditor.validation.nameRequired')),
+    email: z.email(),
+    joinDate: z.string(),
+    gender: z.string(),
+    address: z.string(),
+    postalCode: z.string(),
+    mobile: z.string(),
+    corporateId: z.string(),
+    dob: z.string(),
+    language: z.string(),
+    city: z.string(),
+    country: z.string(),
+    bankName: z.string(),
+    branch: z.string(),
+    accountHolder: z.string(),
+    accountNumber: z.string(),
+    ifsc: z.string(),
+    // About Company fields
+    employeesCount: z.string(),
+    businessSetting: z.string(),
+    payrollDescription: z.string(),
+    hasCompanyBankAccount: z.string(),
+    africaTeamMembers: z.string(),
+    industry: z.string(),
+    desiredFirstPayday: z.string(),
+    needClockInOut: z.string(),
+    currentPayrollMethod: z.string(),
+    companyPaying: z.string(),
+    registeredWithIRS: z.string(),
+    hiredFirstTeamMember: z.string(),
+    africanRegions: z.string(),
+    hasAccountant: z.string(),
+    wantHealthBenefits: z.string(),
+    hasWorkersCompInsurance: z.string(),
+  });
 
-type CorporateFormValues = z.infer<typeof corporateSchema>;
+type CorporateFormValues = z.infer<ReturnType<typeof createCorporateSchema>>;
 
 type CorporateEditorProps = {
   initialData?: Partial<CorporateFormValues>;
@@ -66,7 +69,9 @@ type CorporateEditorProps = {
 
 // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation>
 export function CorporateEditor({ initialData }: CorporateEditorProps) {
+  const { t } = useTranslation();
   const [profileImage, setProfileImage] = useState<string | File>('');
+  const corporateSchema = createCorporateSchema(t);
   const form = useForm<CorporateFormValues>({
     resolver: zodResolver(corporateSchema),
     defaultValues: {
@@ -108,105 +113,101 @@ export function CorporateEditor({ initialData }: CorporateEditorProps) {
     [
       {
         name: 'employeesCount',
-        label: 'How many employees does he/she has, including himself/herself?',
-        placeholder: 'Enter here',
+        label: t('corporateEditor.aboutCompany.employeesCountLabel'),
+        placeholder: t('corporateEditor.aboutCompany.placeholder'),
         type: 'text',
       },
       {
         name: 'businessSetting',
-        label: 'How would you describe his/her business setting?',
-        placeholder: 'Enter here',
+        label: t('corporateEditor.aboutCompany.businessSettingLabel'),
+        placeholder: t('corporateEditor.aboutCompany.placeholder'),
         type: 'text',
       },
       {
         name: 'payrollDescription',
-        label: 'Hoe dose his/her company currently run payroll?',
-        placeholder: 'Enter here',
+        label: t('corporateEditor.aboutCompany.payrollDescriptionLabel'),
+        placeholder: t('corporateEditor.aboutCompany.placeholder'),
         type: 'text',
       },
       {
         name: 'hasCompanyBankAccount',
-        label: 'Do he/she has a company bank account?',
+        label: t('corporateEditor.aboutCompany.hasCompanyBankAccountLabel'),
         type: 'select',
-        placeholder: '',
+        placeholder: t('corporateEditor.aboutCompany.yesOrNoPlaceholder'),
       },
       {
         name: 'africaTeamMembers',
-        label: 'How many team members in the Africa is he/she planning to pay?',
-        placeholder: 'Enter number',
+        label: t('corporateEditor.aboutCompany.africaTeamMembersLabel'),
+        placeholder: t('corporateEditor.aboutCompany.numberPlaceholder'),
         type: 'text',
       },
       {
         name: 'industry',
-        label: 'What industry is he/she in?',
-        placeholder: 'Enter here',
+        label: t('corporateEditor.aboutCompany.industryLabel'),
+        placeholder: t('corporateEditor.aboutCompany.placeholder'),
         type: 'text',
       },
       {
         name: 'desiredFirstPayday',
-        label: "What's his desired first payday?",
-        placeholder: '__/__/____',
+        label: t('corporateEditor.aboutCompany.desiredFirstPaydayLabel'),
+        placeholder: t('corporateEditor.aboutCompany.datePlaceholder'),
         type: 'text',
       },
       {
         name: 'needClockInOut',
-        label:
-          'Dose anyone in his/her company need to clock in and out or track the hours they work?',
+        label: t('corporateEditor.aboutCompany.needClockInOutLabel'),
         type: 'select',
-        placeholder: '',
+        placeholder: t('corporateEditor.aboutCompany.yesOrNoPlaceholder'),
       },
     ],
     [
       {
         name: 'currentPayrollMethod',
-        label: 'How do he/she currently run payroll?',
-        placeholder: 'Enter here',
+        label: t('corporateEditor.aboutCompany.currentPayrollMethodLabel'),
+        placeholder: t('corporateEditor.aboutCompany.placeholder'),
         type: 'text',
       },
       {
         name: 'companyPaying',
-        label: 'Who is his/her company planning to pay?',
-        placeholder: 'Enter here',
+        label: t('corporateEditor.aboutCompany.companyPayingLabel'),
+        placeholder: t('corporateEditor.aboutCompany.placeholder'),
         type: 'text',
       },
       {
         name: 'registeredWithIRS',
-        label: 'Is his/her company registered as an employer with the IRS?',
+        label: t('corporateEditor.aboutCompany.registeredWithIRSLabel'),
         type: 'select',
-        placeholder: '',
+        placeholder: t('corporateEditor.aboutCompany.yesOrNoPlaceholder'),
       },
       {
         name: 'hiredFirstTeamMember',
-        label: 'Has he/she already hired your first team member?',
+        label: t('corporateEditor.aboutCompany.hiredFirstTeamMemberLabel'),
         type: 'select',
-        placeholder: '',
+        placeholder: t('corporateEditor.aboutCompany.yesOrNoPlaceholder'),
       },
       {
         name: 'africanRegions',
-        label:
-          'In which African region(s) does he/she and his/her employees work?',
-        placeholder: 'Enter here',
+        label: t('corporateEditor.aboutCompany.africanRegionsLabel'),
+        placeholder: t('corporateEditor.aboutCompany.placeholder'),
         type: 'text',
       },
       {
         name: 'hasAccountant',
-        label:
-          'Does he/she has an accountant or bookkeeper helping his/her business?',
+        label: t('corporateEditor.aboutCompany.hasAccountantLabel'),
         type: 'select',
-        placeholder: '',
+        placeholder: t('corporateEditor.aboutCompany.yesOrNoPlaceholder'),
       },
       {
         name: 'wantHealthBenefits',
-        label:
-          'Dose his/her company want to offer health benefits to your employees?',
+        label: t('corporateEditor.aboutCompany.wantHealthBenefitsLabel'),
         type: 'select',
-        placeholder: '',
+        placeholder: t('corporateEditor.aboutCompany.yesOrNoPlaceholder'),
       },
       {
         name: 'hasWorkersCompInsurance',
-        label: 'Does his/her company has workers compensation insurance',
+        label: t('corporateEditor.aboutCompany.hasWorkersCompInsuranceLabel'),
         type: 'select',
-        placeholder: '',
+        placeholder: t('corporateEditor.aboutCompany.yesOrNoPlaceholder'),
       },
     ],
   ] as const;
@@ -225,81 +226,101 @@ export function CorporateEditor({ initialData }: CorporateEditorProps) {
           />
         </div>
         <div className="w-full">
-          <h2 className="mb-4 font-semibold text-lg">Profile Detail</h2>
+          <h2 className="mb-4 font-semibold text-lg">
+            {t('corporateEditor.profileDetail.title')}
+          </h2>
           <div className="grid grid-cols-2 gap-5">
             {/* ...existing code... */}
             {(
               [
                 {
                   name: 'name',
-                  label: 'Name Of The Vendor',
-                  placeholder: 'Enter name',
+                  label: t('corporateEditor.profileDetail.nameLabel'),
+                  placeholder: t(
+                    'corporateEditor.profileDetail.namePlaceholder'
+                  ),
                   type: 'text',
                 },
                 {
                   name: 'email',
-                  label: 'Email',
-                  placeholder: 'Enter email',
+                  label: t('corporateEditor.profileDetail.emailLabel'),
+                  placeholder: t(
+                    'corporateEditor.profileDetail.emailPlaceholder'
+                  ),
                   type: 'text',
                 },
                 {
                   name: 'joinDate',
-                  label: 'Join Date',
+                  label: t('corporateEditor.profileDetail.joinDateLabel'),
                   placeholder: '',
                   type: 'date',
                 },
                 {
                   name: 'gender',
-                  label: 'Gender',
-                  placeholder: 'Enter here',
+                  label: t('corporateEditor.profileDetail.genderLabel'),
+                  placeholder: t(
+                    'corporateEditor.profileDetail.genderPlaceholder'
+                  ),
                   type: 'text',
                 },
                 {
                   name: 'address',
-                  label: 'Permanent Address',
-                  placeholder: 'Enter address',
+                  label: t('corporateEditor.profileDetail.addressLabel'),
+                  placeholder: t(
+                    'corporateEditor.profileDetail.addressPlaceholder'
+                  ),
                   type: 'text',
                 },
                 {
                   name: 'postalCode',
-                  label: 'Postal Code',
-                  placeholder: 'Enter here',
+                  label: t('corporateEditor.profileDetail.postalCodeLabel'),
+                  placeholder: t(
+                    'corporateEditor.profileDetail.postalCodePlaceholder'
+                  ),
                   type: 'text',
                 },
                 {
                   name: 'mobile',
-                  label: 'Mobile Number',
-                  placeholder: 'Enter number',
+                  label: t('corporateEditor.profileDetail.mobileNumberLabel'),
+                  placeholder: t(
+                    'corporateEditor.profileDetail.mobilePlaceholder'
+                  ),
                   type: 'text',
                 },
                 {
                   name: 'corporateId',
-                  label: 'Give A ID',
-                  placeholder: 'Enter ID',
+                  label: t('corporateEditor.profileDetail.giveIdLabel'),
+                  placeholder: t('corporateEditor.profileDetail.idPlaceholder'),
                   type: 'text',
                 },
                 {
                   name: 'dob',
-                  label: 'Date Of Birth',
+                  label: t('corporateEditor.profileDetail.dobLabel'),
                   placeholder: '',
                   type: 'date',
                 },
                 {
                   name: 'language',
-                  label: 'Preferred language',
-                  placeholder: 'Enter here',
+                  label: t('corporateEditor.profileDetail.languageLabel'),
+                  placeholder: t(
+                    'corporateEditor.profileDetail.languagePlaceholder'
+                  ),
                   type: 'text',
                 },
                 {
                   name: 'city',
-                  label: 'City',
-                  placeholder: 'Enter here',
+                  label: t('corporateEditor.profileDetail.cityLabel'),
+                  placeholder: t(
+                    'corporateEditor.profileDetail.cityPlaceholder'
+                  ),
                   type: 'text',
                 },
                 {
                   name: 'country',
-                  label: 'Country',
-                  placeholder: 'Enter here',
+                  label: t('corporateEditor.profileDetail.countryLabel'),
+                  placeholder: t(
+                    'corporateEditor.profileDetail.countryPlaceholder'
+                  ),
                   type: 'text',
                 },
               ] as const
@@ -321,34 +342,48 @@ export function CorporateEditor({ initialData }: CorporateEditorProps) {
             ))}
           </div>
           <div className="mt-8">
-            <h2 className="mb-4 font-semibold text-lg">Bank Detail</h2>
+            <h2 className="mb-4 font-semibold text-lg">
+              {t('corporateEditor.bankDetail.title')}
+            </h2>
             <div className="grid grid-cols-2 gap-5">
               {(
                 [
                   {
                     name: 'bankName',
-                    label: 'Bank Name',
-                    placeholder: 'Enter here',
+                    label: t('corporateEditor.bankDetail.bankNameLabel'),
+                    placeholder: t(
+                      'corporateEditor.bankDetail.bankNamePlaceholder'
+                    ),
                   },
                   {
                     name: 'accountHolder',
-                    label: 'Account Holder Name',
-                    placeholder: 'Enter name',
+                    label: t(
+                      'corporateEditor.bankDetail.accountHolderNameLabel'
+                    ),
+                    placeholder: t(
+                      'corporateEditor.bankDetail.accountHolderNamePlaceholder'
+                    ),
                   },
                   {
                     name: 'ifsc',
-                    label: 'IFSC Code',
-                    placeholder: 'Enter here',
+                    label: t('corporateEditor.bankDetail.ifscCodeLabel'),
+                    placeholder: t(
+                      'corporateEditor.bankDetail.ifscCodePlaceholder'
+                    ),
                   },
                   {
                     name: 'branch',
-                    label: 'Branch',
-                    placeholder: 'Enter here',
+                    label: t('corporateEditor.bankDetail.branchLabel'),
+                    placeholder: t(
+                      'corporateEditor.bankDetail.branchPlaceholder'
+                    ),
                   },
                   {
                     name: 'accountNumber',
-                    label: 'Account Number',
-                    placeholder: 'Enter number',
+                    label: t('corporateEditor.bankDetail.accountNumberLabel'),
+                    placeholder: t(
+                      'corporateEditor.bankDetail.accountNumberPlaceholder'
+                    ),
                   },
                 ] as const
               ).map(({ name, label, placeholder }) => (
@@ -371,7 +406,9 @@ export function CorporateEditor({ initialData }: CorporateEditorProps) {
           </div>
           {/* About Company Section */}
           <div className="mt-8">
-            <h2 className="mb-4 font-semibold text-lg">About Company</h2>
+            <h2 className="mb-4 font-semibold text-lg">
+              {t('corporateEditor.aboutCompany.title')}
+            </h2>
             <div className="grid grid-cols-2 gap-6">
               {aboutCompanyFields.map((column) => (
                 <div
@@ -394,11 +431,19 @@ export function CorporateEditor({ initialData }: CorporateEditorProps) {
                                 value={field.value || ''}
                               >
                                 <SelectTrigger className="w-full">
-                                  <SelectValue placeholder="Yes or NO" />
+                                  <SelectValue
+                                    placeholder={t(
+                                      'corporateEditor.aboutCompany.yesOrNoPlaceholder'
+                                    )}
+                                  />
                                 </SelectTrigger>
                                 <SelectContent>
-                                  <SelectItem value="Yes">Yes</SelectItem>
-                                  <SelectItem value="No">No</SelectItem>
+                                  <SelectItem value="Yes">
+                                    {t('corporateEditor.aboutCompany.yes')}
+                                  </SelectItem>
+                                  <SelectItem value="No">
+                                    {t('corporateEditor.aboutCompany.no')}
+                                  </SelectItem>
                                 </SelectContent>
                               </Select>
                             ) : (
@@ -420,7 +465,7 @@ export function CorporateEditor({ initialData }: CorporateEditorProps) {
           </div>
           <div className="mt-8 flex justify-center">
             <Button className="w-1/2 rounded-full bg-primary-gradient font-semibold text-white shadow">
-              Add
+              {t('corporateEditor.addButton')}
             </Button>
           </div>
         </div>
