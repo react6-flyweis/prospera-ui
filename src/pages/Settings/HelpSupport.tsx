@@ -1,4 +1,5 @@
 import { Edit2Icon, Trash2Icon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { ContactDialog } from '@/components/Settings/ContactDialog';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -40,18 +41,17 @@ const contacts = [
 ];
 
 export default function HelpSupport() {
+  const { t } = useTranslation();
   return (
-    <PageLayout title="Help & Support" withBack>
+    <PageLayout title={t('helpSupportPage.title')} withBack>
       <div className="mb-4 flex items-center justify-between">
-        <span className="text-sm">
-          Here is the information about the contacts.
-        </span>
+        <span className="text-sm">{t('helpSupportPage.description')}</span>
         <ContactDialog>
           <Button
             className="w-32 rounded bg-primary-gradient text-white"
             size="lg"
           >
-            Add
+            {t('helpSupportPage.addButton')}
           </Button>
         </ContactDialog>
       </div>
@@ -70,7 +70,7 @@ export default function HelpSupport() {
                 <span className="font-semibold text-sm">{contact.name}</span>
               </div>
               <Button
-                aria-label="Delete"
+                aria-label={t('helpSupportPage.deleteAriaLabel')}
                 className="rounded-md p-2 text-red-600 shadow-none"
                 size="icon"
                 variant="ghost"
@@ -82,12 +82,14 @@ export default function HelpSupport() {
               {/* Mobile number */}
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="font-semibold">Mobile number</div>
+                  <div className="font-semibold">
+                    {t('helpSupportPage.mobileNumber')}
+                  </div>
                   <div className="text-gray-400">{contact.mobile}</div>
                 </div>
                 <ContactDialog initialValues={contact}>
                   <Button
-                    aria-label="Edit"
+                    aria-label={t('helpSupportPage.editAriaLabel')}
                     className="rounded-md p-1 text-blue-600 shadow-none"
                     size="icon"
                     variant="ghost"
@@ -99,12 +101,14 @@ export default function HelpSupport() {
               {/* Email ID */}
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="font-semibold">Email ID</div>
+                  <div className="font-semibold">
+                    {t('helpSupportPage.emailId')}
+                  </div>
                   <div className="text-gray-400">{contact.email}</div>
                 </div>
                 <ContactDialog initialValues={contact}>
                   <Button
-                    aria-label="Edit"
+                    aria-label={t('helpSupportPage.editAriaLabel')}
                     className="rounded-md p-1 text-blue-600 shadow-none"
                     size="icon"
                     variant="ghost"
@@ -116,12 +120,14 @@ export default function HelpSupport() {
               {/* Region */}
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="font-semibold">Region</div>
+                  <div className="font-semibold">
+                    {t('helpSupportPage.region')}
+                  </div>
                   <div className="text-gray-400">{contact.region}</div>
                 </div>
                 <ContactDialog initialValues={contact}>
                   <Button
-                    aria-label="Edit"
+                    aria-label={t('helpSupportPage.editAriaLabel')}
                     className="rounded-md p-1 text-blue-600 shadow-none"
                     size="icon"
                     variant="ghost"

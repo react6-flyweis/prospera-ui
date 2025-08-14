@@ -1,4 +1,5 @@
 import { Edit2Icon, Trash2Icon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { TermsConditionDialog } from '@/components/Settings/TermsConditionDialog';
 import { Button } from '@/components/ui/button';
@@ -13,18 +14,17 @@ const terms = [
 ];
 
 export default function TermsCondition() {
+  const { t } = useTranslation();
   return (
-    <PageLayout title="Terms & Condition" withBack>
+    <PageLayout title={t('termsConditionPage.title')} withBack>
       <div className="mb-4 flex items-center justify-between">
-        <span className="text-sm">
-          Here is the information about the Terms & Condition
-        </span>
+        <span className="text-sm">{t('termsConditionPage.description')}</span>
         <TermsConditionDialog>
           <Button
             className="w-32 rounded bg-primary-gradient text-white"
             size="lg"
           >
-            Add
+            {t('termsConditionPage.addButton')}
           </Button>
         </TermsConditionDialog>
       </div>
@@ -33,11 +33,10 @@ export default function TermsCondition() {
         {terms.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-16 text-gray-400">
             <div className="mb-2 font-semibold text-lg">
-              No Terms & Conditions
+              {t('termsConditionPage.noTerms')}
             </div>
             <div className="text-sm">
-              There are no terms & conditions to display. Click "Add" to create
-              one.
+              {t('termsConditionPage.noTermsMessage')}
             </div>
           </div>
         ) : (
@@ -51,7 +50,7 @@ export default function TermsCondition() {
                 <div className="flex gap-3">
                   <TermsConditionDialog initialValues={term}>
                     <Button
-                      aria-label="Edit"
+                      aria-label={t('termsConditionPage.editAriaLabel')}
                       className="rounded-md p-2 text-blue-600 shadow-none"
                       size="icon"
                       variant="ghost"
@@ -60,7 +59,7 @@ export default function TermsCondition() {
                     </Button>
                   </TermsConditionDialog>
                   <Button
-                    aria-label="Delete"
+                    aria-label={t('termsConditionPage.deleteAriaLabel')}
                     className="rounded-md p-2 text-red-600 shadow-none"
                     size="icon"
                     variant="ghost"

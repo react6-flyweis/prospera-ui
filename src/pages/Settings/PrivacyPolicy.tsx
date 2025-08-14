@@ -1,4 +1,5 @@
 import { Edit2Icon, Trash2Icon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { PrivacyPolicyDialog } from '@/components/Settings/PrivacyPolicyDialog';
 import { Button } from '@/components/ui/button';
@@ -13,18 +14,17 @@ const policies = [
 ];
 
 export default function PrivacyPolicy() {
+  const { t } = useTranslation();
   return (
-    <PageLayout title="Privacy Policy" withBack>
+    <PageLayout title={t('privacyPolicyPage.title')} withBack>
       <div className="mb-4 flex items-center justify-between">
-        <span className="text-sm">
-          Here is the information about the Privacy Policy
-        </span>
+        <span className="text-sm">{t('privacyPolicyPage.description')}</span>
         <PrivacyPolicyDialog>
           <Button
             className="w-32 rounded bg-primary-gradient text-white"
             size="lg"
           >
-            Add
+            {t('privacyPolicyPage.addButton')}
           </Button>
         </PrivacyPolicyDialog>
       </div>
@@ -33,11 +33,10 @@ export default function PrivacyPolicy() {
         {policies.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-16 text-gray-400">
             <div className="mb-2 font-semibold text-lg">
-              No Privacy Policies
+              {t('privacyPolicyPage.noPolicies')}
             </div>
             <div className="text-sm">
-              There are no privacy policies to display. Click "Add" to create
-              one.
+              {t('privacyPolicyPage.noPoliciesMessage')}
             </div>
           </div>
         ) : (
@@ -51,7 +50,7 @@ export default function PrivacyPolicy() {
                 <div className="flex gap-3">
                   <PrivacyPolicyDialog initialValues={policy}>
                     <Button
-                      aria-label="Edit"
+                      aria-label={t('privacyPolicyPage.editAriaLabel')}
                       className="rounded-md p-2 text-blue-600 shadow-none"
                       size="icon"
                       variant="ghost"
@@ -60,7 +59,7 @@ export default function PrivacyPolicy() {
                     </Button>
                   </PrivacyPolicyDialog>
                   <Button
-                    aria-label="Delete"
+                    aria-label={t('privacyPolicyPage.deleteAriaLabel')}
                     className="rounded-md p-2 text-red-600 shadow-none"
                     size="icon"
                     variant="ghost"
