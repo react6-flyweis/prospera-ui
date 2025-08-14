@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { DataTable } from '@/components/DataTable';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -27,15 +28,19 @@ const USER_MOCK = {
 };
 
 export default function WalletDetails() {
+  const { t } = useTranslation();
   return (
-    <PageLayout title={`${USER_MOCK.name}'s wallet`} withBack>
+    <PageLayout
+      title={t('walletDetailsPage.title', { name: USER_MOCK.name })}
+      withBack
+    >
       <Card className=" flex items-center gap-6 rounded-2xl p-4 shadow-sm">
         <div className="grid flex-1 grid-cols-4 items-center gap-5">
           {/* Avatar */}
           <div className="flex items-center gap-3">
             <Avatar className="h-20 w-20">
               <AvatarImage
-                alt="User Avatar"
+                alt={t('walletDetailsPage.userAvatarAlt')}
                 className="h-20 w-20 object-cover"
                 src={USER_MOCK.avatar}
               />
@@ -45,44 +50,48 @@ export default function WalletDetails() {
               <div className="font-semibold text-lg">{USER_MOCK.name}</div>
               <div className="text-gray-500 text-sm">{USER_MOCK.phone}</div>
               <div className="text-gray-500 text-sm">
-                Country : {USER_MOCK.country}
+                {t('walletDetailsPage.country')} {USER_MOCK.country}
               </div>
             </div>
           </div>
           <div>
-            <div className="text-gray-500 text-sm">DOB : {USER_MOCK.dob}</div>
             <div className="text-gray-500 text-sm">
-              Email ID : {USER_MOCK.email}
+              {t('walletDetailsPage.dob')} {USER_MOCK.dob}
             </div>
             <div className="text-gray-500 text-sm">
-              User ID: {USER_MOCK.userId}
+              {t('walletDetailsPage.emailId')} {USER_MOCK.email}
+            </div>
+            <div className="text-gray-500 text-sm">
+              {t('walletDetailsPage.userId')} {USER_MOCK.userId}
             </div>
           </div>
           <div>
             <div className="text-gray-500 text-sm">
-              Bank Name: {USER_MOCK.bank.name}
+              {t('walletDetailsPage.bankName')} {USER_MOCK.bank.name}
             </div>
             <div className="text-gray-500 text-sm">
-              Account No: {USER_MOCK.bank.accountNo}
+              {t('walletDetailsPage.accountNo')} {USER_MOCK.bank.accountNo}
             </div>
             <div className="text-gray-500 text-sm">
-              Branch: {USER_MOCK.bank.branch}
+              {t('walletDetailsPage.branch')} {USER_MOCK.bank.branch}
             </div>
           </div>
           <div className="flex gap-3">
             <div className="">
               <div className="text-gray-500 text-sm">
-                IFSC Code: {USER_MOCK.bank.ifsc}
+                {t('walletDetailsPage.ifscCode')} {USER_MOCK.bank.ifsc}
               </div>
               <div className="text-gray-400 text-xs">
-                Joined : {USER_MOCK.joined}
+                {t('walletDetailsPage.joined')} {USER_MOCK.joined}
               </div>
             </div>
           </div>
         </div>
       </Card>
       <div className="my-4 space-y-2">
-        <h3 className="text-2xl">Current Wallet Balance</h3>
+        <h3 className="text-2xl">
+          {t('walletDetailsPage.currentWalletBalance')}
+        </h3>
         <p className="font-semibold text-3xl">
           {formatCurrency(USER_MOCK.walletBalance)}
         </p>

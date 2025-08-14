@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Input } from '@/components/ui/input';
@@ -25,32 +26,39 @@ const TXN_MOCK = {
 };
 
 export default function TransactionDetails() {
+  const { t } = useTranslation();
   return (
-    <PageLayout title="Transaction History" withBack>
-      <h2 className="mb-5 font-semibold text-2xl">{`Transaction ID: ${TXN_MOCK.transactionId}`}</h2>
+    <PageLayout title={t('transactionDetailsPage.title')} withBack>
+      <h2 className="mb-5 font-semibold text-2xl">{`${t(
+        'transactionDetailsPage.transactionId'
+      )}: ${TXN_MOCK.transactionId}`}</h2>
       <div className="grid grid-cols-2 gap-8">
         {/* Sender Section */}
         <div>
           <div className="mb-2 font-semibold text-lg">
-            Sender ID: {TXN_MOCK.sender.id}
+            {t('transactionDetailsPage.senderId')}: {TXN_MOCK.sender.id}
           </div>
           <div className="mb-4 flex items-center gap-4">
             <Avatar className="h-32 w-28 rounded">
               <AvatarImage
-                alt="Sender Avatar"
+                alt={t('transactionDetailsPage.senderAvatarAlt')}
                 className="h-32 w-28 rounded object-cover"
                 src={TXN_MOCK.sender.avatar}
               />
               <AvatarFallback>{TXN_MOCK.sender.name[0]}</AvatarFallback>
             </Avatar>
             <div>
-              <Label className="mb-1 block text-sm">Sender Name</Label>
+              <Label className="mb-1 block text-sm">
+                {t('transactionDetailsPage.senderName')}
+              </Label>
               <Input
                 className="mb-2 rounded-sm"
                 readOnly
                 value={TXN_MOCK.sender.name}
               />
-              <Label className="mb-1 block text-sm">Sender Mobile Number</Label>
+              <Label className="mb-1 block text-sm">
+                {t('transactionDetailsPage.senderMobileNumber')}
+              </Label>
               <Input
                 className="rounded-sm"
                 readOnly
@@ -62,26 +70,28 @@ export default function TransactionDetails() {
         {/* Recipient Section */}
         <div>
           <div className="mb-2 font-semibold text-lg">
-            Recipient ID: {TXN_MOCK.recipient.id}
+            {t('transactionDetailsPage.recipientId')}: {TXN_MOCK.recipient.id}
           </div>
           <div className="mb-4 flex items-center gap-4">
             <Avatar className="h-32 w-28 rounded">
               <AvatarImage
-                alt="Recipient Avatar"
+                alt={t('transactionDetailsPage.recipientAvatarAlt')}
                 className="h-32 w-28 rounded object-cover"
                 src={TXN_MOCK.recipient.avatar}
               />
               <AvatarFallback>{TXN_MOCK.recipient.name[0]}</AvatarFallback>
             </Avatar>
             <div>
-              <Label className="mb-1 block text-sm">Recipient Name</Label>
+              <Label className="mb-1 block text-sm">
+                {t('transactionDetailsPage.recipientName')}
+              </Label>
               <Input
                 className="mb-2 rounded-sm"
                 readOnly
                 value={TXN_MOCK.recipient.name}
               />
               <Label className="mb-1 block text-sm">
-                Recipient Mobile Number
+                {t('transactionDetailsPage.recipientMobileNumber')}
               </Label>
               <Input
                 className="rounded-sm"
@@ -95,15 +105,21 @@ export default function TransactionDetails() {
       {/* Transaction Info Row */}
       <div className="mt-6 grid grid-cols-4 gap-6">
         <div>
-          <Label className="mb-1 block text-sm">Date</Label>
+          <Label className="mb-1 block text-sm">
+            {t('transactionDetailsPage.date')}
+          </Label>
           <Input className="rounded-sm" readOnly value={TXN_MOCK.date} />
         </div>
         <div>
-          <Label className="mb-1 block text-sm">Mode Of Payment</Label>
+          <Label className="mb-1 block text-sm">
+            {t('transactionDetailsPage.modeOfPayment')}
+          </Label>
           <Input className="rounded-sm" readOnly value={TXN_MOCK.mode} />
         </div>
         <div>
-          <Label className="mb-1 block text-sm">Received Amount</Label>
+          <Label className="mb-1 block text-sm">
+            {t('transactionDetailsPage.receivedAmount')}
+          </Label>
           <Input
             className="rounded-sm"
             readOnly
@@ -111,7 +127,9 @@ export default function TransactionDetails() {
           />
         </div>
         <div>
-          <Label className="mb-1 block text-sm">Transaction Status</Label>
+          <Label className="mb-1 block text-sm">
+            {t('transactionDetailsPage.transactionStatus')}
+          </Label>
           <Input className="rounded-sm" readOnly value={TXN_MOCK.status} />
         </div>
       </div>

@@ -1,4 +1,5 @@
 import type { ColumnDef, Row } from '@tanstack/react-table';
+import type { TFunction } from 'i18next';
 import { EyeIcon } from 'lucide-react';
 import { Link } from 'react-router';
 import { UserCell } from '../UserCell';
@@ -24,9 +25,9 @@ export type Wallet = {
   };
 };
 
-export const walletColumns: ColumnDef<Wallet>[] = [
+export const getWalletColumns = (t: TFunction): ColumnDef<Wallet>[] => [
   {
-    header: 'Name',
+    header: t('walletColumns.name'),
     accessorKey: 'name',
     cell: (props: { row: Row<Wallet> }) => (
       <UserCell
@@ -36,24 +37,24 @@ export const walletColumns: ColumnDef<Wallet>[] = [
     ),
   },
   {
-    header: 'ID',
+    header: t('walletColumns.id'),
     accessorKey: 'user.id',
   },
   {
-    header: 'Email Address',
+    header: t('walletColumns.emailAddress'),
     accessorKey: 'user.email',
   },
   {
-    header: 'Mobile Number',
+    header: t('walletColumns.mobileNumber'),
     accessorKey: 'user.mobile',
   },
   {
-    header: 'Current Balance',
+    header: t('walletColumns.currentBalance'),
     accessorKey: 'wallet',
     cell: ({ row }) => <span>${row.original.balance}</span>,
   },
   {
-    header: 'See profile',
+    header: t('walletColumns.seeProfile'),
     id: 'action',
     cell: ({ row }) => (
       <Link to={`/wallets/${row.original.id}`}>
