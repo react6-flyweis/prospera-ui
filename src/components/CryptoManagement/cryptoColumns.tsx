@@ -1,4 +1,5 @@
 import type { ColumnDef } from '@tanstack/react-table';
+import type { TFunction } from 'i18next';
 import { EllipsisVerticalIcon, MenuIcon, TriangleIcon } from 'lucide-react';
 import { CryptoCell } from '@/components/CryptoTransaction/CryptoCell';
 import { Button } from '@/components/ui/button';
@@ -16,9 +17,9 @@ export type Crypto = {
   icon: string;
 };
 
-export const cryptoColumns: ColumnDef<Crypto>[] = [
+export const getCryptoColumns = (t: TFunction): ColumnDef<Crypto>[] => [
   {
-    header: 'Name',
+    header: t('cryptoColumns.name'),
     accessorKey: 'name',
     cell: ({ row }) => (
       <CryptoCell
@@ -29,11 +30,11 @@ export const cryptoColumns: ColumnDef<Crypto>[] = [
     ),
   },
   {
-    header: 'Price',
+    header: t('cryptoColumns.price'),
     accessorKey: 'price',
   },
   {
-    header: '24H',
+    header: t('cryptoColumns.24h'),
     accessorKey: 'change24h',
     cell: ({ getValue }) => {
       const value = getValue<string>();
@@ -55,7 +56,7 @@ export const cryptoColumns: ColumnDef<Crypto>[] = [
     },
   },
   {
-    header: '7D',
+    header: t('cryptoColumns.7d'),
     accessorKey: 'change7d',
     cell: ({ getValue }) => {
       const value = getValue<string>();
@@ -77,15 +78,15 @@ export const cryptoColumns: ColumnDef<Crypto>[] = [
     },
   },
   {
-    header: 'Market Cap',
+    header: t('cryptoColumns.marketCap'),
     accessorKey: 'marketCap',
   },
   {
-    header: 'Volume',
+    header: t('cryptoColumns.volume'),
     accessorKey: 'volume',
   },
   {
-    header: 'Last 7 Days',
+    header: t('cryptoColumns.last7Days'),
     accessorKey: 'last7Days',
     cell: ({ row }) => {
       const demoData = Array.from({ length: 7 * 5 }, () =>
@@ -100,7 +101,7 @@ export const cryptoColumns: ColumnDef<Crypto>[] = [
     },
   },
   {
-    header: 'Actions',
+    header: t('cryptoColumns.actions'),
     id: 'actions',
     cell: () => (
       <div className="flex gap-2">

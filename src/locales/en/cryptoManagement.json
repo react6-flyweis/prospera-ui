@@ -1,0 +1,24 @@
+{
+  "cryptoManagementPage": {
+    "title": "Crypto Management",
+    "buyButton": "Buy",
+    "sellButton": "Sell",
+    "transferButton": "Transfer",
+    "todaysPricesTitle": "Today's prices by marketcap"
+  },
+  "cryptoColumns": {
+    "name": "Name",
+    "price": "Price",
+    "24h": "24H",
+    "7d": "7D",
+    "marketCap": "Market Cap",
+    "volume": "Volume",
+    "last7Days": "Last 7 Days",
+    "actions": "Actions"
+  },
+  "cryptoRankingLists": {
+    "trending": "🔥 Trending",
+    "seeAll": "See all",
+    "recentlyAdded": "⏳ Recently added"
+  }
+}

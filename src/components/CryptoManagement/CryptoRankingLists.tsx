@@ -1,4 +1,5 @@
 import type React from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface RankItemProps {
   rank: number;
@@ -42,60 +43,67 @@ interface CryptoRankingListsProps {
   recentlyAdded: RecentlyAddedItem[];
 }
 
-export const CryptoRankingLists: React.FC<CryptoRankingListsProps> = ({
+export function CryptoRankingLists({
   trending,
   recentlyAdded,
-}) => (
-  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-    {/* Trending */}
-    <div className="rounded-xl bg-white p-4 shadow">
-      <div className="mb-2 flex items-center justify-between">
-        <span className="font-semibold text-lg">🔥 Trending</span>
-        <a className="text-primary text-xs" href="/">
-          See all
-        </a>
+}: CryptoRankingListsProps) {
+  const { t } = useTranslation();
+  return (
+    <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      {/* Trending */}
+      <div className="rounded-xl bg-white p-4 shadow">
+        <div className="mb-2 flex items-center justify-between">
+          <span className="font-semibold text-lg">
+            {t('cryptoRankingLists.trending')}
+          </span>
+          <a className="text-primary text-xs" href="/">
+            {t('cryptoRankingLists.seeAll')}
+          </a>
+        </div>
+        <div className="space-y-2">
+          {trending.map((item) => (
+            <RankItem
+              key={item.rank}
+              name={item.name}
+              rank={item.rank}
+              right={
+                <span
+                  className={
+                    item.changeType === 'up'
+                      ? 'font-semibold text-green-300'
+                      : 'font-semibold text-red-300'
+                  }
+                >
+                  {item.change}
+                </span>
+              }
+              symbol={item.symbol}
+            />
+          ))}
+        </div>
       </div>
-      <div className="space-y-2">
-        {trending.map((item) => (
-          <RankItem
-            key={item.rank}
-            name={item.name}
-            rank={item.rank}
-            right={
-              <span
-                className={
-                  item.changeType === 'up'
-                    ? 'font-semibold text-green-300'
-                    : 'font-semibold text-red-300'
-                }
-              >
-                {item.change}
-              </span>
-            }
-            symbol={item.symbol}
-          />
-        ))}
+      {/* Recently Added */}
+      <div className="rounded-xl bg-white p-4 shadow">
+        <div className="mb-2 flex items-center justify-between">
+          <span className="font-semibold text-lg">
+            {t('cryptoRankingLists.recentlyAdded')}
+          </span>
+          <a className="text-primary text-xs" href="/">
+            {t('cryptoRankingLists.seeAll')}
+          </a>
+        </div>
+        <div className="space-y-2">
+          {recentlyAdded.map((item) => (
+            <RankItem
+              key={item.rank}
+              name={item.name}
+              rank={item.rank}
+              right={<span className="font-semibold">{item.price}</span>}
+              symbol={item.symbol}
+            />
+          ))}
+        </div>
       </div>
     </div>
-    {/* Recently Added */}
-    <div className="rounded-xl bg-white p-4 shadow">
-      <div className="mb-2 flex items-center justify-between">
-        <span className="font-semibold text-lg">⏳ Recently added</span>
-        <a className="text-primary text-xs" href="/">
-          See all
-        </a>
-      </div>
-      <div className="space-y-2">
-        {recentlyAdded.map((item) => (
-          <RankItem
-            key={item.rank}
-            name={item.name}
-            rank={item.rank}
-            right={<span className="font-semibold">{item.price}</span>}
-            symbol={item.symbol}
-          />
-        ))}
-      </div>
-    </div>
-  </div>
-);
+  );
+}

@@ -1,5 +1,6 @@
+import { useTranslation } from 'react-i18next';
 import { CryptoRankingLists } from '@/components/CryptoManagement/CryptoRankingLists';
-import { cryptoColumns } from '@/components/CryptoManagement/cryptoColumns';
+import { getCryptoColumns } from '@/components/CryptoManagement/cryptoColumns';
 import { cryptoData } from '@/components/CryptoManagement/cryptoData';
 import { CryptoStackedBarChart } from '@/components/charts/CryptoStackedBarChart';
 import { DataTable } from '@/components/DataTable';
@@ -7,8 +8,10 @@ import { PageLayout } from '@/components/Layout/PageLayout';
 import { Button } from '@/components/ui/button';
 
 export default function CryptoManagement() {
+  const { t } = useTranslation();
+  const cryptoColumns = getCryptoColumns(t);
   return (
-    <PageLayout title="Crypto Management">
+    <PageLayout title={t('cryptoManagementPage.title')}>
       <div className="mb-8 flex items-center justify-between">
         <CryptoStackedBarChart />
         <div className="flex gap-4">
@@ -16,19 +19,19 @@ export default function CryptoManagement() {
             className="rounded-full px-6 hover:bg-primary hover:text-white"
             variant="outline"
           >
-            Buy
+            {t('cryptoManagementPage.buyButton')}
           </Button>
           <Button
             className="rounded-full px-6 hover:bg-primary hover:text-white"
             variant="outline"
           >
-            Sell
+            {t('cryptoManagementPage.sellButton')}
           </Button>
           <Button
             className="rounded-full px-6 hover:bg-primary hover:text-white"
             variant="outline"
           >
-            Transfer
+            {t('cryptoManagementPage.transferButton')}
           </Button>
         </div>
       </div>
@@ -39,7 +42,7 @@ export default function CryptoManagement() {
         showPagination={true}
       />
       <h2 className="mt-10 mb-2 font-semibold text-xl">
-        Today's prices by marketcap
+        {t('cryptoManagementPage.todaysPricesTitle')}
       </h2>
       <CryptoRankingLists
         recentlyAdded={[
