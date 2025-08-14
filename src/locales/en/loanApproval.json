@@ -1,0 +1,58 @@
+{
+  "loanApprovalPage": {
+    "title": "User's Loan Approval",
+    "searchPlaceholder": "Search Name or ID...",
+    "creditScoreButton": "Know About Credit Score"
+  },
+  "creditScoreDialog": {
+    "title": "Credit Score Bands",
+    "tableHeaders": {
+      "scoreBand": "Score Band",
+      "category": "Category",
+      "significance": "Significance"
+    },
+    "bands": [
+      {
+        "score": "Below 300",
+        "category": "Poor Credit Score",
+        "significance": "No credit history or limited credit usage, making it difficult to assess creditworthiness."
+      },
+      {
+        "score": "300–550",
+        "category": "Very Low Credit Score",
+        "significance": "Indicates potential credit issues. Requires improvement to access better loan terms."
+      },
+      {
+        "score": "551–620",
+        "category": "Low Credit Score",
+        "significance": "Needs improvement to reach a good credit standing."
+      },
+      {
+        "score": "621–700",
+        "category": "Fair Credit Score",
+        "significance": "Approaching a good credit score. Continued responsible credit management is recommended."
+      },
+      {
+        "score": "701–749",
+        "category": "Good Credit Score",
+        "significance": "Indicates responsible credit behavior and eligibility for favorable loan terms."
+      },
+      {
+        "score": "750–900",
+        "category": "Excellent Credit Score",
+        "significance": "Top tier credit score, making you eligible for the best loan offers and financial products."
+      }
+    ]
+  },
+  "loanApprovalColumns": {
+    "name": "Name",
+    "userId": "User ID",
+    "loanAmount": "Loan Amount",
+    "creditScore": "Credit Score",
+    "dateTime": "Date & Time",
+    "action": "Action",
+    "approve": "Approve",
+    "reject": "Reject",
+    "notEligibleToast": "Dear Employer and Lender, this user is not eligible for the loan amount of ${{amount}}."
+  }
+}

@@ -1,4 +1,5 @@
 import type { ColumnDef, Row } from '@tanstack/react-table';
+import type { TFunction } from 'i18next';
 import {
   BanIcon,
   CheckSquareIcon,
@@ -31,9 +32,11 @@ export type LoanRequest = {
   createdAt: string;
 };
 
-export const loanApprovalColumns: ColumnDef<LoanRequest>[] = [
+export const getLoanApprovalColumns = (
+  t: TFunction
+): ColumnDef<LoanRequest>[] => [
   {
-    header: 'Name',
+    header: t('loanApprovalColumns.name'),
     accessorKey: 'name',
     cell: (props: { row: Row<LoanRequest> }) => (
       <UserCell
@@ -48,11 +51,11 @@ export const loanApprovalColumns: ColumnDef<LoanRequest>[] = [
     },
   },
   {
-    header: 'User ID',
+    header: t('loanApprovalColumns.userId'),
     accessorKey: 'user.id',
   },
   {
-    header: 'Loan Amount',
+    header: t('loanApprovalColumns.loanAmount'),
     accessorKey: 'amount',
     cell: ({ row }) => (
       <div className="flex items-center gap-2">
@@ -69,11 +72,11 @@ export const loanApprovalColumns: ColumnDef<LoanRequest>[] = [
     ),
   },
   {
-    header: 'Credit Score',
+    header: t('loanApprovalColumns.creditScore'),
     accessorKey: 'creditScore',
   },
   {
-    header: 'Date & Time',
+    header: t('loanApprovalColumns.dateTime'),
     accessorKey: 'createdAt',
     cell: ({ row }) => (
       <p className="space-x-1 font-medium">
@@ -96,7 +99,7 @@ export const loanApprovalColumns: ColumnDef<LoanRequest>[] = [
     ),
   },
   {
-    header: 'Action',
+    header: t('loanApprovalColumns.action'),
     id: 'action',
     cell: ({ row }) => (
       <Menubar className="border-0 bg-transparent shadow-none">
@@ -110,27 +113,39 @@ export const loanApprovalColumns: ColumnDef<LoanRequest>[] = [
             <MenubarItem
               onClick={() => {
                 toast.success(
-                  `Dear Employer and Lender, this user is not eligible for the loan amount of $${row.original.amount}.`
+                  t('loanApprovalColumns.notEligibleToast', {
+                    amount: row.original.amount,
+                  })
                 );
               }}
             >
               <CheckSquareIcon
-                aria-label="Approve"
+                aria-label={t('loanApprovalColumns.approve')}
                 className="text-green-600"
                 size={22}
               />
-              <span className="text-green-600">Approve</span>
+              <span className="text-green-600">
+                {t('loanApprovalColumns.approve')}
+              </span>
             </MenubarItem>
             <MenubarItem
               onClick={() => {
                 toast.error(
-                  `Dear Employer and Lender, this user is not eligible for the loan amount of $${row.original.amount}.`
+                  t('loanApprovalColumns.notEligibleToast', {
+                    amount: row.original.amount,
+                  })
                 );
               }}
               variant="destructive"
             >
-              <BanIcon aria-label="Reject" className="text-red-600" size={22} />
-              <span className="text-red-600">Reject</span>
+              <BanIcon
+                aria-label={t('loanApprovalColumns.reject')}
+                className="text-red-600"
+                size={22}
+              />
+              <span className="text-red-600">
+                {t('loanApprovalColumns.reject')}
+              </span>
             </MenubarItem>
           </MenubarContent>
         </MenubarMenu>

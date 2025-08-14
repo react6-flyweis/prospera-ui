@@ -1,20 +1,24 @@
 import { InfoIcon, RefreshCwIcon, SearchIcon } from 'lucide-react';
 import type React from 'react';
 import { useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { DataTableRef } from '@/components/DataTable';
 import { DataTable } from '@/components/DataTable';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { CreditScoreDialog } from '@/components/LoanApproval/CreditScoreDialog';
-import { loanApprovalColumns } from '@/components/LoanApproval/loanApprovalColumns';
+import { getLoanApprovalColumns } from '@/components/LoanApproval/loanApprovalColumns';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { loanApprovalData } from '@/data/loanApprovalData';
 
 export default function LoanApproval() {
+  const { t } = useTranslation();
   const [search, setSearch] = useState('');
   const [open, setOpen] = useState(false);
   type LoanApprovalRow = (typeof loanApprovalData)[number];
   const tableRef = useRef<DataTableRef<LoanApprovalRow>>(null);
+
+  const loanApprovalColumns = getLoanApprovalColumns(t);
 
   const handleRefresh = () => {
     // TODO: implement refresh logic
@@ -33,7 +37,7 @@ export default function LoanApproval() {
   };
 
   return (
-    <PageLayout title="User's Loan Approval">
+    <PageLayout title={t('loanApprovalPage.title')}>
       <div className="mb-2 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Button onClick={handleRefresh} size="icon" variant="ghost">
@@ -46,7 +50,7 @@ export default function LoanApproval() {
             <Input
               className="h-10 w-64 rounded pl-8"
               onChange={handleSearchChange}
-              placeholder="Search Name or ID..."
+              placeholder={t('loanApprovalPage.searchPlaceholder')}
               value={search}
             />
           </div>
@@ -57,7 +61,7 @@ export default function LoanApproval() {
           variant="default"
         >
           <InfoIcon className="h-5 w-5" />
-          Know About Credit Score
+          {t('loanApprovalPage.creditScoreButton')}
         </Button>
       </div>
 
