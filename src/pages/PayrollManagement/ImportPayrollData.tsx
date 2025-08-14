@@ -1,11 +1,13 @@
 import type React from 'react';
 import { useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
 export default function ImportPayrollData() {
+  const { t } = useTranslation();
   const [file, setFile] = useState<File | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -27,17 +29,16 @@ export default function ImportPayrollData() {
   };
 
   return (
-    <PageLayout className="" title="Import payroll data" withBack>
+    <PageLayout className="" title={t('importPayrollDataPage.title')} withBack>
       <h2 className="mb-1 font-bold text-xl">
-        Upload your hourly employees’ time without reformatting
+        {t('importPayrollDataPage.uploadTitle')}
       </h2>
       <p className="mb-6 text-muted-foreground">
-        If you already use software to track your employees’ hours—like a
-        spreadsheet or time-tracking software—you can quickly upload a file
-        (CSV, Excel, and more) to run payroll faster with Smart Import. We’ll
-        automatically import their hours for you.
+        {t('importPayrollDataPage.uploadDescription')}
       </p>
-      <div className="mb-2 font-medium">Upload your spreadsheet</div>
+      <div className="mb-2 font-medium">
+        {t('importPayrollDataPage.uploadSpreadsheet')}
+      </div>
       <Card
         className={cn(
           'mb-8 flex min-h-[160px] cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-primary/40 border-dashed bg-background px-4 py-10 transition-colors',
@@ -57,7 +58,9 @@ export default function ImportPayrollData() {
         {file ? (
           <div className="text-center">
             <div className="mb-1 font-medium text-primary">{file.name}</div>
-            <div className="text-muted-foreground text-xs">File selected</div>
+            <div className="text-muted-foreground text-xs">
+              {t('importPayrollDataPage.fileSelected')}
+            </div>
           </div>
         ) : (
           <div className="flex flex-col items-center">
@@ -66,21 +69,23 @@ export default function ImportPayrollData() {
               type="button"
               variant="outline"
             >
-              + Upload
+              {t('importPayrollDataPage.uploadButton')}
             </Button>
-            <div className="text-muted-foreground text-sm">or drop file</div>
+            <div className="text-muted-foreground text-sm">
+              {t('importPayrollDataPage.orDropFile')}
+            </div>
           </div>
         )}
       </Card>
       <div className="mt-2 flex justify-center gap-4">
         <Button className="border-primary text-primary" variant="outline">
-          Go to Payroll
+          {t('importPayrollDataPage.goToPayrollButton')}
         </Button>
         <Button
           className="bg-primary-gradient text-white shadow-md"
           disabled={!file}
         >
-          Continue
+          {t('importPayrollDataPage.continueButton')}
         </Button>
       </div>
     </PageLayout>

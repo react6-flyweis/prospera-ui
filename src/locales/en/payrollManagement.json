@@ -1,0 +1,64 @@
+{
+  "payrollManagementPage": {
+    "title": "Payroll Management",
+    "hoursAndEarningsTitle": "Hours and additional earnings",
+    "hoursAndEarningsDescription": "Update your employee's hours, reimbursements, and additional earning below.",
+    "selectAll": "Select All",
+    "filterButton": "Filter",
+    "columnsButton": "Columns",
+    "importPayrollDataButton": "Import payroll data"
+  },
+  "importPayrollDataPage": {
+    "title": "Import payroll data",
+    "uploadTitle": "Upload your hourly employees’ time without reformatting",
+    "uploadDescription": "If you already use software to track your employees’ hours—like a spreadsheet or time-tracking software—you can quickly upload a file (CSV, Excel, and more) to run payroll faster with Smart Import. We’ll automatically import their hours for you.",
+    "uploadSpreadsheet": "Upload your spreadsheet",
+    "fileSelected": "File selected",
+    "uploadButton": "+ Upload",
+    "orDropFile": "or drop file",
+    "goToPayrollButton": "Go to Payroll",
+    "continueButton": "Continue"
+  },
+  "columnSelectorDialog": {
+    "title": "Columns",
+    "searchColumns": "Search columns",
+    "cancelButton": "Cancel",
+    "saveButton": "Save"
+  },
+  "payrollColumns": {
+    "employeeName": "Employee Name",
+    "baseSalaryLD": "Base Salary (LD)",
+    "otherIncomeLD": "Other Income (LD)",
+    "totalIncomeLD": "Total Income (LD)",
+    "deductionLD": "Deduction (LD)",
+    "socialSecurityLD": "Social Security (LD)",
+    "taxExemptIncomeLD": "Tax-exempt Income (LD)",
+    "taxableIncomeLD": "Taxable Income (LD)",
+    "incomeTaxLD": "Income Tax (LD)",
+    "conversionRate": "Conversion Rate (LD to USD)",
+    "currency": "Currency",
+    "netSalaryLD": "Net Salary (LD)",
+    "netSalaryUSD": "Net Salary (USD)"
+  },
+  "payrollFiltersDialog": {
+    "title": "Filters",
+    "employeeType": {
+      "title": "Employee type",
+      "dismissedDate": "Dismissed date"
+    },
+    "departments": {
+      "title": "Departments",
+      "designing": "Designing",
+      "marketing": "Marketing",
+      "sales": "Sales",
+      "noDepartment": "No department"
+    },
+    "skipped": {
+      "title": "Skipped",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "clearAllFiltersButton": "Clear all filters",
+    "applyButton": "Apply"
+  }
+}

@@ -1,4 +1,5 @@
 import type { ColumnDef, Row } from '@tanstack/react-table';
+import type { TFunction } from 'i18next';
 import { UserCell } from '../UserCell';
 import { Checkbox } from '../ui/checkbox';
 
@@ -24,9 +25,9 @@ export type Payroll = {
   netSalaryUSD: number;
 };
 
-export const payrollColumns: ColumnDef<Payroll>[] = [
+export const getPayrollColumns = (t: TFunction): ColumnDef<Payroll>[] => [
   {
-    header: 'Employee Name',
+    header: t('payrollColumns.employeeName'),
     accessorKey: 'employeeName',
     cell: ({ row }: { row: Row<Payroll> }) => (
       <div className="flex items-center gap-2">
@@ -42,51 +43,51 @@ export const payrollColumns: ColumnDef<Payroll>[] = [
     ),
   },
   {
-    header: 'Base Salary (LD)',
+    header: t('payrollColumns.baseSalaryLD'),
     accessorKey: 'baseSalaryLD',
   },
   {
-    header: 'Other Income (LD)',
+    header: t('payrollColumns.otherIncomeLD'),
     accessorKey: 'otherIncomeLD',
   },
   {
-    header: 'Total Income (LD)',
+    header: t('payrollColumns.totalIncomeLD'),
     accessorKey: 'totalIncomeLD',
   },
   {
-    header: 'Deduction (LD)',
+    header: t('payrollColumns.deductionLD'),
     accessorKey: 'deductionLD',
   },
   {
-    header: 'Social Security (LD)',
+    header: t('payrollColumns.socialSecurityLD'),
     accessorKey: 'socialSecurityLD',
   },
   {
-    header: 'Tax-exempt Income (LD)',
+    header: t('payrollColumns.taxExemptIncomeLD'),
     accessorKey: 'taxExemptIncomeLD',
   },
   {
-    header: 'Taxable Income (LD)',
+    header: t('payrollColumns.taxableIncomeLD'),
     accessorKey: 'taxableIncomeLD',
   },
   {
-    header: 'Income Tax (LD)',
+    header: t('payrollColumns.incomeTaxLD'),
     accessorKey: 'incomeTaxLD',
   },
   {
-    header: 'Conversion Rate (LD to USD)',
+    header: t('payrollColumns.conversionRate'),
     accessorKey: 'conversionRate',
   },
   {
-    header: 'Currency',
+    header: t('payrollColumns.currency'),
     accessorKey: 'currency',
   },
   {
-    header: 'Net Salary (LD)',
+    header: t('payrollColumns.netSalaryLD'),
     accessorKey: 'netSalaryLD',
   },
   {
-    header: 'Net Salary (USD)',
+    header: t('payrollColumns.netSalaryUSD'),
     accessorKey: 'netSalaryUSD',
   },
 ];

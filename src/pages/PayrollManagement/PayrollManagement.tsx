@@ -1,20 +1,23 @@
 import { ListFilterIcon, UploadIcon } from 'lucide-react';
 import { useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 import { DataTable, type DataTableRef } from '@/components/DataTable';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { ColumnSelectorDialog } from '@/components/PayrollManagement/ColumnSelectorDialog';
 import { PayrollFiltersDialog } from '@/components/PayrollManagement/PayrollFiltersDialog';
 import {
+  getPayrollColumns,
   type Payroll,
-  payrollColumns,
 } from '@/components/PayrollManagement/payrollColumns';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { payrollData } from '@/data/payrollData';
 
 export default function PayrollManagement() {
+  const { t } = useTranslation();
   const tableRef = useRef<DataTableRef<Payroll>>(null);
+  const payrollColumns = getPayrollColumns(t);
   const [open, setOpen] = useState(false); // filter dialog
   const [colDialogOpen, setColDialogOpen] = useState(false);
   // columns state: all columns are shown by default
@@ -29,14 +32,13 @@ export default function PayrollManagement() {
   }));
 
   return (
-    <PageLayout title="Payroll Management">
+    <PageLayout title={t('payrollManagementPage.title')}>
       <div className="mb-6">
         <h2 className="font-bold text-gray-800 text-xl">
-          Hours and additional earnings
+          {t('payrollManagementPage.hoursAndEarningsTitle')}
         </h2>
         <p className="text-foreground">
-          Update your employee's hours, reimbursements, and additional earning
-          below.
+          {t('payrollManagementPage.hoursAndEarningsDescription')}
         </p>
       </div>
       <div className="mb-4 flex items-center justify-between">
@@ -47,20 +49,20 @@ export default function PayrollManagement() {
               tableRef.current?.toggleAllPageRowsSelected(!!value)
             }
           />
-          Select All
+          {t('payrollManagementPage.selectAll')}
         </div>
         <div className="flex items-center gap-4">
           <Button onClick={() => setOpen(true)} variant="link">
             <ListFilterIcon className="size-4" />
-            <span>Filter</span>
+            <span>{t('payrollManagementPage.filterButton')}</span>
           </Button>
           <Button onClick={() => setColDialogOpen(true)} variant="link">
-            <span>Columns</span>
+            <span>{t('payrollManagementPage.columnsButton')}</span>
           </Button>
           <Button asChild variant="link">
             <Link to="/payrolls/import">
               <UploadIcon className="size-4" />
-              <span>Import payroll data</span>
+              <span>{t('payrollManagementPage.importPayrollDataButton')}</span>
             </Link>
           </Button>
         </div>

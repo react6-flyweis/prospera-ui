@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import {
@@ -23,6 +24,7 @@ export function ColumnSelectorDialog({
   selected,
   onChange,
 }: ColumnSelectorDialogProps) {
+  const { t } = useTranslation();
   const [search, setSearch] = useState('');
   const [localSelected, setLocalSelected] = useState<string[]>(selected);
 
@@ -50,14 +52,18 @@ export function ColumnSelectorDialog({
     <Dialog onOpenChange={setOpen} open={open}>
       <DialogContent className="max-w-md rounded-xl p-8">
         <DialogHeader>
-          <DialogTitle className="mb-2 font-bold text-3xl">Columns</DialogTitle>
+          <DialogTitle className="mb-2 font-bold text-3xl">
+            {t('columnSelectorDialog.title')}
+          </DialogTitle>
         </DialogHeader>
         <div className="mb-4">
-          <div className="mb-2 font-semibold">Search columns</div>
+          <div className="mb-2 font-semibold">
+            {t('columnSelectorDialog.searchColumns')}
+          </div>
           <input
             className="w-full rounded border px-3 py-2 outline-none"
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search columns"
+            placeholder={t('columnSelectorDialog.searchColumns')}
             value={search}
           />
         </div>
@@ -83,13 +89,13 @@ export function ColumnSelectorDialog({
             onClick={handleCancel}
             variant="outline"
           >
-            Cancel
+            {t('columnSelectorDialog.cancelButton')}
           </Button>
           <Button
             className="rounded-xl bg-primary-gradient px-8 py-2 text-lg text-white shadow"
             onClick={handleSave}
           >
-            Save
+            {t('columnSelectorDialog.saveButton')}
           </Button>
         </div>
       </DialogContent>
