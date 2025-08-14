@@ -1,0 +1,25 @@
+{
+  "chatPage": {
+    "chatWith": "Chat With",
+    "chatTypes": {
+      "users": "Users",
+      "employees": "Employees",
+      "corporates": "Corporates",
+      "agents": "Agents",
+      "lenders": "Lenders",
+      "vendors": "Vendors"
+    }
+  },
+  "chatInterface": {
+    "selectUserToChat": "Select a user to start chatting",
+    "chooseConversation": "Choose a conversation from the list to begin messaging",
+    "noMessagesYet": "No messages yet. Start the conversation!",
+    "userId": "User ID:",
+    "typeMessage": "Type a message",
+    "you": "You",
+    "users": "Users",
+    "searchById": "Search By Id.",
+    "chat": "chat",
+    "noMessagesYetFallback": "No messages yet."
+  }
+}

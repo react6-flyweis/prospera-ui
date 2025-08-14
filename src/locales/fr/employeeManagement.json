@@ -1,0 +1,99 @@
+{
+  "employeeManagementPage": {
+    "title": "Gestion des Employés",
+    "totalEmployees": "Total des Employés",
+    "addNewEmployeeButton": "Ajouter un Nouvel Employé",
+    "filter": {
+      "all": "Tous",
+      "verified": "Vérifiés",
+      "blocked": "Bloqués",
+      "unblocked": "Débloqués"
+    },
+    "newEmployeesSection": {
+      "title": "Nouveaux Employés",
+      "last30Days": "30 Derniers Jours",
+      "last7Days": "7 Derniers Jours",
+      "last15Days": "15 Derniers Jours",
+      "allTime": "Tout le Temps"
+    }
+  },
+  "addNewEmployeePage": {
+    "title": "Ajouter un Nouvel Employé"
+  },
+  "employeeDetailsPage": {
+    "country": "Pays",
+    "dob": "Date de Naissance :",
+    "emailId": "ID Courriel :",
+    "employeeId": "ID Employé :",
+    "bankName": "Nom de la Banque :",
+    "accountNo": "Numéro de Compte :",
+    "branch": "Succursale :",
+    "ifscCode": "Code IFSC :",
+    "joined": "Rejoint :",
+    "about": "À Propos",
+    "permanentAddress": "Adresse Permanente",
+    "presentAddress": "Adresse Actuelle",
+    "postalCode": "Code Postal",
+    "city": "Ville"
+  },
+  "editEmployeePage": {
+    "title": "Modifier l'Employé"
+  },
+  "employeeColumns": {
+    "employeeName": "Nom de l'Employé",
+    "employeeId": "ID Employé",
+    "emailAddress": "Adresse E-mail",
+    "mobileNumber": "Numéro de Téléphone",
+    "documents": "Documents",
+    "action": "Action",
+    "complete": "Complet",
+    "active": "Actif",
+    "inactive": "Inactif"
+  },
+  "employeeEditor": {
+    "validation": {
+      "nameRequired": "Le nom est requis"
+    },
+    "profileDetail": {
+      "title": "Détail de l'Employé",
+      "nameLabel": "Nom de l'Employé",
+      "emailLabel": "Courriel",
+      "joinDateLabel": "Date d'Adhésion",
+      "genderLabel": "Genre",
+      "permanentAddressLabel": "Adresse Permanente",
+      "presentAddressLabel": "Adresse Actuelle",
+      "postalCodeLabel": "Code Postal",
+      "mobileNumberLabel": "Numéro de Téléphone",
+      "employeeIdLabel": "ID Employé",
+      "dobLabel": "Date de Naissance",
+      "preferredLanguageLabel": "Langue Préférée",
+      "cityLabel": "Ville",
+      "countryLabel": "Pays",
+      "namePlaceholder": "Entrez le nom",
+      "emailPlaceholder": "Entrez l'e-mail",
+      "genderPlaceholder": "Entrez le genre",
+      "addressPlaceholder": "Entrez l'adresse",
+      "postalCodePlaceholder": "Entrez le code postal",
+      "mobilePlaceholder": "Entrez le numéro",
+      "idPlaceholder": "Entrez l'ID",
+      "languagePlaceholder": "Entrez la langue",
+      "cityPlaceholder": "Entrez la ville",
+      "countryPlaceholder": "Entrez le pays"
+    },
+    "bankDetail": {
+      "title": "Détail Bancaire",
+      "ifAny": "(si applicable)",
+      "bankNameLabel": "Nom de la Banque",
+      "branchLabel": "Succursale",
+      "accountHolderNameLabel": "Nom du Titulaire du Compte",
+      "accountNumberLabel": "Numéro de Compte",
+      "ifscCodeLabel": "Code IFSC",
+      "bankNamePlaceholder": "Entrez ici",
+      "branchPlaceholder": "Entrez ici",
+      "accountHolderNamePlaceholder": "Entrez le nom",
+      "accountNumberPlaceholder": "Entrez le numéro",
+      "ifscCodePlaceholder": "Entrez ici"
+    },
+    "addButton": "Ajouter"
+  }
+}

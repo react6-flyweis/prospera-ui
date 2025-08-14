@@ -1,0 +1,64 @@
+{
+  "payrollManagementPage": {
+    "title": "Gestion de la Paie",
+    "hoursAndEarningsTitle": "Heures et gains supplémentaires",
+    "hoursAndEarningsDescription": "Mettez à jour les heures, les remboursements et les gains supplémentaires de votre employé ci-dessous.",
+    "selectAll": "Tout Sélectionner",
+    "filterButton": "Filtrer",
+    "columnsButton": "Colonnes",
+    "importPayrollDataButton": "Importer les données de paie"
+  },
+  "importPayrollDataPage": {
+    "title": "Importer les données de paie",
+    "uploadTitle": "Téléchargez le temps de vos employés horaires sans reformatage",
+    "uploadDescription": "Si vous utilisez déjà un logiciel pour suivre les heures de vos employés, comme une feuille de calcul ou un logiciel de suivi du temps, vous pouvez rapidement télécharger un fichier (CSV, Excel, etc.) pour exécuter la paie plus rapidement avec Smart Import. Nous importerons automatiquement leurs heures pour vous.",
+    "uploadSpreadsheet": "Téléchargez votre feuille de calcul",
+    "fileSelected": "Fichier sélectionné",
+    "uploadButton": "+ Télécharger",
+    "orDropFile": "ou déposer le fichier",
+    "goToPayrollButton": "Aller à la Paie",
+    "continueButton": "Continuer"
+  },
+  "columnSelectorDialog": {
+    "title": "Colonnes",
+    "searchColumns": "Rechercher des colonnes",
+    "cancelButton": "Annuler",
+    "saveButton": "Enregistrer"
+  },
+  "payrollColumns": {
+    "employeeName": "Nom de l'Employé",
+    "baseSalaryLD": "Salaire de Base (LD)",
+    "otherIncomeLD": "Autres Revenus (LD)",
+    "totalIncomeLD": "Revenus Totaux (LD)",
+    "deductionLD": "Déduction (LD)",
+    "socialSecurityLD": "Sécurité Sociale (LD)",
+    "taxExemptIncomeLD": "Revenus Exonérés d'Impôts (LD)",
+    "taxableIncomeLD": "Revenus Imposables (LD)",
+    "incomeTaxLD": "Impôt sur le Revenu (LD)",
+    "conversionRate": "Taux de Conversion (LD en USD)",
+    "currency": "Devise",
+    "netSalaryLD": "Salaire Net (LD)",
+    "netSalaryUSD": "Salaire Net (USD)"
+  },
+  "payrollFiltersDialog": {
+    "title": "Filtres",
+    "employeeType": {
+      "title": "Type d'employé",
+      "dismissedDate": "Date de licenciement"
+    },
+    "departments": {
+      "title": "Départements",
+      "designing": "Conception",
+      "marketing": "Marketing",
+      "sales": "Ventes",
+      "noDepartment": "Pas de département"
+    },
+    "skipped": {
+      "title": "Ignoré",
+      "yes": "Oui",
+      "no": "Non"
+    },
+    "clearAllFiltersButton": "Effacer tous les filtres",
+    "applyButton": "Appliquer"
+  }
+}

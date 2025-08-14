@@ -1,0 +1,141 @@
+{
+  "corporateManagementPage": {
+    "title": "Corporate Management",
+    "totalCorporates": "Total Corporates",
+    "addNewCorporateButton": "Add A New Corporate",
+    "filter": {
+      "all": "All",
+      "verifiedCorporates": "Verified Corporates",
+      "blockedCorporates": "Blocked Corporates",
+      "unblockedCorporates": "Unblocked Corporates"
+    },
+    "newCorporatesSection": {
+      "title": "New Corporates",
+      "last30Days": "Last 30 Days",
+      "last7Days": "Last 7 Days",
+      "last15Days": "Last 15 Days",
+      "allTime": "All Time"
+    }
+  },
+  "addNewCorporatePage": {
+    "title": "Add a New Corporate"
+  },
+  "corporateDetailPage": {
+    "country": "Country :",
+    "dob": "DOB :",
+    "emailId": "Email ID :",
+    "corporateId": "Corporate ID:",
+    "bankName": "Bank Name:",
+    "accountNo": "Account No:",
+    "branch": "Branch:",
+    "ifscCode": "IFSC Code:",
+    "joined": "Joined :",
+    "aboutCompany": "About Company",
+    "companyFields": {
+      "employeesQuestion": "How many employees does he/she has, including himself/herself?",
+      "businessSettingQuestion": "How would you describe his/her business setting?",
+      "payrollRunQuestion": "Hoe dose his/her company currently run payroll?",
+      "newToPayroll": "We're new to running payroll",
+      "companyBankAccountQuestion": "Do he/she has a company bank account?",
+      "yes": "Yes",
+      "no": "No",
+      "teamMembersAfricaQuestion": "How many team members in the Africa is he/she planning to pay?",
+      "industryQuestion": "What industry is he/she in?",
+      "desiredFirstPaydayQuestion": "What's his desired first payday?",
+      "clockInOutQuestion": "Dose anyone in his/her company need to clock in and out or track the hours they work?",
+      "howRunPayrollQuestion": "How do he/she currently run payroll?",
+      "whoPlanningToPayQuestion": "Who is his/her company planning to pay?",
+      "employeeNonAfricaVendors": "Employee in the Africa, Non-Africa employee, Vendors",
+      "registeredEmployerIRSQuestion": "Is his/her company registered as an employer with the IRS?",
+      "hiredFirstTeamMemberQuestion": "Has he/she already hired your first team member?",
+      "africanRegionQuestion": "In which African region(s) does he/she and his/her employees work?",
+      "accountantBookkeeperQuestion": "Does he/she has an accountant or bookkeeper helping his/her business?",
+      "healthBenefitsQuestion": "Dose his/her company want to offer health benefits to your employees?",
+      "workersCompensationInsuranceQuestion": "Does his/her company has workers compensation insurance"
+    }
+  },
+  "editCorporatePage": {
+    "title": "Edit Corporate"
+  },
+  "corporateEditor": {
+    "validation": {
+      "nameRequired": "Name is required"
+    },
+    "profileDetail": {
+      "title": "Profile Detail",
+      "nameLabel": "Name Of The Corporate",
+      "emailLabel": "Email",
+      "joinDateLabel": "Join Date",
+      "genderLabel": "Gender",
+      "addressLabel": "Permanent Address",
+      "postalCodeLabel": "Postal Code",
+      "mobileNumberLabel": "Mobile Number",
+      "giveIdLabel": "Give A ID",
+      "dobLabel": "Date Of Birth",
+      "languageLabel": "Preferred language",
+      "cityLabel": "City",
+      "countryLabel": "Country",
+      "namePlaceholder": "Enter name",
+      "emailPlaceholder": "Enter email",
+      "genderPlaceholder": "Enter here",
+      "addressPlaceholder": "Enter address",
+      "postalCodePlaceholder": "Enter here",
+      "mobilePlaceholder": "Enter number",
+      "idPlaceholder": "Enter ID",
+      "languagePlaceholder": "Enter here",
+      "cityPlaceholder": "Enter here",
+      "countryPlaceholder": "Enter here"
+    },
+    "bankDetail": {
+      "title": "Bank Detail",
+      "bankNameLabel": "Bank Name",
+      "accountHolderNameLabel": "Account Holder Name",
+      "ifscCodeLabel": "IFSC Code",
+      "branchLabel": "Branch",
+      "accountNumberLabel": "Account Number",
+      "bankNamePlaceholder": "Enter here",
+      "accountHolderNamePlaceholder": "Enter name",
+      "ifscCodePlaceholder": "Enter here",
+      "branchPlaceholder": "Enter here",
+      "accountNumberPlaceholder": "Enter number"
+    },
+    "aboutCompany": {
+      "title": "About Company",
+      "employeesCountLabel": "How many employees does he/she has, including himself/herself?",
+      "businessSettingLabel": "How would you describe his/her business setting?",
+      "payrollDescriptionLabel": "Hoe dose his/her company currently run payroll?",
+      "hasCompanyBankAccountLabel": "Do he/she has a company bank account?",
+      "africaTeamMembersLabel": "How many team members in the Africa is he/she planning to pay?",
+      "industryLabel": "What industry is he/she in?",
+      "desiredFirstPaydayLabel": "What's his desired first payday?",
+      "needClockInOutLabel": "Dose anyone in his/her company need to clock in and out or track the hours they work?",
+      "currentPayrollMethodLabel": "How do he/she currently run payroll?",
+      "companyPayingLabel": "Who is his/her company planning to pay?",
+      "registeredWithIRSLabel": "Is his/her company registered as an employer with the IRS?",
+      "hiredFirstTeamMemberLabel": "Has he/she already hired your first team member?",
+      "africanRegionsLabel": "In which African region(s) does he/she and his/her employees work?",
+      "hasAccountantLabel": "Does he/she has an accountant or bookkeeper helping his/her business?",
+      "wantHealthBenefitsLabel": "Dose his/her company want to offer health benefits to your employees?",
+      "hasWorkersCompInsuranceLabel": "Does his/her company has workers compensation insurance",
+      "placeholder": "Enter here",
+      "numberPlaceholder": "Enter number",
+      "datePlaceholder": "__/__/____",
+      "yesOrNoPlaceholder": "Yes or NO",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "addButton": "Add"
+  },
+  "corporateColumns": {
+    "deleteProfile": "Delete This Profile",
+    "corporateName": "Corporate Name",
+    "corporateId": "Corporate ID",
+    "emailAddress": "Email Address",
+    "mobileNumber": "Mobile Number",
+    "documents": "Documents",
+    "action": "Action",
+    "complete": "Complete",
+    "active": "Active",
+    "inactive": "Inactive"
+  }
+}

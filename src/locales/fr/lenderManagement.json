@@ -1,0 +1,86 @@
+{
+  "lenderManagementPage": {
+    "title": "Gestion des Prêteurs",
+    "totalLenders": "Total des Prêteurs",
+    "addNewLenderButton": "Ajouter un Nouveau Prêteur",
+    "filter": {
+      "all": "Tous",
+      "verifiedLenders": "Prêteurs Vérifiés",
+      "blockedLenders": "Prêteurs Bloqués",
+      "unblockedLenders": "Prêteurs Débloqués"
+    },
+    "newLendersSection": {
+      "title": "Nouveaux Prêteurs",
+      "last30Days": "30 Derniers Jours",
+      "last7Days": "7 Derniers Jours",
+      "last15Days": "15 Derniers Jours",
+      "allTime": "Tout le Temps"
+    }
+  },
+  "addNewLenderPage": {
+    "title": "Ajouter un Nouveau Prêteur"
+  },
+  "lenderDetailsPage": {
+    "country": "Pays :",
+    "dob": "Date de Naissance :",
+    "emailId": "ID Courriel :",
+    "lenderId": "ID Prêteur :",
+    "bankName": "Nom de la Banque :",
+    "accountNo": "Numéro de Compte :",
+    "branch": "Succursale :",
+    "ifscCode": "Code IFSC :",
+    "joined": "Rejoint :",
+    "about": "À Propos",
+    "permanentAddress": "Adresse Permanente",
+    "presentAddress": "Adresse Actuelle",
+    "postalCode": "Code Postal",
+    "city": "Ville"
+  },
+  "editLenderPage": {
+    "title": "Modifier le Prêteur"
+  },
+  "lenderEditor": {
+    "validation": {
+      "nameRequired": "Le nom est requis"
+    },
+    "profileDetail": {
+      "title": "Détail du Prêteur",
+      "nameLabel": "Nom du Prêteur",
+      "emailLabel": "Courriel",
+      "joinDateLabel": "Date d'Adhésion",
+      "genderLabel": "Genre",
+      "permanentAddressLabel": "Adresse Permanente",
+      "presentAddressLabel": "Adresse Actuelle",
+      "postalCodeLabel": "Code Postal",
+      "mobileNumberLabel": "Numéro de Téléphone",
+      "giveIdLabel": "Donner un ID",
+      "dobLabel": "Date de Naissance",
+      "preferredLanguageLabel": "Langue Préférée",
+      "cityLabel": "Ville",
+      "countryLabel": "Pays",
+      "namePlaceholder": "Entrez le nom",
+      "emailPlaceholder": "Entrez l'e-mail",
+      "genderPlaceholder": "Entrez le genre",
+      "addressPlaceholder": "Entrez l'adresse",
+      "postalCodePlaceholder": "Entrez le code postal",
+      "mobilePlaceholder": "Entrez le numéro",
+      "idPlaceholder": "Entrez l'ID",
+      "languagePlaceholder": "Entrez la langue",
+      "cityPlaceholder": "Entrez la ville",
+      "countryPlaceholder": "Entrez le pays"
+    },
+    "addButton": "Ajouter"
+  },
+  "lendersColumns": {
+    "deleteProfile": "Supprimer ce Profil",
+    "lenderName": "Nom du Prêteur",
+    "lenderId": "ID Prêteur",
+    "emailAddress": "Adresse E-mail",
+    "mobileNumber": "Numéro de Téléphone",
+    "documents": "Documents",
+    "action": "Action",
+    "complete": "Complet",
+    "active": "Actif",
+    "inactive": "Inactif"
+  }
+}

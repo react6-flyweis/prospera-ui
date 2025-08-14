@@ -1,0 +1,114 @@
+{
+  "agentManagementPage": {
+    "title": "Gestion des Agents",
+    "totalAgents": "Total des Agents",
+    "addNewAgentButton": "Ajouter un Nouvel Agent",
+    "filter": {
+      "all": "Tous",
+      "verifiedAgents": "Agents Vérifiés",
+      "blockedAgents": "Agents Bloqués",
+      "unblockedAgents": "Agents Débloqués"
+    },
+    "newAgentsSection": {
+      "title": "New Agents",
+      "last30Days": "Last 30 Days",
+      "last7Days": "Last 7 Days",
+      "last15Days": "Last 15 Days",
+      "allTime": "All Time"
+    }
+  },
+  "addNewAgentPage": {
+    "title": "Add a New Agent"
+  },
+  "agentDetailsPage": {
+    "country": "Country :",
+    "dob": "DOB :",
+    "emailId": "Email ID :",
+    "agentId": "Agent ID:",
+    "bankName": "Bank Name:",
+    "accountNo": "Account No:",
+    "branch": "Branch:",
+    "ifscCode": "IFSC Code:",
+    "joined": "Joined :"
+  },
+  "editAgentPage": {
+    "title": "Edit Agent"
+  },
+  "agentsColumns": {
+    "deleteProfile": "Delete This Profile",
+    "agentName": "Agent Name",
+    "agentId": "Agent ID",
+    "emailAddress": "Email Address",
+    "mobileNumber": "Mobile Number",
+    "documents": "Documents",
+    "action": "Action",
+    "complete": "Complete",
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "agentEditor": {
+    "validation": {
+      "nameRequired": "Name is required"
+    },
+    "profileDetail": {
+      "title": "Profile Detail",
+      "nameLabel": "Name Of The Agent",
+      "emailLabel": "Email",
+      "joinDateLabel": "Join Date",
+      "genderLabel": "Gender",
+      "addressLabel": "Permanent Address",
+      "postalCodeLabel": "Postal Code",
+      "mobileNumberLabel": "Mobile Number",
+      "giveIdLabel": "Give A ID",
+      "dobLabel": "Date Of Birth",
+      "languageLabel": "Preferred language",
+      "cityLabel": "City",
+      "countryLabel": "Country",
+      "namePlaceholder": "Enter name",
+      "emailPlaceholder": "Enter email",
+      "genderPlaceholder": "Enter here",
+      "addressPlaceholder": "Enter address",
+      "postalCodePlaceholder": "Enter here",
+      "mobilePlaceholder": "Enter number",
+      "idPlaceholder": "Enter ID",
+      "languagePlaceholder": "Enter here",
+      "cityPlaceholder": "Enter here",
+      "countryPlaceholder": "Enter here"
+    },
+    "bankDetail": {
+      "title": "Bank Detail",
+      "bankNameLabel": "Bank Name",
+      "accountHolderNameLabel": "Account Holder Name",
+      "ifscCodeLabel": "IFSC Code",
+      "branchLabel": "Branch",
+      "accountNumberLabel": "Account Number",
+      "bankNamePlaceholder": "Enter here",
+      "accountHolderNamePlaceholder": "Enter name",
+      "ifscCodePlaceholder": "Enter here",
+      "branchPlaceholder": "Enter here",
+      "accountNumberPlaceholder": "Enter number"
+    },
+    "uploadDocuments": {
+      "title": "Télécharger les Documents",
+      "documentList": {
+        "businessLicense": "Licence Commerciale",
+        "ownerOperatorId": "ID Propriétaire / Opérateur",
+        "financialStatements": "États Financiers",
+        "amlTrainingPeriods": "Périodes de Formation AML",
+        "sampleKycRecords": "Exemples de Dossiers KYC",
+        "dataProcessingAgreements": "Accords de Traitement des Données",
+        "complianceCertifications": "Certifications de Conformité",
+        "businessReferences": "Références Commerciales",
+        "certificateOfIncorporation": "Certificat de Constitution",
+        "proofOfAddress": "Preuve d'Adresse",
+        "amlPolicy": "Politique AML",
+        "kycPolicy": "Politique KYC",
+        "dataProtectionPolicy": "Politique de Protection des Données",
+        "auditReports": "Rapports d'Audit",
+        "liabilityInsurance": "Assurance Responsabilité Civile"
+      },
+      "uploadButton": "télécharger"
+    },
+    "addButton": "Ajouter"
+  }
+}

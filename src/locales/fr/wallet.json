@@ -1,0 +1,14 @@
+{
+  "walletColumns": {
+    "name": "Nom",
+    "id": "ID",
+    "emailAddress": "Adresse E-mail",
+    "mobileNumber": "Numéro de Téléphone",
+    "currentBalance": "Solde Actuel",
+    "seeProfile": "Voir le profil"
+  },
+  "walletManagement": {
+    "pageTitle": "Gestion des Portefeuilles",
+    "walletSuffix": " Portefeuille"
+  }
+}

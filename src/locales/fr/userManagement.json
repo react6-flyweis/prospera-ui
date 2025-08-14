@@ -1,0 +1,147 @@
+{
+  "userManagementPage": {
+    "title": "Gestion des Utilisateurs",
+    "totalUsers": "Total des Utilisateurs",
+    "addNewUserButton": "Ajouter un Nouvel Utilisateur",
+    "filter": {
+      "all": "Tous",
+      "verified": "Vérifiés",
+      "blocked": "Bloqués",
+      "unblocked": "Débloqués"
+    },
+    "newUsersSection": {
+      "title": "Nouveaux Utilisateurs",
+      "last30Days": "30 Derniers Jours",
+      "last7Days": "7 Derniers Jours",
+      "last15Days": "15 Derniers Jours",
+      "allTime": "Tout le Temps"
+    }
+  },
+  "addNewUserPage": {
+    "title": "Ajouter un Nouvel Utilisateur"
+  },
+  "editUserPage": {
+    "title": "Modifier l'Utilisateur"
+  },
+  "userDetailsPage": {
+    "dob": "Date de Naissance :",
+    "emailId": "ID Courriel :",
+    "userId": "ID Utilisateur :",
+    "bankName": "Nom de la Banque :",
+    "accountNo": "Numéro de Compte :",
+    "branch": "Succursale :",
+    "ifscCode": "Code IFSC :",
+    "joined": "Rejoint :",
+    "about": "À Propos",
+    "permanentAddress": "Adresse Permanente",
+    "presentAddress": "Adresse Actuelle",
+    "postalCode": "Code Postal",
+    "city": "Ville",
+    "country": "Pays"
+  },
+  "changePasswordDialog": {
+    "validation": {
+      "currentPasswordRequired": "Le mot de passe actuel est requis",
+      "newPasswordMinLength": "Le nouveau mot de passe doit contenir au moins 6 caractères",
+      "passwordsDontMatch": "Les mots de passe ne correspondent pas"
+    },
+    "title": "Changer le Mot de Passe",
+    "currentPasswordLabel": "Mot de Passe Actuel",
+    "newPasswordLabel": "Nouveau Mot de Passe",
+    "reEnterPasswordLabel": "Ressaisir le Mot de Passe",
+    "changeButton": "Changer",
+    "cancelButton": "Annuler"
+  },
+  "userEditor": {
+    "validation": {
+      "nameRequired": "Le nom est requis"
+    },
+    "profileDetail": {
+      "title": "Détail de l'Utilisateur",
+      "nameLabel": "Nom de l'Utilisateur",
+      "emailLabel": "Courriel",
+      "joinDateLabel": "Date d'Adhésion",
+      "genderLabel": "Genre",
+      "permanentAddressLabel": "Adresse Permanente",
+      "presentAddressLabel": "Adresse Actuelle",
+      "postalCodeLabel": "Code Postal",
+      "mobileNumberLabel": "Numéro de Téléphone",
+      "giveIdLabel": "Donner un ID",
+      "dobLabel": "Date de Naissance",
+      "preferredLanguageLabel": "Langue Préférée",
+      "cityLabel": "Ville",
+      "countryLabel": "Pays",
+      "namePlaceholder": "Entrez le nom",
+      "emailPlaceholder": "Entrez l'e-mail",
+      "genderPlaceholder": "Entrez le genre",
+      "addressPlaceholder": "Entrez l'adresse",
+      "postalCodePlaceholder": "Entrez le code postal",
+      "mobilePlaceholder": "Entrez le numéro",
+      "idPlaceholder": "Entrez l'ID",
+      "languagePlaceholder": "Entrez la langue",
+      "cityPlaceholder": "Entrez la ville",
+      "countryPlaceholder": "Entrez le pays"
+    },
+    "bankDetail": {
+      "title": "Détail Bancaire",
+      "ifAny": "(si applicable)",
+      "bankNameLabel": "Nom de la Banque",
+      "branchLabel": "Succursale",
+      "accountHolderNameLabel": "Nom du Titulaire du Compte",
+      "accountNumberLabel": "Numéro de Compte",
+      "ifscCodeLabel": "Code IFSC",
+      "bankNamePlaceholder": "Entrez ici",
+      "branchPlaceholder": "Entrez ici",
+      "accountHolderNamePlaceholder": "Entrez le nom",
+      "accountNumberPlaceholder": "Entrez le numéro",
+      "ifscCodePlaceholder": "Entrez ici"
+    },
+    "addButton": "Ajouter"
+  },
+  "usersColumns": {
+    "userName": "Nom d'Utilisateur",
+    "userId": "ID Utilisateur",
+    "emailAddress": "Adresse E-mail",
+    "mobileNumber": "Numéro de Téléphone",
+    "documents": "Documents",
+    "action": "Action",
+    "complete": "Complet",
+    "active": "Actif",
+    "inactive": "Inactif"
+  },
+  "profileDetailPage": {
+    "validation": {
+      "nameRequired": "Le nom est requis",
+      "passwordRequired": "Le mot de passe est requis"
+    },
+    "title": "Profil",
+    "profileDetailTitle": "Détail du Profil",
+    "nameLabel": "Nom",
+    "mobileNumberLabel": "Numéro de Téléphone",
+    "emailLabel": "Courriel",
+    "giveIdLabel": "Donner un ID",
+    "genderLabel": "Genre",
+    "dobLabel": "Date de Naissance",
+    "presentAddressLabel": "Adresse Actuelle",
+    "preferredLanguageLabel": "Langue Préférée",
+    "permanentAddressLabel": "Adresse Permanente",
+    "postalCodeLabel": "Code Postal",
+    "countryLabel": "Pays",
+    "cityLabel": "Ville",
+    "passwordLabel": "Mot de Passe",
+    "namePlaceholder": "Adson Kersgaard",
+    "mobilePlaceholder": "+1 78945 62130",
+    "emailPlaceholder": "exemple@gmail.com",
+    "idPlaceholder": "AD7778471",
+    "genderPlaceholder": "Femme",
+    "dobPlaceholder": "07/07/1987",
+    "addressPlaceholder": "San Jose, Californie, États-Unis",
+    "languagePlaceholder": "Anglais",
+    "postalCodePlaceholder": "700012",
+    "countryPlaceholder": "États-Unis",
+    "cityPlaceholder": "San Jose",
+    "passwordInputPlaceholder": "************",
+    "editPasswordAriaLabel": "Modifier le Mot de Passe",
+    "saveButton": "Enregistrer"
+  }
+}

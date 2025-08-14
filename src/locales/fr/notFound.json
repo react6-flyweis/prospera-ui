@@ -1,0 +1,7 @@
+{
+  "notFoundPage": {
+    "title": "404 - Page Non Trouvée",
+    "description": "La page que vous recherchez n'existe pas.",
+    "goHomeButton": "Aller à l'Accueil"
+  }
+}

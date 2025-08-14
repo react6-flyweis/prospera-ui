@@ -1,0 +1,58 @@
+{
+  "loanApprovalPage": {
+    "title": "Approbation de Prêt de l'Utilisateur",
+    "searchPlaceholder": "Rechercher Nom ou ID...",
+    "creditScoreButton": "Connaître le Score de Crédit"
+  },
+  "creditScoreDialog": {
+    "title": "Bandes de Score de Crédit",
+    "tableHeaders": {
+      "scoreBand": "Bande de Score",
+      "category": "Catégorie",
+      "significance": "Signification"
+    },
+    "bands": [
+      {
+        "score": "Moins de 300",
+        "category": "Mauvais Score de Crédit",
+        "significance": "Pas d'historique de crédit ou utilisation limitée du crédit, rendant difficile l'évaluation de la solvabilité."
+      },
+      {
+        "score": "300–550",
+        "category": "Très Faible Score de Crédit",
+        "significance": "Indique des problèmes de crédit potentiels. Nécessite une amélioration pour accéder à de meilleures conditions de prêt."
+      },
+      {
+        "score": "551–620",
+        "category": "Faible Score de Crédit",
+        "significance": "Nécessite une amélioration pour atteindre une bonne situation de crédit."
+      },
+      {
+        "score": "621–700",
+        "category": "Score de Crédit Passable",
+        "significance": "Approche d'un bon score de crédit. Une gestion de crédit responsable continue est recommandée."
+      },
+      {
+        "score": "701–749",
+        "category": "Bon Score de Crédit",
+        "significance": "Indique un comportement de crédit responsable et l'éligibilité à des conditions de prêt favorables."
+      },
+      {
+        "score": "750–900",
+        "category": "Excellent Score de Crédit",
+        "significance": "Score de crédit de premier ordre, vous rendant éligible aux meilleures offres de prêt et produits financiers."
+      }
+    ]
+  },
+  "loanApprovalColumns": {
+    "name": "Nom",
+    "userId": "ID Utilisateur",
+    "loanAmount": "Montant du Prêt",
+    "creditScore": "Score de Crédit",
+    "dateTime": "Date et Heure",
+    "action": "Action",
+    "approve": "Approuver",
+    "reject": "Rejeter",
+    "notEligibleToast": "Cher Employeur et Prêteur, cet utilisateur n'est pas éligible pour le montant du prêt de ${{amount}}."
+  }
+}

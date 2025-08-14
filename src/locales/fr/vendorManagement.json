@@ -1,0 +1,38 @@
+{
+  "vendorManagementPage": {
+    "title": "Gestion des Fournisseurs",
+    "totalVendors": "Total des Fournisseurs",
+    "addNewVendorButton": "Ajouter un Nouveau Fournisseur",
+    "filter": {
+      "all": "Tous",
+      "verifiedVendors": "Fournisseurs Vérifiés",
+      "blockedVendors": "Fournisseurs Bloqués",
+      "unblockedVendors": "Fournisseurs Débloqués"
+    },
+    "newVendorsSection": {
+      "title": "Nouveaux Fournisseurs",
+      "last30Days": "30 Derniers Jours",
+      "last7Days": "7 Derniers Jours",
+      "last15Days": "15 Derniers Jours",
+      "allTime": "Tout le Temps"
+    }
+  },
+  "addNewVendorPage": {
+    "title": "Ajouter un Nouveau Fournisseur"
+  },
+  "editVendorPage": {
+    "title": "Modifier le Fournisseur"
+  },
+  "vendorColumns": {
+    "deleteProfile": "Supprimer ce Profil",
+    "vendorName": "Nom du Fournisseur",
+    "vendorId": "ID Fournisseur",
+    "emailAddress": "Adresse E-mail",
+    "mobileNumber": "Numéro de Téléphone",
+    "documents": "Documents",
+    "action": "Action",
+    "complete": "Complet",
+    "active": "Actif",
+    "inactive": "Inactif"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "commissionManagementPage": {
+    "title": "Gestion des Commissions",
+    "deleteAllButton": "Tout Supprimer"
+  },
+  "commissionColumns": {
+    "chargeNo": "Numéro de Frais",
+    "chargeName": "Nom des Frais",
+    "percentage": "Pourcentage",
+    "date": "Date",
+    "delete": "Supprimer"
+  },
+  "commissionForm": {
+    "validation": {
+      "nameRequired": "Le nom est requis",
+      "fromAmountRequired": "Le montant de départ est requis",
+      "toAmountRequired": "Le montant final est requis"
+    },
+    "types": {
+      "user": "Utilisateur",
+      "employee": "Employé",
+      "corporate": "Entreprise",
+      "agent": "Agent",
+      "lender": "Prêteur",
+      "vendor": "Fournisseur"
+    },
+    "giveNameLabel": "Donner un Nom",
+    "fromAmountLabel": "Montant de Départ (En USD/LRD)",
+    "toAmountLabel": "Montant Final (En USD/LRD)",
+    "percentageLabel": "Pourcentage",
+    "percentageDescription": "Lorem Ipsum est simplement un texte factice",
+    "placeholder": "Entrez ici",
+    "createButton": "Créer",
+    "decreasePercentage": "Diminuer le pourcentage",
+    "increasePercentage": "Augmenter le pourcentage"
+  }
+}
