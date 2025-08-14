@@ -1,0 +1,23 @@
+{
+  "sidebar": {
+    "dashboard": "Tableau de bord",
+    "agentManagement": "Gestion des agents",
+    "vendorManagement": "Gestion des fournisseurs",
+    "corporateManagement": "Gestion des entreprises",
+    "lenderManagement": "Gestion des prêteurs",
+    "userManagement": "Gestion des utilisateurs",
+    "employeeManagement": "Gestion des employés",
+    "walletManagement": "Gestion du portefeuille",
+    "payrollManagement": "Gestion de la paie",
+    "userLoanApproval": "Approbation de prêt utilisateur",
+    "kycVerification": "Vérification KYC",
+    "commissionManagement": "Gestion des commissions",
+    "cryptoManagement": "Gestion des cryptomonnaies",
+    "cryptoTransaction": "Transaction crypto",
+    "pushNotification": "Notification push",
+    "chat": "Chat",
+    "settings": "Paramètres",
+    "complaints": "Plaintes",
+    "report": "Rapport"
+  }
+}

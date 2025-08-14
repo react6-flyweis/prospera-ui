@@ -1,0 +1,33 @@
+{
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "agentManagement": "Agent Management",
+    "vendorManagement": "Vendor Management",
+    "corporateManagement": "Corporate Management",
+    "lenderManagement": "Lender Management",
+    "userManagement": "User Management",
+    "employeeManagement": "Employee Management",
+    "walletManagement": "Wallet Management",
+    "payrollManagement": "Payroll Management",
+    "userLoanApproval": "User's Loan Approval",
+    "kycVerification": "KYC Verification",
+    "commissionManagement": "Commission Management",
+    "cryptoManagement": "Crypto Management",
+    "cryptoTransaction": "Crypto Transaction",
+    "pushNotification": "Push Notification",
+    "chat": "Chat",
+    "settings": "Settings",
+    "complaints": "Complaints",
+    "report": "Report"
+  },
+  "header": {
+    "brandName": "Prospera",
+    "searchPlaceholder": "Search...",
+    "profileAlt": "Profile",
+    "userName": "Name",
+    "userEmail": "variar@gmail.com",
+    "userDate": "24-05-2024",
+    "profile": "Profile",
+    "logout": "Log out"
+  }
+}

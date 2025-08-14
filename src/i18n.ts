@@ -8,6 +8,7 @@ const translationModules = [
   'auth',
   'chat',
   'commissionManagement',
+  'common',
   'complaints',
   'corporateManagement',
   'cryptoManagement',

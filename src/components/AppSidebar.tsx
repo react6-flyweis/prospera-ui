@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { NavLink, type To } from 'react-router';
 
 import {
@@ -19,7 +20,7 @@ import {
 import { cn } from '@/lib/utils';
 
 export type SidebarItem = {
-  title: string;
+  titleKey: string;
   icon: string;
   url: To;
 };
@@ -28,93 +29,93 @@ export interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {}
 
 const navigationItems: SidebarItem[] = [
   {
-    title: 'Dashboard',
+    titleKey: 'sidebar.dashboard',
     icon: 'dashboard.png',
     url: '/',
   },
-  { title: 'Agent Management', icon: 'agent.png', url: '/agents' },
+  { titleKey: 'sidebar.agentManagement', icon: 'agent.png', url: '/agents' },
   {
-    title: 'Vendor Management',
+    titleKey: 'sidebar.vendorManagement',
     icon: 'vendor.png',
     url: '/vendors',
   },
   {
-    title: 'Corporate Management',
+    titleKey: 'sidebar.corporateManagement',
     icon: 'corporate.png',
     url: '/corporates',
   },
   {
-    title: 'Lender Management',
+    titleKey: 'sidebar.lenderManagement',
     icon: 'lender.png',
     url: '/lenders',
   },
   {
-    title: 'User Management',
+    titleKey: 'sidebar.userManagement',
     icon: 'user.png',
     url: '/users',
   },
   {
-    title: 'Employee Management',
+    titleKey: 'sidebar.employeeManagement',
     icon: 'employee.png',
     url: '/employees',
   },
   {
-    title: 'Wallet Management',
+    titleKey: 'sidebar.walletManagement',
     icon: 'wallet.png',
     url: '/wallets',
   },
   {
-    title: 'Payroll Management',
+    titleKey: 'sidebar.payrollManagement',
     icon: 'payroll.png',
     url: '/payrolls',
   },
   {
-    title: 'User’s Loan Approval',
+    titleKey: 'sidebar.userLoanApproval',
     icon: 'loan-approval.png',
     url: '/loan-approvals',
   },
   {
-    title: 'KYC Verification',
+    titleKey: 'sidebar.kycVerification',
     icon: 'kyc.png',
     url: '/kyc',
   },
   {
-    title: 'Commission Management',
+    titleKey: 'sidebar.commissionManagement',
     icon: 'commission.png',
     url: '/commissions',
   },
   {
-    title: 'Crypto Management',
+    titleKey: 'sidebar.cryptoManagement',
     icon: 'crypto.png',
     url: '/cryptos',
   },
   {
-    title: 'Crypto Transaction',
+    titleKey: 'sidebar.cryptoTransaction',
     icon: 'crypto-transaction.png',
     url: '/crypto-transactions',
   },
   {
-    title: 'Push Notification',
+    titleKey: 'sidebar.pushNotification',
     icon: 'push-notification.png',
     url: '/push-notifications',
   },
   {
-    title: 'Chat',
+    titleKey: 'sidebar.chat',
     icon: 'chat.png',
     url: '/chat',
   },
   {
-    title: 'Settings',
+    titleKey: 'sidebar.settings',
     icon: 'settings.png',
     url: '/settings',
   },
   {
-    title: 'Complaints',
+    titleKey: 'sidebar.complaints',
     icon: 'complaints.png',
     url: '/complaints',
   },
   {
-    title: 'Report',
+    titleKey: 'sidebar.report',
     icon: 'report.png',
     url: '/reports',
   },
@@ -122,6 +123,7 @@ const navigationItems: SidebarItem[] = [
 
 export function AppSidebar({ ...props }: AppSidebarProps) {
   const { state } = useSidebar();
+  const { t } = useTranslation();
 
   return (
     <Sidebar {...props} className="font-kumbh">
@@ -141,7 +143,7 @@ export function AppSidebar({ ...props }: AppSidebarProps) {
       <SidebarContent className="gap-0">
         <SidebarMenu className="gap-0">
           {navigationItems.map((item) => (
-            <SidebarMenuItem key={item.title}>
+            <SidebarMenuItem key={item.titleKey}>
               <NavLink
                 className={cn(
                   'flex',
@@ -164,14 +166,14 @@ export function AppSidebar({ ...props }: AppSidebarProps) {
                             size="lg"
                           >
                             <img
-                              alt={item.title}
+                              alt={t(item.titleKey)}
                               className="max-h-4 max-w-4 flex-shrink-0 transition-all duration-300"
                               src={`/icons/${item.icon}`}
                             />
                           </SidebarMenuButton>
                         </TooltipTrigger>
                         <TooltipContent side="right">
-                          {item.title}
+                          {t(item.titleKey)}
                         </TooltipContent>
                       </Tooltip>
                     ) : (
@@ -184,11 +186,11 @@ export function AppSidebar({ ...props }: AppSidebarProps) {
                         size="lg"
                       >
                         <img
-                          alt={item.title}
+                          alt={t(item.titleKey)}
                           className="max-h-4 max-w-4 flex-shrink-0 transition-all duration-300"
                           src={`/icons/${item.icon}`}
                         />
-                        <span className="text-white">{item.title}</span>
+                        <span className="text-white">{t(item.titleKey)}</span>
                       </SidebarMenuButton>
                     )}
                   </>
