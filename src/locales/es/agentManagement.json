@@ -10,83 +10,83 @@
       "unblockedAgents": "Agentes Desbloqueados"
     },
     "newAgentsSection": {
-      "title": "New Agents",
-      "last30Days": "Last 30 Days",
-      "last7Days": "Last 7 Days",
-      "last15Days": "Last 15 Days",
-      "allTime": "All Time"
+      "title": "Nuevos Agentes",
+      "last30Days": "Últimos 30 Días",
+      "last7Days": "Últimos 7 Días",
+      "last15Days": "Últimos 15 Días",
+      "allTime": "Todo el Tiempo"
     }
   },
   "addNewAgentPage": {
-    "title": "Add a New Agent"
+    "title": "Añadir un Nuevo Agente"
   },
   "agentDetailsPage": {
-    "country": "Country :",
-    "dob": "DOB :",
-    "emailId": "Email ID :",
-    "agentId": "Agent ID:",
-    "bankName": "Bank Name:",
-    "accountNo": "Account No:",
-    "branch": "Branch:",
-    "ifscCode": "IFSC Code:",
-    "joined": "Joined :"
+    "country": "País :",
+    "dob": "Fecha de Nacimiento :",
+    "emailId": "Correo Electrónico :",
+    "agentId": "ID del Agente:",
+    "bankName": "Nombre del Banco:",
+    "accountNo": "Número de Cuenta:",
+    "branch": "Sucursal:",
+    "ifscCode": "Código IFSC:",
+    "joined": "Unido :"
   },
   "editAgentPage": {
-    "title": "Edit Agent"
+    "title": "Editar Agente"
   },
   "agentsColumns": {
-    "deleteProfile": "Delete This Profile",
-    "agentName": "Agent Name",
-    "agentId": "Agent ID",
-    "emailAddress": "Email Address",
-    "mobileNumber": "Mobile Number",
-    "documents": "Documents",
-    "action": "Action",
-    "complete": "Complete",
-    "active": "Active",
-    "inactive": "Inactive"
+    "deleteProfile": "Eliminar Este Perfil",
+    "agentName": "Nombre del Agente",
+    "agentId": "ID del Agente",
+    "emailAddress": "Dirección de Correo Electrónico",
+    "mobileNumber": "Número de Teléfono",
+    "documents": "Documentos",
+    "action": "Acción",
+    "complete": "Completo",
+    "active": "Activo",
+    "inactive": "Inactivo"
   },
   "agentEditor": {
     "validation": {
-      "nameRequired": "Name is required"
+      "nameRequired": "El nombre es obligatorio"
     },
     "profileDetail": {
-      "title": "Profile Detail",
-      "nameLabel": "Name Of The Agent",
-      "emailLabel": "Email",
-      "joinDateLabel": "Join Date",
-      "genderLabel": "Gender",
-      "addressLabel": "Permanent Address",
-      "postalCodeLabel": "Postal Code",
-      "mobileNumberLabel": "Mobile Number",
-      "giveIdLabel": "Give A ID",
-      "dobLabel": "Date Of Birth",
-      "languageLabel": "Preferred language",
-      "cityLabel": "City",
-      "countryLabel": "Country",
-      "namePlaceholder": "Enter name",
-      "emailPlaceholder": "Enter email",
-      "genderPlaceholder": "Enter here",
-      "addressPlaceholder": "Enter address",
-      "postalCodePlaceholder": "Enter here",
-      "mobilePlaceholder": "Enter number",
-      "idPlaceholder": "Enter ID",
-      "languagePlaceholder": "Enter here",
-      "cityPlaceholder": "Enter here",
-      "countryPlaceholder": "Enter here"
+      "title": "Detalle del Perfil",
+      "nameLabel": "Nombre del Agente",
+      "emailLabel": "Correo Electrónico",
+      "joinDateLabel": "Fecha de Ingreso",
+      "genderLabel": "Género",
+      "addressLabel": "Dirección Permanente",
+      "postalCodeLabel": "Código Postal",
+      "mobileNumberLabel": "Número de Teléfono",
+      "giveIdLabel": "Asignar un ID",
+      "dobLabel": "Fecha de Nacimiento",
+      "languageLabel": "Idioma Preferido",
+      "cityLabel": "Ciudad",
+      "countryLabel": "País",
+      "namePlaceholder": "Ingrese el nombre",
+      "emailPlaceholder": "Ingrese el correo electrónico",
+      "genderPlaceholder": "Ingrese aquí",
+      "addressPlaceholder": "Ingrese la dirección",
+      "postalCodePlaceholder": "Ingrese aquí",
+      "mobilePlaceholder": "Ingrese el número",
+      "idPlaceholder": "Ingrese el ID",
+      "languagePlaceholder": "Ingrese aquí",
+      "cityPlaceholder": "Ingrese aquí",
+      "countryPlaceholder": "Ingrese aquí"
     },
     "bankDetail": {
-      "title": "Bank Detail",
-      "bankNameLabel": "Bank Name",
-      "accountHolderNameLabel": "Account Holder Name",
-      "ifscCodeLabel": "IFSC Code",
-      "branchLabel": "Branch",
-      "accountNumberLabel": "Account Number",
-      "bankNamePlaceholder": "Enter here",
-      "accountHolderNamePlaceholder": "Enter name",
-      "ifscCodePlaceholder": "Enter here",
-      "branchPlaceholder": "Enter here",
-      "accountNumberPlaceholder": "Enter number"
+      "title": "Detalle Bancario",
+      "bankNameLabel": "Nombre del Banco",
+      "accountHolderNameLabel": "Nombre del Titular de la Cuenta",
+      "ifscCodeLabel": "Código IFSC",
+      "branchLabel": "Sucursal",
+      "accountNumberLabel": "Número de Cuenta",
+      "bankNamePlaceholder": "Ingrese aquí",
+      "accountHolderNamePlaceholder": "Ingrese el nombre",
+      "ifscCodePlaceholder": "Ingrese aquí",
+      "branchPlaceholder": "Ingrese aquí",
+      "accountNumberPlaceholder": "Ingrese el número"
     },
     "uploadDocuments": {
       "title": "Subir Documentos",
