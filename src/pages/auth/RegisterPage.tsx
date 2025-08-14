@@ -1,7 +1,7 @@
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 import { RegisterForm } from '@/components/auth/RegisterForm';
 import { SocialLogin } from '@/components/auth/SocialLogin';
-import { useTranslation } from 'react-i18next';
 
 export default function RegisterPage() {
   const { t } = useTranslation();

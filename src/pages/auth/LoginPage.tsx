@@ -1,13 +1,15 @@
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 import { LoginForm } from '@/components/auth/LoginForm';
 import { SocialLogin } from '@/components/auth/SocialLogin';
-import { useTranslation } from 'react-i18next';
 
 export default function LoginPage() {
   const { t } = useTranslation();
   return (
     <div className="w-full">
-      <h2 className="mb-6 text-center font-semibold text-2xl">{t('loginPage.welcomeBack')}</h2>
+      <h2 className="mb-6 text-center font-semibold text-2xl">
+        {t('loginPage.welcomeBack')}
+      </h2>
       <SocialLogin />
       <div className="my-4 flex items-center">
         <div className="h-px flex-1 bg-gray-200" />
