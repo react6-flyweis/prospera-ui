@@ -1,6 +1,8 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import type { TFunction } from 'i18next';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 import { ProfileImageUploader } from '../ProfileImageUploader';
 import { Button } from '../ui/button';
@@ -14,30 +16,35 @@ import {
 } from '../ui/form';
 import { Input } from '../ui/input';
 
-const lenderSchema = z.object({
-  name: z.string().min(1, 'Name is required'),
-  email: z.string().email(),
-  joinDate: z.string(),
-  gender: z.string(),
-  address: z.string(),
-  presentAddress: z.string(),
-  postalCode: z.string(),
-  mobile: z.string(),
-  lenderId: z.string(),
-  dob: z.string(),
-  language: z.string(),
-  city: z.string(),
-  country: z.string(),
-});
+const createLenderSchema = (t: TFunction) =>
+  z.object({
+    name: z.string().min(1, t('lenderEditor.validation.nameRequired')),
+    email: z.string().email(),
+    joinDate: z.string(),
+    gender: z.string(),
+    address: z.string(),
+    presentAddress: z.string(),
+    postalCode: z.string(),
+    mobile: z.string(),
+    lenderId: z.string(),
+    dob: z.string(),
+    language: z.string(),
+    city: z.string(),
+    country: z.string(),
+  });
 
-type LenderFormValues = z.infer<typeof lenderSchema>;
+type LenderFormValues = z.infer<ReturnType<typeof createLenderSchema>>;
 
 type LenderEditorProps = {
   initialData?: Partial<LenderFormValues>;
 };
 
 export function LenderEditor({ initialData }: LenderEditorProps) {
+  const { t } = useTranslation();
   const [profileImage, setProfileImage] = useState<string | File>('');
+
+  const lenderSchema = createLenderSchema(t);
+
   const form = useForm<LenderFormValues>({
     resolver: zodResolver(lenderSchema),
     defaultValues: {
@@ -65,66 +72,81 @@ export function LenderEditor({ initialData }: LenderEditorProps) {
   const lenderFields = [
     {
       name: 'name',
-      label: 'Name Of The Lender',
+      label: t('lenderEditor.profileDetail.nameLabel'),
       type: 'text',
-      placeholder: 'Enter name',
+      placeholder: t('lenderEditor.profileDetail.namePlaceholder'),
     },
     {
       name: 'email',
-      label: 'Email',
+      label: t('lenderEditor.profileDetail.emailLabel'),
       type: 'email',
-      placeholder: 'Enter email',
+      placeholder: t('lenderEditor.profileDetail.emailPlaceholder'),
     },
-    { name: 'joinDate', label: 'Join Date', type: 'date', placeholder: '' },
+    {
+      name: 'joinDate',
+      label: t('lenderEditor.profileDetail.joinDateLabel'),
+      type: 'date',
+      placeholder: '',
+    },
     {
       name: 'gender',
-      label: 'Gender',
+      label: t('lenderEditor.profileDetail.genderLabel'),
       type: 'text',
-      placeholder: 'Enter gender',
+      placeholder: t('lenderEditor.profileDetail.genderPlaceholder'),
     },
     {
       name: 'address',
-      label: 'Permanent Address',
+      label: t('lenderEditor.profileDetail.permanentAddressLabel'),
       type: 'text',
-      placeholder: 'Enter address',
+      placeholder: t('lenderEditor.profileDetail.addressPlaceholder'),
     },
     {
       name: 'presentAddress',
-      label: 'Present Address',
+      label: t('lenderEditor.profileDetail.presentAddressLabel'),
       type: 'text',
-      placeholder: 'Enter address',
+      placeholder: t('lenderEditor.profileDetail.addressPlaceholder'),
     },
     {
       name: 'postalCode',
-      label: 'Postal Code',
+      label: t('lenderEditor.profileDetail.postalCodeLabel'),
       type: 'text',
-      placeholder: 'Enter postal code',
+      placeholder: t('lenderEditor.profileDetail.postalCodePlaceholder'),
     },
     {
       name: 'mobile',
-      label: 'Mobile Number',
+      label: t('lenderEditor.profileDetail.mobileNumberLabel'),
       type: 'text',
-      placeholder: 'Enter number',
+      placeholder: t('lenderEditor.profileDetail.mobilePlaceholder'),
     },
     {
       name: 'lenderId',
-      label: 'Give A ID',
+      label: t('lenderEditor.profileDetail.giveIdLabel'),
       type: 'text',
-      placeholder: 'Enter ID',
+      placeholder: t('lenderEditor.profileDetail.idPlaceholder'),
     },
-    { name: 'dob', label: 'Date Of Birth', type: 'date', placeholder: '' },
+    {
+      name: 'dob',
+      label: t('lenderEditor.profileDetail.dobLabel'),
+      type: 'date',
+      placeholder: '',
+    },
     {
       name: 'language',
-      label: 'Preferred Language',
+      label: t('lenderEditor.profileDetail.preferredLanguageLabel'),
       type: 'text',
-      placeholder: 'Enter language',
+      placeholder: t('lenderEditor.profileDetail.languagePlaceholder'),
     },
-    { name: 'city', label: 'City', type: 'text', placeholder: 'Enter city' },
+    {
+      name: 'city',
+      label: t('lenderEditor.profileDetail.cityLabel'),
+      type: 'text',
+      placeholder: t('lenderEditor.profileDetail.cityPlaceholder'),
+    },
     {
       name: 'country',
-      label: 'Country',
+      label: t('lenderEditor.profileDetail.countryLabel'),
       type: 'text',
-      placeholder: 'Enter country',
+      placeholder: t('lenderEditor.profileDetail.countryPlaceholder'),
     },
   ];
 
@@ -142,7 +164,9 @@ export function LenderEditor({ initialData }: LenderEditorProps) {
           />
         </div>
         <div className="w-full">
-          <h2 className="mb-4 font-semibold text-lg">Lender Detail</h2>
+          <h2 className="mb-4 font-semibold text-lg">
+            {t('lenderEditor.profileDetail.title')}
+          </h2>
           <div className="grid grid-cols-2 gap-5">
             {lenderFields.map((field) => (
               <FormField
@@ -167,7 +191,7 @@ export function LenderEditor({ initialData }: LenderEditorProps) {
           </div>
           <div className="mt-8 flex justify-center">
             <Button className="w-1/2 rounded-full bg-primary-gradient font-semibold text-white shadow">
-              Add
+              {t('lenderEditor.addButton')}
             </Button>
           </div>
         </div>

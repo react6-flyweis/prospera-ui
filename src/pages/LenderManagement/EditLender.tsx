@@ -1,8 +1,10 @@
+import { useTranslation } from 'react-i18next';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { LenderEditor } from '@/components/LenderManagement/LenderEditor';
 
 // Static mock lender data
 export default function EditLender() {
+  const { t } = useTranslation();
   // Get lenderId from route params
   //   const { lenderId } = useParams();
   const mockLender = {
@@ -22,7 +24,7 @@ export default function EditLender() {
   };
 
   return (
-    <PageLayout title="Edit Lender" withBack>
+    <PageLayout title={t('editLenderPage.title')} withBack>
       <LenderEditor initialData={mockLender} />
     </PageLayout>
   );

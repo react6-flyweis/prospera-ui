@@ -1,4 +1,5 @@
 import { PenLineIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -25,6 +26,7 @@ const LENDER_MOCK = {
 };
 
 export default function LenderDetails() {
+  const { t } = useTranslation();
   return (
     <PageLayout title={LENDER_MOCK.name} withBack>
       <Card className=" flex items-center gap-6 rounded-2xl p-4 shadow-sm">
@@ -43,37 +45,39 @@ export default function LenderDetails() {
               <div className="font-semibold text-lg">{LENDER_MOCK.name}</div>
               <div className="text-gray-500 text-sm">{LENDER_MOCK.phone}</div>
               <div className="text-gray-500 text-sm">
-                Country : {LENDER_MOCK.country}
+                {t('lenderDetailsPage.country')} {LENDER_MOCK.country}
               </div>
             </div>
           </div>
           <div>
-            <div className="text-gray-500 text-sm">DOB : {LENDER_MOCK.dob}</div>
             <div className="text-gray-500 text-sm">
-              Email ID : {LENDER_MOCK.email}
+              {t('lenderDetailsPage.dob')} {LENDER_MOCK.dob}
             </div>
             <div className="text-gray-500 text-sm">
-              Lender ID: {LENDER_MOCK.lenderId}
+              {t('lenderDetailsPage.emailId')} {LENDER_MOCK.email}
+            </div>
+            <div className="text-gray-500 text-sm">
+              {t('lenderDetailsPage.lenderId')} {LENDER_MOCK.lenderId}
             </div>
           </div>
           <div>
             <div className="text-gray-500 text-sm">
-              Bank Name: {LENDER_MOCK.bank.name}
+              {t('lenderDetailsPage.bankName')} {LENDER_MOCK.bank.name}
             </div>
             <div className="text-gray-500 text-sm">
-              Account No: {LENDER_MOCK.bank.accountNo}
+              {t('lenderDetailsPage.accountNo')} {LENDER_MOCK.bank.accountNo}
             </div>
             <div className="text-gray-500 text-sm">
-              Branch: {LENDER_MOCK.bank.branch}
+              {t('lenderDetailsPage.branch')} {LENDER_MOCK.bank.branch}
             </div>
           </div>
           <div className="flex gap-3">
             <div className="">
               <div className="text-gray-500 text-sm">
-                IFSC Code: {LENDER_MOCK.bank.ifsc}
+                {t('lenderDetailsPage.ifscCode')} {LENDER_MOCK.bank.ifsc}
               </div>
               <div className="text-gray-400 text-xs">
-                Joined : {LENDER_MOCK.joined}
+                {t('lenderDetailsPage.joined')} {LENDER_MOCK.joined}
               </div>
             </div>
             <Link to={`/lenders/${LENDER_MOCK.lenderId}/edit`}>
@@ -86,22 +90,36 @@ export default function LenderDetails() {
       </Card>
       {/* About Kalyan Card */}
       <Card className="mt-6 rounded-2xl p-6 shadow-sm">
-        <div className="mb-6 font-semibold text-2xl">About Kalyan</div>
+        <div className="mb-6 font-semibold text-2xl">
+          {t('lenderDetailsPage.about')} {LENDER_MOCK.name}
+        </div>
         {(() => {
           const aboutFields = [
             {
-              label: 'Permanent Address',
+              label: t('lenderDetailsPage.permanentAddress'),
               id: 'permanent-address',
               value: 'San Jose, California, USA',
             },
             {
-              label: 'Present Address',
+              label: t('lenderDetailsPage.presentAddress'),
               id: 'present-address',
               value: 'San Jose, California, USA',
             },
-            { label: 'Postal Code', id: 'postal-code', value: '700012' },
-            { label: 'City', id: 'city', value: 'San Jose' },
-            { label: 'Country', id: 'country', value: 'USA' },
+            {
+              label: t('lenderDetailsPage.postalCode'),
+              id: 'postal-code',
+              value: '700012',
+            },
+            {
+              label: t('lenderDetailsPage.city'),
+              id: 'city',
+              value: 'San Jose',
+            },
+            {
+              label: t('lenderDetailsPage.country'),
+              id: 'country',
+              value: 'USA',
+            },
           ];
           return (
             <div className="grid grid-cols-2 gap-x-10 gap-y-6">

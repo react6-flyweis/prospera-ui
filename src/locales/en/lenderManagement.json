@@ -1,0 +1,86 @@
+{
+  "lenderManagementPage": {
+    "title": "Lender Management",
+    "totalLenders": "Total Lenders",
+    "addNewLenderButton": "Add A New Lender",
+    "filter": {
+      "all": "All",
+      "verifiedLenders": "Verified Lenders",
+      "blockedLenders": "Blocked Lenders",
+      "unblockedLenders": "Unblocked Lenders"
+    },
+    "newLendersSection": {
+      "title": "New Lenders",
+      "last30Days": "Last 30 Days",
+      "last7Days": "Last 7 Days",
+      "last15Days": "Last 15 Days",
+      "allTime": "All Time"
+    }
+  },
+  "addNewLenderPage": {
+    "title": "Add a New Lender"
+  },
+  "lenderDetailsPage": {
+    "country": "Country :",
+    "dob": "DOB :",
+    "emailId": "Email ID :",
+    "lenderId": "Lender ID:",
+    "bankName": "Bank Name:",
+    "accountNo": "Account No:",
+    "branch": "Branch:",
+    "ifscCode": "IFSC Code:",
+    "joined": "Joined :",
+    "about": "About",
+    "permanentAddress": "Permanent Address",
+    "presentAddress": "Present Address",
+    "postalCode": "Postal Code",
+    "city": "City"
+  },
+  "editLenderPage": {
+    "title": "Edit Lender"
+  },
+  "lenderEditor": {
+    "validation": {
+      "nameRequired": "Name is required"
+    },
+    "profileDetail": {
+      "title": "Lender Detail",
+      "nameLabel": "Name Of The Lender",
+      "emailLabel": "Email",
+      "joinDateLabel": "Join Date",
+      "genderLabel": "Gender",
+      "permanentAddressLabel": "Permanent Address",
+      "presentAddressLabel": "Present Address",
+      "postalCodeLabel": "Postal Code",
+      "mobileNumberLabel": "Mobile Number",
+      "giveIdLabel": "Give A ID",
+      "dobLabel": "Date Of Birth",
+      "preferredLanguageLabel": "Preferred Language",
+      "cityLabel": "City",
+      "countryLabel": "Country",
+      "namePlaceholder": "Enter name",
+      "emailPlaceholder": "Enter email",
+      "genderPlaceholder": "Enter gender",
+      "addressPlaceholder": "Enter address",
+      "postalCodePlaceholder": "Enter postal code",
+      "mobilePlaceholder": "Enter number",
+      "idPlaceholder": "Enter ID",
+      "languagePlaceholder": "Enter language",
+      "cityPlaceholder": "Enter city",
+      "countryPlaceholder": "Enter country"
+    },
+    "addButton": "Add"
+  },
+  "lendersColumns": {
+    "deleteProfile": "Delete This Profile",
+    "lenderName": "Lender Name",
+    "lenderId": "Lender ID",
+    "emailAddress": "Email Address",
+    "mobileNumber": "Mobile Number",
+    "documents": "Documents",
+    "action": "Action",
+    "complete": "Complete",
+    "active": "Active",
+    "inactive": "Inactive"
+  }
+}
