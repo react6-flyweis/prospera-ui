@@ -19,5 +19,15 @@
     "settings": "Configuración",
     "complaints": "Quejas",
     "report": "Reporte"
+  },
+  "header": {
+    "brandName": "Prospera",
+    "searchPlaceholder": "Buscar...",
+    "profileAlt": "Perfil",
+    "userName": "Nombre",
+    "userEmail": "variar@gmail.com",
+    "userDate": "24-05-2024",
+    "profile": "Perfil",
+    "logout": "Cerrar sesión"
   }
 }

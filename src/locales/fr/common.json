@@ -1,4 +1,14 @@
 {
+  "header": {
+    "brandName": "Prospera",
+    "searchPlaceholder": "Rechercher...",
+    "profileAlt": "Profil",
+    "userName": "Nom",
+    "userEmail": "variar@gmail.com",
+    "userDate": "24-05-2024",
+    "profile": "Profil",
+    "logout": "Se déconnecter"
+  },
   "sidebar": {
     "dashboard": "Tableau de bord",
     "agentManagement": "Gestion des agents",
