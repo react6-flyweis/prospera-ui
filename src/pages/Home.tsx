@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { CryptoChart } from '@/components/charts/CryptoChart';
 import { GaugeProgress } from '@/components/charts/GaugeProgress';
 import { TotalMoneyApprovedChart } from '@/components/charts/TotalMoneyApprovedChart';
@@ -8,6 +9,7 @@ import { cryptoData } from '@/data/cryptoData';
 import { kycStatusData } from '@/data/kycStatusData';
 
 export default function Home() {
+  const { t } = useTranslation();
   return (
     <PageLayout className="" title="Home">
       <div className="mb-6">
@@ -27,8 +29,13 @@ export default function Home() {
       </div>
 
       {/* KYC Verification Status */}
-      <div className="mb-6 flex justify-between gap-8">
-        <KYCStatusTable rows={kycStatusData as KycStatusRow[]} />
+      <div className="mb-6 grid grid-cols-3 justify-between gap-8">
+        <div className="col-span-2">
+          <KYCStatusTable
+            rows={kycStatusData as KycStatusRow[]}
+            title={t('kycVerificationPage.title')}
+          />
+        </div>
         <GaugeProgress
           filter="All"
           filterOptions={['All', 'Q1', 'Q2', 'Q3', 'Q4']}
