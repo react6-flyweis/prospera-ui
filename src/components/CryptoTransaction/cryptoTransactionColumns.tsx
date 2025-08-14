@@ -1,4 +1,5 @@
 import type { ColumnDef } from '@tanstack/react-table';
+import type { TFunction } from 'i18next';
 import { EyeIcon } from 'lucide-react';
 import { Link } from 'react-router';
 import { UserCell } from '../UserCell';
@@ -12,33 +13,36 @@ export type CryptoTransaction = {
   profileUrl: string;
   avatar: string;
 };
-export const cryptoColumns: ColumnDef<CryptoTransaction>[] = [
+
+export const getCryptoTransactionColumns = (
+  t: TFunction
+): ColumnDef<CryptoTransaction>[] => [
   {
     accessorKey: 'name',
-    header: 'User Name',
+    header: t('cryptoTransactionColumns.userName'),
     cell: ({ row }) => (
       <UserCell avatar={row.original.avatar} name={row.original.name} />
     ),
   },
   {
     accessorKey: 'userId',
-    header: 'User ID',
+    header: t('cryptoTransactionColumns.userId'),
   },
   {
     accessorKey: 'email',
-    header: 'Email Address',
+    header: t('cryptoTransactionColumns.emailAddress'),
   },
   {
     accessorKey: 'mobile',
-    header: 'Mobile Number',
+    header: t('cryptoTransactionColumns.mobileNumber'),
   },
   {
     accessorKey: 'balance',
-    header: 'Current Balance',
+    header: t('cryptoTransactionColumns.currentBalance'),
   },
   {
     accessorKey: 'seeProfile',
-    header: 'See Portfolio',
+    header: t('cryptoTransactionColumns.seePortfolio'),
     cell: ({ row }) => (
       <Link
         className="cursor-pointer text-blue-600"

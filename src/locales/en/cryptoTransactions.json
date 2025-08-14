@@ -1,0 +1,31 @@
+{
+  "cryptoTransactionsPage": {
+    "title": "Crypto Transaction",
+    "usersCryptoTransactions": "Users Crypto Transactions"
+  },
+  "cryptoPortfolioPage": {
+    "portfolio": "Portfolio",
+    "currentCryptoBalance": "Current Crypto Balance",
+    "24h": "24H",
+    "allTimeProfit": "All time profit",
+    "bestPerformer": "Best performer",
+    "worstPerformer": "Worst performer"
+  },
+  "cryptoPortfolioColumns": {
+    "assets": "Assets",
+    "price": "Price",
+    "24h": "24H",
+    "balance": "Balance",
+    "avgBuy": "Avg buy",
+    "profitLoss": "Profit/Loss",
+    "actions": "Actions"
+  },
+  "cryptoTransactionColumns": {
+    "userName": "User Name",
+    "userId": "User ID",
+    "emailAddress": "Email Address",
+    "mobileNumber": "Mobile Number",
+    "currentBalance": "Current Balance",
+    "seePortfolio": "See Portfolio"
+  }
+}

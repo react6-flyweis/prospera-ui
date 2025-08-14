@@ -1,4 +1,5 @@
 import type { ColumnDef } from '@tanstack/react-table';
+import type { TFunction } from 'i18next';
 import { EllipsisVerticalIcon, MenuIcon, TriangleIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CryptoCell } from './CryptoCell';
@@ -14,9 +15,11 @@ export type CryptoPortfolio = {
   icon: string;
 };
 
-export const cryptoPortfolioColumns: ColumnDef<CryptoPortfolio>[] = [
+export const getCryptoPortfolioColumns = (
+  t: TFunction
+): ColumnDef<CryptoPortfolio>[] => [
   {
-    header: 'Assets',
+    header: t('cryptoPortfolioColumns.assets'),
     accessorKey: 'name',
     cell: ({ row }) => (
       <CryptoCell
@@ -27,14 +30,14 @@ export const cryptoPortfolioColumns: ColumnDef<CryptoPortfolio>[] = [
     ),
   },
   {
-    header: 'Price',
+    header: t('cryptoPortfolioColumns.price'),
     accessorKey: 'price',
     cell: ({ getValue }) => (
       <span className="font-medium">{getValue<string>()}</span>
     ),
   },
   {
-    header: '24H',
+    header: t('cryptoPortfolioColumns.24h'),
     accessorKey: 'change24h',
     cell: ({ getValue }) => {
       const value = getValue<string>();
@@ -56,21 +59,21 @@ export const cryptoPortfolioColumns: ColumnDef<CryptoPortfolio>[] = [
     },
   },
   {
-    header: 'Balance',
+    header: t('cryptoPortfolioColumns.balance'),
     accessorKey: 'balance',
     cell: ({ getValue }) => (
       <span className="font-medium">{getValue<string>()}</span>
     ),
   },
   {
-    header: 'Avg buy',
+    header: t('cryptoPortfolioColumns.avgBuy'),
     accessorKey: 'avgBuy',
     cell: ({ getValue }) => (
       <span className="text-gray-600">{getValue<string>()}</span>
     ),
   },
   {
-    header: 'Profit/Loss',
+    header: t('cryptoPortfolioColumns.profitLoss'),
     accessorKey: 'profitLoss',
     cell: ({ getValue }) => {
       const value = getValue<string>();
@@ -87,7 +90,7 @@ export const cryptoPortfolioColumns: ColumnDef<CryptoPortfolio>[] = [
     },
   },
   {
-    header: 'Actions',
+    header: t('cryptoPortfolioColumns.actions'),
     id: 'actions',
     cell: () => (
       <div className="flex gap-2">
