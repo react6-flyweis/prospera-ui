@@ -1,7 +1,9 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import type { TFunction } from 'i18next';
 import { MinusIcon, PlusIcon } from 'lucide-react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import {
@@ -14,22 +16,37 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 
-const commissionSchema = z.object({
-  name: z.string().min(1, 'Name is required'),
-  fromAmount: z.string().min(1, 'From Amount is required'),
-  toAmount: z.string().min(1, 'To Amount is required'),
-  percentage: z.number().min(1).max(100),
-});
+const createCommissionSchema = (t: TFunction) =>
+  z.object({
+    name: z.string().min(1, t('commissionForm.validation.nameRequired')),
+    fromAmount: z
+      .string()
+      .min(1, t('commissionForm.validation.fromAmountRequired')),
+    toAmount: z
+      .string()
+      .min(1, t('commissionForm.validation.toAmountRequired')),
+    percentage: z.number().min(1).max(100),
+  });
 
-type CommissionFormValues = z.infer<typeof commissionSchema>;
-
-const types = ['User', 'Employee', 'Corporate', 'Agent', 'Lender', 'Vendor'];
+type CommissionFormValues = z.infer<ReturnType<typeof createCommissionSchema>>;
 
 export const CommissionForm = ({
   onSubmit,
 }: {
   onSubmit?: (data: CommissionFormValues) => void;
 }) => {
+  const { t } = useTranslation();
+  const types = [
+    t('commissionForm.types.user'),
+    t('commissionForm.types.employee'),
+    t('commissionForm.types.corporate'),
+    t('commissionForm.types.agent'),
+    t('commissionForm.types.lender'),
+    t('commissionForm.types.vendor'),
+  ];
+
+  const commissionSchema = createCommissionSchema(t);
+
   const form = useForm<CommissionFormValues>({
     resolver: zodResolver(commissionSchema),
     defaultValues: {
@@ -69,9 +86,14 @@ export const CommissionForm = ({
             name="name"
             render={({ field }) => (
               <FormItem className="mb-4">
-                <FormLabel className="text-lg">Give A Name</FormLabel>
+                <FormLabel className="text-lg">
+                  {t('commissionForm.giveNameLabel')}
+                </FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder="Enter here" />
+                  <Input
+                    {...field}
+                    placeholder={t('commissionForm.placeholder')}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -84,10 +106,13 @@ export const CommissionForm = ({
               render={({ field }) => (
                 <FormItem className="flex-1">
                   <FormLabel className="text-lg">
-                    From Amount (In USD/LRD)
+                    {t('commissionForm.fromAmountLabel')}
                   </FormLabel>
                   <FormControl>
-                    <Input {...field} placeholder="Enter here" />
+                    <Input
+                      {...field}
+                      placeholder={t('commissionForm.placeholder')}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -99,10 +124,13 @@ export const CommissionForm = ({
               render={({ field }) => (
                 <FormItem className="flex-1">
                   <FormLabel className="text-lg">
-                    To Amount (In USD/LRD)
+                    {t('commissionForm.toAmountLabel')}
                   </FormLabel>
                   <FormControl>
-                    <Input {...field} placeholder="Enter here" />
+                    <Input
+                      {...field}
+                      placeholder={t('commissionForm.placeholder')}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -115,14 +143,16 @@ export const CommissionForm = ({
             render={() => (
               <FormItem className="mb-4 flex items-center gap-5">
                 <div className="">
-                  <FormLabel className="text-lg">Percentage</FormLabel>
+                  <FormLabel className="text-lg">
+                    {t('commissionForm.percentageLabel')}
+                  </FormLabel>
                   <p className="mb-2 text-muted-foreground">
-                    Lorem Ipsum is simply dummy text
+                    {t('commissionForm.percentageDescription')}
                   </p>
                 </div>
                 <div className="mb-8 flex items-center gap-4">
                   <Button
-                    aria-label="Decrease percentage"
+                    aria-label={t('commissionForm.decreasePercentage')}
                     className="rounded-full bg-blue-100 text-primary hover:bg-blue-200"
                     onClick={() =>
                       form.setValue('percentage', Math.max(1, percentage - 1))
@@ -137,7 +167,7 @@ export const CommissionForm = ({
                     {percentage}%
                   </span>
                   <Button
-                    aria-label="Increase percentage"
+                    aria-label={t('commissionForm.increasePercentage')}
                     className="rounded-full bg-blue-100 text-primary hover:bg-blue-200"
                     onClick={() =>
                       form.setValue('percentage', Math.min(100, percentage + 1))
@@ -156,7 +186,7 @@ export const CommissionForm = ({
         </div>
         <div className="flex items-center justify-end">
           <Button className="w-32 bg-primary-gradient" type="submit">
-            Create
+            {t('commissionForm.createButton')}
           </Button>
         </div>
       </form>

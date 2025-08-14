@@ -1,0 +1,37 @@
+{
+  "commissionManagementPage": {
+    "title": "Commission Management",
+    "deleteAllButton": "Delete All"
+  },
+  "commissionColumns": {
+    "chargeNo": "Charge No",
+    "chargeName": "Charge Name",
+    "percentage": "Percentage",
+    "date": "Date",
+    "delete": "Delete"
+  },
+  "commissionForm": {
+    "validation": {
+      "nameRequired": "Name is required",
+      "fromAmountRequired": "From Amount is required",
+      "toAmountRequired": "To Amount is required"
+    },
+    "types": {
+      "user": "User",
+      "employee": "Employee",
+      "corporate": "Corporate",
+      "agent": "Agent",
+      "lender": "Lender",
+      "vendor": "Vendor"
+    },
+    "giveNameLabel": "Give A Name",
+    "fromAmountLabel": "From Amount (In USD/LRD)",
+    "toAmountLabel": "To Amount (In USD/LRD)",
+    "percentageLabel": "Percentage",
+    "percentageDescription": "Lorem Ipsum is simply dummy text",
+    "placeholder": "Enter here",
+    "createButton": "Create",
+    "decreasePercentage": "Decrease percentage",
+    "increasePercentage": "Increase percentage"
+  }
+}

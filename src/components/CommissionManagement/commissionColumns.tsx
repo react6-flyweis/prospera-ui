@@ -1,4 +1,5 @@
 import type { ColumnDef } from '@tanstack/react-table';
+import type { TFunction } from 'i18next';
 import { Trash2Icon } from 'lucide-react';
 
 export type CommissionCharge = {
@@ -8,25 +9,27 @@ export type CommissionCharge = {
   date: string;
 };
 
-export const commissionColumns: ColumnDef<CommissionCharge>[] = [
+export const getCommissionColumns = (
+  t: TFunction
+): ColumnDef<CommissionCharge>[] => [
   {
-    header: 'Charge No',
+    header: t('commissionColumns.chargeNo'),
     accessorKey: 'chargeNo',
   },
   {
-    header: 'Charge Name',
+    header: t('commissionColumns.chargeName'),
     accessorKey: 'chargeName',
   },
   {
-    header: 'Percentage',
+    header: t('commissionColumns.percentage'),
     accessorKey: 'percentage',
   },
   {
-    header: 'Date',
+    header: t('commissionColumns.date'),
     accessorKey: 'date',
   },
   {
-    header: 'Delete',
+    header: t('commissionColumns.delete'),
     id: 'delete',
     cell: () => <Trash2Icon className="cursor-pointer text-red-600" />,
   },
