@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { ComplaintsCard } from '@/components/Complaints/ComplaintsCard';
 import { PageLayout } from '@/components/Layout/PageLayout';
 
@@ -32,8 +33,9 @@ const complaintsData = [
 ];
 
 export default function Complaints() {
+  const { t } = useTranslation();
   return (
-    <PageLayout title="Complaints">
+    <PageLayout title={t('complaintsPage.title')}>
       <div className="space-y-6">
         {complaintsData.map((complaint) => (
           <ComplaintsCard complaint={complaint} key={complaint.id} />

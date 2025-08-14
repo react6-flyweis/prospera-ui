@@ -1,4 +1,5 @@
 import { Trash2Icon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader } from '@/components/ui/card';
 
@@ -12,11 +13,12 @@ export type Complaint = {
 };
 
 export function ComplaintsCard({ complaint }: { complaint: Complaint }) {
+  const { t } = useTranslation();
   return (
     <Card className="relative p-3">
       <CardHeader>
         <div className="absolute top-0 inline-block w-fit rounded-b-lg bg-primary-gradient px-2 py-0.5 font-semibold text-white shadow">
-          {complaint.type} ID: | {complaint.id}
+          {complaint.type} {t('complaintsCard.id')} | {complaint.id}
         </div>
       </CardHeader>
       <div className="flex w-full items-start gap-4">
@@ -38,7 +40,7 @@ export function ComplaintsCard({ complaint }: { complaint: Complaint }) {
             {complaint.description}
           </div>
           <Button className="w-24 font-medium" size="sm" variant="outline">
-            Reply
+            {t('complaintsCard.replyButton')}
           </Button>
         </div>
         <div className="flex h-full flex-col items-center justify-center border-l">
