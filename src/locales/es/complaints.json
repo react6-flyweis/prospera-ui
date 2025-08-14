@@ -1,0 +1,9 @@
+{
+  "complaintsPage": {
+    "title": "Quejas"
+  },
+  "complaintsCard": {
+    "id": "ID:",
+    "replyButton": "Responder"
+  }
+}

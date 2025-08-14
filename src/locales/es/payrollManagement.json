@@ -1,0 +1,64 @@
+{
+  "payrollManagementPage": {
+    "title": "Gestión de Nóminas",
+    "hoursAndEarningsTitle": "Horas y ganancias adicionales",
+    "hoursAndEarningsDescription": "Actualice las horas, reembolsos y ganancias adicionales de su empleado a continuación.",
+    "selectAll": "Seleccionar Todo",
+    "filterButton": "Filtrar",
+    "columnsButton": "Columnas",
+    "importPayrollDataButton": "Importar datos de nómina"
+  },
+  "importPayrollDataPage": {
+    "title": "Importar datos de nómina",
+    "uploadTitle": "Suba el tiempo de sus empleados por hora sin reformatear",
+    "uploadDescription": "Si ya utiliza un software para rastrear las horas de sus empleados, como una hoja de cálculo o un software de seguimiento de tiempo, puede cargar rápidamente un archivo (CSV, Excel y más) para ejecutar la nómina más rápido con Smart Import. Importaremos automáticamente sus horas por usted.",
+    "uploadSpreadsheet": "Subir su hoja de cálculo",
+    "fileSelected": "Archivo seleccionado",
+    "uploadButton": "+ Subir",
+    "orDropFile": "o arrastrar archivo",
+    "goToPayrollButton": "Ir a Nómina",
+    "continueButton": "Continuar"
+  },
+  "columnSelectorDialog": {
+    "title": "Columnas",
+    "searchColumns": "Buscar columnas",
+    "cancelButton": "Cancelar",
+    "saveButton": "Guardar"
+  },
+  "payrollColumns": {
+    "employeeName": "Nombre del Empleado",
+    "baseSalaryLD": "Salario Base (LD)",
+    "otherIncomeLD": "Otros Ingresos (LD)",
+    "totalIncomeLD": "Ingresos Totales (LD)",
+    "deductionLD": "Deducción (LD)",
+    "socialSecurityLD": "Seguridad Social (LD)",
+    "taxExemptIncomeLD": "Ingresos Exentos de Impuestos (LD)",
+    "taxableIncomeLD": "Ingresos Imponibles (LD)",
+    "incomeTaxLD": "Impuesto sobre la Renta (LD)",
+    "conversionRate": "Tasa de Conversión (LD a USD)",
+    "currency": "Moneda",
+    "netSalaryLD": "Salario Neto (LD)",
+    "netSalaryUSD": "Salario Neto (USD)"
+  },
+  "payrollFiltersDialog": {
+    "title": "Filtros",
+    "employeeType": {
+      "title": "Tipo de empleado",
+      "dismissedDate": "Fecha de despido"
+    },
+    "departments": {
+      "title": "Departamentos",
+      "designing": "Diseño",
+      "marketing": "Marketing",
+      "sales": "Ventas",
+      "noDepartment": "Sin departamento"
+    },
+    "skipped": {
+      "title": "Omitido",
+      "yes": "Sí",
+      "no": "No"
+    },
+    "clearAllFiltersButton": "Borrar todos los filtros",
+    "applyButton": "Aplicar"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "pushNotificationsPage": {
+    "title": "Notificaciones Push",
+    "deleteAllButton": "Eliminar Todo"
+  },
+  "notificationColumns": {
+    "notificationTitle": "Título de la Notificación",
+    "notificationContent": "Contenido de la Notificación",
+    "notificationStatus": "Estado de la Notificación",
+    "date": "Fecha",
+    "delete": "Eliminar",
+    "deleteNotificationAriaLabel": "Eliminar notificación"
+  },
+  "notificationForm": {
+    "validation": {
+      "titleRequired": "El título es requerido",
+      "contentRequired": "El contenido es requerido",
+      "selectWhomToSend": "Seleccione a quién enviar"
+    },
+    "sendTo": {
+      "title": "Enviar A",
+      "all": "Todos",
+      "single": "Individual"
+    },
+    "toWhom": {
+      "label": "A Quién Desea Enviar",
+      "placeholder": "Seleccionar...",
+      "options": {
+        "agents": "Agentes",
+        "corporates": "Corporaciones",
+        "employees": "Empleados",
+        "vendors": "Proveedores",
+        "lenders": "Prestadores"
+      }
+    },
+    "selectIndividual": {
+      "label": "Seleccionar al Individuo",
+      "placeholder": "Seleccionar...",
+      "options": {
+        "user1": "Usuario 1",
+        "user2": "Usuario 2"
+      }
+    },
+    "notificationTitle": {
+      "label": "Título de la Notificación",
+      "placeholder": "Escribir aquí"
+    },
+    "notificationContent": {
+      "label": "Contenido de la Notificación",
+      "placeholder": "Escribir aquí"
+    },
+    "sendButton": "Enviar",
+    "cancelButton": "Cancelar"
+  }
+}

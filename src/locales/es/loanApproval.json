@@ -1,0 +1,58 @@
+{
+  "loanApprovalPage": {
+    "title": "Aprobación de Préstamos del Usuario",
+    "searchPlaceholder": "Buscar Nombre o ID...",
+    "creditScoreButton": "Conocer Puntuación Crediticia"
+  },
+  "creditScoreDialog": {
+    "title": "Bandas de Puntuación Crediticia",
+    "tableHeaders": {
+      "scoreBand": "Banda de Puntuación",
+      "category": "Categoría",
+      "significance": "Significado"
+    },
+    "bands": [
+      {
+        "score": "Menos de 300",
+        "category": "Puntuación Crediticia Baja",
+        "significance": "Sin historial crediticio o uso limitado de crédito, lo que dificulta evaluar la solvencia."
+      },
+      {
+        "score": "300–550",
+        "category": "Puntuación Crediticia Muy Baja",
+        "significance": "Indica posibles problemas de crédito. Requiere mejora para acceder a mejores términos de préstamo."
+      },
+      {
+        "score": "551–620",
+        "category": "Puntuación Crediticia Baja",
+        "significance": "Necesita mejorar para alcanzar una buena posición crediticia."
+      },
+      {
+        "score": "621–700",
+        "category": "Puntuación Crediticia Justa",
+        "significance": "Acercándose a una buena puntuación crediticia. Se recomienda una gestión crediticia responsable continua."
+      },
+      {
+        "score": "701–749",
+        "category": "Buena Puntuación Crediticia",
+        "significance": "Indica un comportamiento crediticio responsable y elegibilidad para términos de préstamo favorables."
+      },
+      {
+        "score": "750–900",
+        "category": "Excelente Puntuación Crediticia",
+        "significance": "Puntuación crediticia de primer nivel, lo que le hace elegible para las mejores ofertas de préstamos y productos financieros."
+      }
+    ]
+  },
+  "loanApprovalColumns": {
+    "name": "Nombre",
+    "userId": "ID de Usuario",
+    "loanAmount": "Monto del Préstamo",
+    "creditScore": "Puntuación Crediticia",
+    "dateTime": "Fecha y Hora",
+    "action": "Acción",
+    "approve": "Aprobar",
+    "reject": "Rechazar",
+    "notEligibleToast": "Estimado Empleador y Prestamista, este usuario no es elegible para el monto del préstamo de ${{amount}}."
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "commissionManagementPage": {
+    "title": "Gestión de Comisiones",
+    "deleteAllButton": "Eliminar Todo"
+  },
+  "commissionColumns": {
+    "chargeNo": "Número de Cargo",
+    "chargeName": "Nombre del Cargo",
+    "percentage": "Porcentaje",
+    "date": "Fecha",
+    "delete": "Eliminar"
+  },
+  "commissionForm": {
+    "validation": {
+      "nameRequired": "El nombre es requerido",
+      "fromAmountRequired": "La cantidad inicial es requerida",
+      "toAmountRequired": "La cantidad final es requerida"
+    },
+    "types": {
+      "user": "Usuario",
+      "employee": "Empleado",
+      "corporate": "Corporativo",
+      "agent": "Agente",
+      "lender": "Prestador",
+      "vendor": "Proveedor"
+    },
+    "giveNameLabel": "Asignar un Nombre",
+    "fromAmountLabel": "Cantidad Inicial (En USD/LRD)",
+    "toAmountLabel": "Cantidad Final (En USD/LRD)",
+    "percentageLabel": "Porcentaje",
+    "percentageDescription": "Lorem Ipsum es simplemente texto de relleno",
+    "placeholder": "Ingresar aquí",
+    "createButton": "Crear",
+    "decreasePercentage": "Disminuir porcentaje",
+    "increasePercentage": "Aumentar porcentaje"
+  }
+}

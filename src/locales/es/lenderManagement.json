@@ -1,0 +1,86 @@
+{
+  "lenderManagementPage": {
+    "title": "Gestión de Prestamistas",
+    "totalLenders": "Total de Prestamistas",
+    "addNewLenderButton": "Añadir Nuevo Prestamista",
+    "filter": {
+      "all": "Todos",
+      "verifiedLenders": "Prestamistas Verificados",
+      "blockedLenders": "Prestamistas Bloqueados",
+      "unblockedLenders": "Prestamistas Desbloqueados"
+    },
+    "newLendersSection": {
+      "title": "Nuevos Prestamistas",
+      "last30Days": "Últimos 30 Días",
+      "last7Days": "Últimos 7 Días",
+      "last15Days": "Últimos 15 Días",
+      "allTime": "Todo el Tiempo"
+    }
+  },
+  "addNewLenderPage": {
+    "title": "Añadir Nuevo Prestamista"
+  },
+  "lenderDetailsPage": {
+    "country": "País :",
+    "dob": "Fecha de Nacimiento :",
+    "emailId": "ID de Correo Electrónico :",
+    "lenderId": "ID de Prestamista:",
+    "bankName": "Nombre del Banco:",
+    "accountNo": "Número de Cuenta:",
+    "branch": "Sucursal:",
+    "ifscCode": "Código IFSC:",
+    "joined": "Unido :",
+    "about": "Acerca de",
+    "permanentAddress": "Dirección Permanente",
+    "presentAddress": "Dirección Actual",
+    "postalCode": "Código Postal",
+    "city": "Ciudad"
+  },
+  "editLenderPage": {
+    "title": "Editar Prestamista"
+  },
+  "lenderEditor": {
+    "validation": {
+      "nameRequired": "El nombre es requerido"
+    },
+    "profileDetail": {
+      "title": "Detalle del Prestamista",
+      "nameLabel": "Nombre del Prestamista",
+      "emailLabel": "Correo Electrónico",
+      "joinDateLabel": "Fecha de Ingreso",
+      "genderLabel": "Género",
+      "permanentAddressLabel": "Dirección Permanente",
+      "presentAddressLabel": "Dirección Actual",
+      "postalCodeLabel": "Código Postal",
+      "mobileNumberLabel": "Número de Móvil",
+      "giveIdLabel": "Dar un ID",
+      "dobLabel": "Fecha de Nacimiento",
+      "preferredLanguageLabel": "Idioma Preferido",
+      "cityLabel": "Ciudad",
+      "countryLabel": "País",
+      "namePlaceholder": "Ingresar nombre",
+      "emailPlaceholder": "Ingresar correo electrónico",
+      "genderPlaceholder": "Ingresar género",
+      "addressPlaceholder": "Ingresar dirección",
+      "postalCodePlaceholder": "Ingresar código postal",
+      "mobilePlaceholder": "Ingresar número",
+      "idPlaceholder": "Ingresar ID",
+      "languagePlaceholder": "Ingresar idioma",
+      "cityPlaceholder": "Ingresar ciudad",
+      "countryPlaceholder": "Ingresar país"
+    },
+    "addButton": "Añadir"
+  },
+  "lendersColumns": {
+    "deleteProfile": "Eliminar Este Perfil",
+    "lenderName": "Nombre del Prestamista",
+    "lenderId": "ID de Prestamista",
+    "emailAddress": "Dirección de Correo",
+    "mobileNumber": "Número de Móvil",
+    "documents": "Documentos",
+    "action": "Acción",
+    "complete": "Completo",
+    "active": "Activo",
+    "inactive": "Inactivo"
+  }
+}

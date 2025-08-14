@@ -1,0 +1,39 @@
+{
+  "kycVerificationPage": {
+    "title": "Verificación KYC",
+    "verificationPurpose": "Los {{type}} listados aquí son para fines de verificación.",
+    "usersPlaceholder": "Usuarios",
+    "agents": "Agentes",
+    "vendors": "Proveedores",
+    "corporates": "Corporaciones",
+    "lenders": "Prestadores"
+  },
+  "kycColumns": {
+    "agentName": "Nombre del Agente",
+    "id": "ID",
+    "emailAddress": "Dirección de Correo",
+    "mobileNumber": "Número de Móvil",
+    "kyc": "KYC",
+    "action": "Acción",
+    "verified": "Verificado",
+    "notVerified": "No verificado",
+    "approve": "Aprobar",
+    "reject": "Rechazar"
+  },
+  "kycStatusTable": {
+    "status": {
+      "completed": "Completado",
+      "delayed": "Retrasado",
+      "atRisk": "En riesgo",
+      "onGoing": "En curso"
+    },
+    "tableHeaders": {
+      "name": "Nombre",
+      "id": "ID",
+      "date": "Fecha",
+      "status": "Estado",
+      "progress": "Progreso"
+    },
+    "statusPlaceholder": "Estado"
+  }
+}

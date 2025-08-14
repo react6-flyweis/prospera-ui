@@ -1,0 +1,31 @@
+{
+  "cryptoTransactionsPage": {
+    "title": "Transacción de Criptomonedas",
+    "usersCryptoTransactions": "Transacciones de Criptomonedas de Usuarios"
+  },
+  "cryptoPortfolioPage": {
+    "portfolio": "Portafolio",
+    "currentCryptoBalance": "Saldo Actual de Criptomonedas",
+    "24h": "24H",
+    "allTimeProfit": "Ganancia de todos los tiempos",
+    "bestPerformer": "Mejor rendimiento",
+    "worstPerformer": "Peor rendimiento"
+  },
+  "cryptoPortfolioColumns": {
+    "assets": "Activos",
+    "price": "Precio",
+    "24h": "24H",
+    "balance": "Saldo",
+    "avgBuy": "Compra promedio",
+    "profitLoss": "Ganancia/Pérdida",
+    "actions": "Acciones"
+  },
+  "cryptoTransactionColumns": {
+    "userName": "Nombre de Usuario",
+    "userId": "ID de Usuario",
+    "emailAddress": "Dirección de Correo",
+    "mobileNumber": "Número de Móvil",
+    "currentBalance": "Saldo Actual",
+    "seePortfolio": "Ver Portafolio"
+  }
+}

@@ -1,0 +1,494 @@
+{
+  "reportsPage": {
+    "pageTitle": "Informes",
+    "newReportsTab": "Nuevos Informes",
+    "reportsHistoryTab": "Historial de Informes",
+    "learnMoreButton": "Saber más",
+    "newCustomReportButton": "Nuevo informe personalizado",
+    "recommendedReportsTitle": "Informes recomendados",
+    "customReportCardTitle": "Informe personalizado",
+    "customReportCardDescription": "Cree un informe personalizado con los datos de nómina, RRHH y/o beneficios de sus empleados, todo en un solo lugar.",
+    "viewCustomReportAriaLabel": "Ver informe personalizado",
+    "viewReportButton": "Ver informe",
+    "payrollTrendsCardTitle": "Tendencias de nómina",
+    "payrollTrendsCardDescription": "Identifique y monitoree las tendencias de nómina durante un período de tiempo específico.",
+    "viewPayrollTrendsReportAriaLabel": "Ver informe de tendencias de nómina",
+    "reportsTable": {
+      "reportHeader": "Informe",
+      "categoryHeader": "Categoría",
+      "lastViewedHeader": "Última Vista",
+      "bankTransactions": "Transacciones bancarias",
+      "viewFederalTaxFilings": "Ver sus declaraciones de impuestos federales",
+      "payrollTaxesCompliance": "Nómina, Impuestos y cumplimiento",
+      "customReport": "Informe personalizado",
+      "payrollTaxesComplianceEmployeeDetailsBenefits": "Nómina, Impuestos y cumplimiento, Detalles del empleado, Beneficios",
+      "taxDocuments": "Documentos fiscales",
+      "taxesCompliance": "Impuestos y cumplimiento",
+      "prosperaRecruitingApplicants": "Candidatos de Prospera Recruiting",
+      "viewJobPostingApplicants": "Ver información, estado y respuestas de los candidatos a su oferta de empleo",
+      "payrollTrends": "Tendencias de nómina",
+      "reportTitleHeader": "Título del informe",
+      "reportTypeHeader": "Tipo de informe",
+      "dateHeader": "Fecha",
+      "statusHeader": "Estado",
+      "actionsHeader": "Acciones"
+    },
+    "groupByMenu": {
+      "groupBy": "Agrupar por",
+      "payroll": "Nómina",
+      "employee": "Empleado",
+      "workAddress": "Dirección de trabajo",
+      "workAddressState": "Dirección de trabajo (estado)"
+    },
+    "scheduleReportDrawer": {
+      "title": "Programar un informe",
+      "description": "Programe una plantilla de informe personalizado para que se ejecute y se envíe automáticamente a su bandeja de entrada.",
+      "learnMore": "Saber más",
+      "cancelButton": "Cancelar",
+      "scheduleButton": "Programar",
+      "reportNameLabel": "Nombre del informe",
+      "reportNamePlaceholder": "Ingresar nombre del informe",
+      "startDateLabel": "Fecha de inicio de entrega",
+      "startDatePlaceholder": "mm/dd/aaaa",
+      "frequencyLabel": "Frecuencia",
+      "frequencyPlaceholder": "Por favor seleccione...",
+      "frequencyOptions": {
+        "daily": "Diario",
+        "weekly": "Semanal",
+        "monthly": "Mensual"
+      },
+      "formatLabel": "Formato",
+      "formatPlaceholder": "Por favor seleccione...",
+      "formatOptions": {
+        "pdf": "PDF",
+        "csv": "CSV",
+        "xlsx": "Excel (.xlsx)"
+      },
+      "reportNameRequired": "El nombre del informe es requerido",
+      "startDateRequired": "La fecha de inicio es requerida",
+      "frequencyRequired": "La frecuencia es requerida",
+      "formatRequired": "El formato es requerido"
+    }
+  },
+  "addColumnsDrawer": {
+    "title": "Añadir columnas",
+    "searchColumnsLabel": "Buscar columnas",
+    "searchColumnsPlaceholder": "Buscar columnas",
+    "cancelButton": "Cancelar",
+    "saveButton": "Guardar",
+    "columnsList": {
+      "grossEarnings": {
+        "label": "Buscar columnas",
+        "description": "Ganancias totales antes de deducciones, incluyendo salario, bonificaciones y comisiones"
+      },
+      "employeeDeductions": {
+        "label": "Deducciones de empleados",
+        "description": "Suma de las deducciones de los empleados, tanto antes como después de impuestos"
+      },
+      "employerContributions": {
+        "label": "Contribuciones del empleador",
+        "description": "Suma de las contribuciones del empleador a los beneficios"
+      },
+      "totalEmployeeTaxes": {
+        "label": "Impuestos totales del empleado",
+        "description": "Suma de los impuestos retenidos del cheque de pago de un empleado"
+      },
+      "totalEmployerTaxes": {
+        "label": "Impuestos totales del empleador",
+        "description": "Suma de los impuestos pagados por el empleador"
+      },
+      "netPay": {
+        "label": "Pago neto",
+        "description": "Ganancias del empleado después de deducciones, representando el salario real neto"
+      },
+      "totalEmployerCost": {
+        "label": "Costo total del empleador",
+        "description": "Costo total de un empleado"
+      },
+      "checkAmount": {
+        "label": "Monto del cheque",
+        "description": ""
+      },
+      "bereavementEarnings": {
+        "label": "Ganancias por duelo",
+        "description": ""
+      },
+      "bereavementHours": {
+        "label": "Horas de duelo",
+        "description": ""
+      },
+      "bereavementRateHourly": {
+        "label": "Tarifa por duelo (por hora)",
+        "description": ""
+      },
+      "bonus": {
+        "label": "Bonificación",
+        "description": ""
+      },
+      "cashTips": {
+        "label": "Propinas en efectivo",
+        "description": ""
+      },
+      "commission": {
+        "label": "Comisión",
+        "description": ""
+      },
+      "currentDepartment": {
+        "label": "Departamento actual",
+        "description": ""
+      },
+      "dismissalReason": {
+        "label": "Motivo de despido",
+        "description": ""
+      },
+      "doubleOvertimeEarnings": {
+        "label": "Ganancias por horas extras dobles",
+        "description": ""
+      },
+      "doubleOvertimeHours": {
+        "label": "Horas extras dobles",
+        "description": ""
+      },
+      "doubleOvertimeRateHourly": {
+        "label": "Tarifa de horas extras dobles (por hora)",
+        "description": ""
+      },
+      "employeeAdditionalMedicareTax": {
+        "label": "Impuesto adicional de Medicare del empleado",
+        "description": ""
+      },
+      "employeeBankAccount": {
+        "label": "Cuenta bancaria del empleado",
+        "description": ""
+      },
+      "employeeBankAccountNumber": {
+        "label": "Cuenta bancaria del empleado (número de cuenta)",
+        "description": ""
+      },
+      "employeeBankAccountRouting": {
+        "label": "Cuenta bancaria del empleado (número de ruta)",
+        "description": ""
+      },
+      "employeeBankAccountType": {
+        "label": "Cuenta bancaria del empleado (tipo)",
+        "description": ""
+      },
+      "employeeDonations": {
+        "label": "Donaciones de empleados",
+        "description": ""
+      },
+      "employeeEmail": {
+        "label": "Correo electrónico del empleado",
+        "description": ""
+      },
+      "employeeEmergencyContact": {
+        "label": "Contacto de emergencia del empleado",
+        "description": ""
+      },
+      "employeeEmergencyContactEmail": {
+        "label": "Contacto de emergencia del empleado (dirección de correo electrónico)",
+        "description": ""
+      },
+      "employeeEmergencyContactName": {
+        "label": "Contacto de emergencia del empleado (nombre)",
+        "description": ""
+      },
+      "employeeEmergencyContactPhone": {
+        "label": "Contacto de emergencia del empleado (número de teléfono)",
+        "description": ""
+      },
+      "employeeEndDate": {
+        "label": "Fecha de finalización del empleado",
+        "description": ""
+      },
+      "employeeFederalIncomeTax": {
+        "label": "Impuesto federal sobre la renta del empleado",
+        "description": ""
+      },
+      "employeeFirstName": {
+        "label": "Nombre del empleado",
+        "description": ""
+      },
+      "employeeFirstNamePreferred": {
+        "label": "Nombre del empleado (preferido)",
+        "description": ""
+      },
+      "employeeHomeAddress": {
+        "label": "Dirección de casa del empleado",
+        "description": ""
+      },
+      "employeeHomeAddressCity": {
+        "label": "Dirección de casa del empleado (ciudad)",
+        "description": ""
+      },
+      "employeeHomeAddressState": {
+        "label": "Dirección de casa del empleado (estado)",
+        "description": ""
+      },
+      "employeeHomeAddressStreet": {
+        "label": "Dirección de casa del empleado (calle)",
+        "description": ""
+      },
+      "employeeHomeAddressZip": {
+        "label": "Dirección de casa del empleado (código postal)",
+        "description": ""
+      },
+      "employeeLastName": {
+        "label": "Apellido del empleado",
+        "description": ""
+      },
+      "employeeMedicareTax": {
+        "label": "Impuesto de Medicare del empleado",
+        "description": ""
+      },
+      "employeeMiddleInitial": {
+        "label": "Inicial del segundo nombre del empleado",
+        "description": ""
+      },
+      "employeePhoneNumber": {
+        "label": "Número de teléfono del empleado",
+        "description": ""
+      },
+      "employeePronouns": {
+        "label": "Pronombres del empleado",
+        "description": ""
+      },
+      "employeeRiskClassCode": {
+        "label": "Código de clase de riesgo del empleado",
+        "description": ""
+      },
+      "employeeSocialSecurityTax": {
+        "label": "Impuesto de Seguridad Social del empleado",
+        "description": ""
+      },
+      "employeeSSN": {
+        "label": "SSN del empleado",
+        "description": ""
+      },
+      "employeeSSNLast4": {
+        "label": "SSN del empleado (últimos 4)",
+        "description": ""
+      },
+      "employeeStartDate": {
+        "label": "Fecha de inicio del empleado",
+        "description": ""
+      },
+      "employeeWorkEmail": {
+        "label": "Correo electrónico de trabajo del empleado",
+        "description": ""
+      },
+      "employeeDOB": {
+        "label": "Fecha de nacimiento del empleado",
+        "description": ""
+      },
+      "employerFUTATax": {
+        "label": "Impuesto FUTA del empleador",
+        "description": ""
+      },
+      "employerMedicareTax": {
+        "label": "Impuesto de Medicare del empleador",
+        "description": ""
+      },
+      "employerSocialSecurityTax": {
+        "label": "Impuesto de Seguridad Social del empleador",
+        "description": ""
+      },
+      "employerSUTATax": {
+        "label": "Impuesto SUTA del empleador",
+        "description": ""
+      },
+      "employmentStatus": {
+        "label": "Estado de empleo",
+        "description": ""
+      },
+      "employmentType": {
+        "label": "Tipo de empleo",
+        "description": ""
+      },
+      "employeeID": {
+        "label": "ID de empleado",
+        "description": ""
+      },
+      "garnishments": {
+        "label": "Embargos",
+        "description": ""
+      },
+      "holidayEarnings": {
+        "label": "Ganancias por vacaciones",
+        "description": ""
+      },
+      "holidayHours": {
+        "label": "Horas de vacaciones",
+        "description": ""
+      },
+      "jobCompensationAmount": {
+        "label": "Monto de compensación laboral",
+        "description": ""
+      },
+      "jobCompensationEffectiveDate": {
+        "label": "Fecha de vigencia de la compensación laboral",
+        "description": ""
+      },
+      "jobCompensationRate": {
+        "label": "Tasa de compensación laboral",
+        "description": ""
+      },
+      "jobCompensationTimePeriod": {
+        "label": "Período de tiempo de compensación laboral",
+        "description": ""
+      },
+      "juryDutyEarnings": {
+        "label": "Ganancias por servicio de jurado",
+        "description": ""
+      },
+      "juryDutyHours": {
+        "label": "Horas de servicio de jurado",
+        "description": ""
+      },
+      "juryDutyRateHourly": {
+        "label": "Tarifa por servicio de jurado (por hora)",
+        "description": ""
+      },
+      "learningDevelopmentTimeOffEarnings": {
+        "label": "Ganancias por tiempo libre de aprendizaje y desarrollo",
+        "description": ""
+      },
+      "learningDevelopmentTimeOffHours": {
+        "label": "Horas de tiempo libre de aprendizaje y desarrollo",
+        "description": ""
+      },
+      "manager": {
+        "label": "Gerente",
+        "description": ""
+      },
+      "overtimeEarnings": {
+        "label": "Ganancias por horas extras",
+        "description": ""
+      },
+      "overtimeHours": {
+        "label": "Horas extras",
+        "description": ""
+      },
+      "overtimeRateHourly": {
+        "label": "Tarifa de horas extras (por hora)",
+        "description": ""
+      },
+      "paidTimeOffEarnings": {
+        "label": "Ganancias por tiempo libre remunerado",
+        "description": ""
+      },
+      "paidTimeOffHours": {
+        "label": "Horas de tiempo libre remunerado",
+        "description": ""
+      },
+      "paidTimeOffRateHourly": {
+        "label": "Tarifa de tiempo libre remunerado (por hora)",
+        "description": ""
+      },
+      "payPeriodEnd": {
+        "label": "Fin del período de pago",
+        "description": ""
+      },
+      "payPeriodStart": {
+        "label": "Inicio del período de pago",
+        "description": ""
+      },
+      "paycheckTips": {
+        "label": "Propinas del cheque de pago",
+        "description": ""
+      },
+      "paymentMethod": {
+        "label": "Método de pago",
+        "description": ""
+      },
+      "payrollPayDate": {
+        "label": "Fecha de pago de nómina",
+        "description": ""
+      },
+      "payrollType": {
+        "label": "Tipo de nómina",
+        "description": ""
+      },
+      "primaryJobTitle": {
+        "label": "Puesto de trabajo principal",
+        "description": ""
+      },
+      "regularEarnings": {
+        "label": "Ganancias regulares",
+        "description": ""
+      },
+      "regularHours": {
+        "label": "Horas regulares",
+        "description": ""
+      },
+      "regularRateHourly": {
+        "label": "Tarifa regular (por hora)",
+        "description": ""
+      },
+      "sickRateHourly": {
+        "label": "Tarifa por enfermedad (por hora)",
+        "description": ""
+      },
+      "sickTimeOffEarnings": {
+        "label": "Ganancias por tiempo libre por enfermedad",
+        "description": ""
+      },
+      "sickTimeOffHours": {
+        "label": "Horas de tiempo libre por enfermedad",
+        "description": ""
+      },
+      "totalMedicareTax": {
+        "label": "Impuesto total de Medicare",
+        "description": ""
+      },
+      "totalOneTimeReimbursements": {
+        "label": "Reembolsos únicos totales",
+        "description": ""
+      },
+      "totalRecurringReimbursements": {
+        "label": "Reembolsos recurrentes totales",
+        "description": ""
+      },
+      "totalReimbursements": {
+        "label": "Reembolsos totales",
+        "description": ""
+      },
+      "totalSocialSecurityTax": {
+        "label": "Impuesto total de Seguridad Social",
+        "description": ""
+      },
+      "totalTimeOffEarnings": {
+        "label": "Ganancias totales por tiempo libre",
+        "description": ""
+      },
+      "totalTimeOffHours": {
+        "label": "Horas totales de tiempo libre",
+        "description": ""
+      },
+      "volunteerEarnings": {
+        "label": "Ganancias por voluntariado",
+        "description": ""
+      },
+      "volunteerHours": {
+        "label": "Horas de voluntariado",
+        "description": ""
+      },
+      "volunteerRateHourly": {
+        "label": "Tarifa de voluntariado (por hora)",
+        "description": ""
+      },
+      "workAddressCity": {
+        "label": "Dirección de trabajo (ciudad)",
+        "description": ""
+      },
+      "workAddressStreet": {
+        "label": "Dirección de trabajo (calle)",
+        "description": ""
+      },
+      "workAddressZip": {
+        "label": "Dirección de trabajo (código postal)",
+        "description": ""
+      }
+    }
+  }
+}

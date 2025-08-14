@@ -1,0 +1,14 @@
+{
+  "walletColumns": {
+    "name": "Nombre",
+    "id": "ID",
+    "emailAddress": "Dirección de Correo",
+    "mobileNumber": "Número de Móvil",
+    "currentBalance": "Saldo Actual",
+    "seeProfile": "Ver perfil"
+  },
+  "walletManagement": {
+    "pageTitle": "Gestión de Billeteras",
+    "walletSuffix": " Billetera"
+  }
+}
