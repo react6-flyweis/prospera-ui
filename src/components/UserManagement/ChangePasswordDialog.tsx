@@ -1,5 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import type { TFunction } from 'i18next';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import {
@@ -21,24 +23,29 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 
-const schema = z
-  .object({
-    currentPassword: z.string().min(6, 'Current password is required'),
-    newPassword: z
-      .string()
-      .min(6, 'New password must be at least 6 characters'),
-    confirmPassword: z.string(),
-  })
-  .refine((data) => data.newPassword === data.confirmPassword, {
-    message: "Passwords don't match",
-    path: ['confirmPassword'],
-  });
+const createSchema = (t: TFunction) =>
+  z
+    .object({
+      currentPassword: z
+        .string()
+        .min(6, t('changePasswordDialog.validation.currentPasswordRequired')),
+      newPassword: z
+        .string()
+        .min(6, t('changePasswordDialog.validation.newPasswordMinLength')),
+      confirmPassword: z.string(),
+    })
+    .refine((data) => data.newPassword === data.confirmPassword, {
+      message: t('changePasswordDialog.validation.passwordsDontMatch'),
+      path: ['confirmPassword'],
+    });
 
 export function ChangePasswordDialog({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const { t } = useTranslation();
+  const schema = createSchema(t);
   const form = useForm({
     resolver: zodResolver(schema),
     defaultValues: {
@@ -61,7 +68,7 @@ export function ChangePasswordDialog({
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
           <DialogTitle className="font-bold text-lg">
-            Change Password
+            {t('changePasswordDialog.title')}
           </DialogTitle>
         </DialogHeader>
         <Form {...form}>
@@ -72,7 +79,7 @@ export function ChangePasswordDialog({
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="font-semibold">
-                    Current Password
+                    {t('changePasswordDialog.currentPasswordLabel')}
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -92,7 +99,7 @@ export function ChangePasswordDialog({
                 render={({ field }) => (
                   <FormItem className="w-1/2">
                     <FormLabel className="font-semibold">
-                      New Password
+                      {t('changePasswordDialog.newPasswordLabel')}
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -111,7 +118,7 @@ export function ChangePasswordDialog({
                 render={({ field }) => (
                   <FormItem className="w-1/2">
                     <FormLabel className="font-semibold">
-                      Re-enter Password
+                      {t('changePasswordDialog.reEnterPasswordLabel')}
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -127,11 +134,11 @@ export function ChangePasswordDialog({
             </div>
             <DialogFooter className="flex gap-4 pt-2">
               <Button className="flex-1 bg-primary-gradient" type="submit">
-                Change
+                {t('changePasswordDialog.changeButton')}
               </Button>
               <DialogClose asChild>
                 <Button className="flex-1" type="button" variant="outline">
-                  Cancel
+                  {t('changePasswordDialog.cancelButton')}
                 </Button>
               </DialogClose>
             </DialogFooter>

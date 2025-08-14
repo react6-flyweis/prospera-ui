@@ -1,4 +1,5 @@
 import type { ColumnDef, Row } from '@tanstack/react-table';
+import type { TFunction } from 'i18next';
 import { EyeIcon } from 'lucide-react';
 import { Link } from 'react-router';
 import checkIcon from '@/assets/icons/check.png';
@@ -17,9 +18,9 @@ export type User = {
   active: boolean;
 };
 
-export const usersColumns: ColumnDef<User>[] = [
+export const getUsersColumns = (t: TFunction): ColumnDef<User>[] => [
   {
-    header: 'User Name',
+    header: t('usersColumns.userName'),
     accessorKey: 'name',
     cell: (props: { row: Row<User> }) => (
       <UserCell
@@ -29,19 +30,19 @@ export const usersColumns: ColumnDef<User>[] = [
     ),
   },
   {
-    header: 'User ID',
+    header: t('usersColumns.userId'),
     accessorKey: 'id',
   },
   {
-    header: 'Email Address',
+    header: t('usersColumns.emailAddress'),
     accessorKey: 'email',
   },
   {
-    header: 'Mobile Number',
+    header: t('usersColumns.mobileNumber'),
     accessorKey: 'mobile',
   },
   {
-    header: 'Documents',
+    header: t('usersColumns.documents'),
     accessorKey: 'documents',
     cell: ({ row }) => (
       <div className="flex items-center gap-1">
@@ -51,14 +52,14 @@ export const usersColumns: ColumnDef<User>[] = [
             alt="Complete"
             className="size-4"
             src={checkIcon}
-            title="Complete"
+            title={t('usersColumns.complete')}
           />
         )}
       </div>
     ),
   },
   {
-    header: 'Action',
+    header: t('usersColumns.action'),
     id: 'action',
     cell: ({ row }) => (
       <div className="flex items-center gap-2">
@@ -70,7 +71,11 @@ export const usersColumns: ColumnDef<User>[] = [
         <Switch
           className="data-[state=checked]:bg-green-500 data-[state=unchecked]:bg-red-500"
           defaultChecked={row.original.active}
-          title={row.original.active ? 'Active' : 'Inactive'}
+          title={
+            row.original.active
+              ? t('usersColumns.active')
+              : t('usersColumns.inactive')
+          }
         />
       </div>
     ),

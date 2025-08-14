@@ -2,6 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { EyeIcon, PencilIcon } from 'lucide-react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { ProfileImageUploader } from '@/components/ProfileImageUploader';
@@ -17,28 +18,29 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 
-const profileSchema = z.object({
-  name: z.string().min(1, 'Name is required'),
-  email: z.string().email(),
-  gender: z.string(),
-  presentAddress: z.string(),
-  address: z.string(),
-  country: z.string(),
-  password: z.string().min(6, 'Password is required'),
-  mobile: z.string(),
-  userId: z.string(),
-  dob: z.string(),
-  language: z.string(),
-  postalCode: z.string(),
-  city: z.string(),
-});
-
-type ProfileFormValues = z.infer<typeof profileSchema>;
-
 export default function ProfileDetail() {
+  const { t } = useTranslation();
+  const profileSchema = z.object({
+    name: z.string().min(1, t('profileDetailPage.validation.nameRequired')),
+    email: z.string().email(t('profileDetailPage.validation.emailRequired')),
+    gender: z.string(),
+    presentAddress: z.string(),
+    address: z.string(),
+    country: z.string(),
+    password: z
+      .string()
+      .min(6, t('profileDetailPage.validation.passwordRequired')),
+    mobile: z.string(),
+    userId: z.string(),
+    dob: z.string(),
+    language: z.string(),
+    postalCode: z.string(),
+    city: z.string(),
+  });
+
+  type ProfileFormValues = z.infer<typeof profileSchema>;
   const [profileImage, setProfileImage] = useState<string | File>('');
   const [showPassword, setShowPassword] = useState(false);
-  // Removed unused showChangePassword state
   const form = useForm<ProfileFormValues>({
     resolver: zodResolver(profileSchema),
     defaultValues: {
@@ -63,7 +65,7 @@ export default function ProfileDetail() {
   }
 
   return (
-    <PageLayout title="Profile">
+    <PageLayout title={t('userManagementPage.profileDetailPage.title')}>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <div className="flex gap-8">
@@ -79,7 +81,7 @@ export default function ProfileDetail() {
             </div>
             <div className="flex-1">
               <h2 className="mt-2 mb-5 font-semibold text-xl ">
-                Profile Detail
+                {t('userManagementPage.profileDetailPage.profileDetailTitle')}
               </h2>
               <div className="mb-6 grid grid-cols-2 gap-5">
                 <FormField
@@ -87,9 +89,16 @@ export default function ProfileDetail() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Name</FormLabel>
+                      <FormLabel>
+                        {t('userManagementPage.profileDetailPage.nameLabel')}
+                      </FormLabel>
                       <FormControl>
-                        <Input placeholder="Adson Kersgaard" {...field} />
+                        <Input
+                          placeholder={t(
+                            'userManagementPage.profileDetailPage.namePlaceholder'
+                          )}
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -100,9 +109,18 @@ export default function ProfileDetail() {
                   name="mobile"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Mobile Number</FormLabel>
+                      <FormLabel>
+                        {t(
+                          'userManagementPage.profileDetailPage.mobileNumberLabel'
+                        )}
+                      </FormLabel>
                       <FormControl>
-                        <Input placeholder="+1 78945 62130" {...field} />
+                        <Input
+                          placeholder={t(
+                            'userManagementPage.profileDetailPage.mobilePlaceholder'
+                          )}
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -113,10 +131,14 @@ export default function ProfileDetail() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email</FormLabel>
+                      <FormLabel>
+                        {t('userManagementPage.profileDetailPage.emailLabel')}
+                      </FormLabel>
                       <FormControl>
                         <Input
-                          placeholder="example@gmail.com"
+                          placeholder={t(
+                            'userManagementPage.profileDetailPage.emailPlaceholder'
+                          )}
                           type="email"
                           {...field}
                         />
@@ -130,9 +152,16 @@ export default function ProfileDetail() {
                   name="userId"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Give A ID</FormLabel>
+                      <FormLabel>
+                        {t('userManagementPage.profileDetailPage.giveIdLabel')}
+                      </FormLabel>
                       <FormControl>
-                        <Input placeholder="AD7778471" {...field} />
+                        <Input
+                          placeholder={t(
+                            'userManagementPage.profileDetailPage.idPlaceholder'
+                          )}
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -143,9 +172,16 @@ export default function ProfileDetail() {
                   name="gender"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Gender</FormLabel>
+                      <FormLabel>
+                        {t('userManagementPage.profileDetailPage.genderLabel')}
+                      </FormLabel>
                       <FormControl>
-                        <Input placeholder="Female" {...field} />
+                        <Input
+                          placeholder={t(
+                            'userManagementPage.profileDetailPage.genderPlaceholder'
+                          )}
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -156,9 +192,16 @@ export default function ProfileDetail() {
                   name="dob"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Date Of Birth</FormLabel>
+                      <FormLabel>
+                        {t('userManagementPage.profileDetailPage.dobLabel')}
+                      </FormLabel>
                       <FormControl>
-                        <Input placeholder="07/07/1987" {...field} />
+                        <Input
+                          placeholder={t(
+                            'userManagementPage.profileDetailPage.dobPlaceholder'
+                          )}
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -169,10 +212,16 @@ export default function ProfileDetail() {
                   name="presentAddress"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Present Address</FormLabel>
+                      <FormLabel>
+                        {t(
+                          'userManagementPage.profileDetailPage.presentAddressLabel'
+                        )}
+                      </FormLabel>
                       <FormControl>
                         <Input
-                          placeholder="San Jose, California, USA"
+                          placeholder={t(
+                            'userManagementPage.profileDetailPage.addressPlaceholder'
+                          )}
                           {...field}
                         />
                       </FormControl>
@@ -185,9 +234,18 @@ export default function ProfileDetail() {
                   name="language"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Preferred language</FormLabel>
+                      <FormLabel>
+                        {t(
+                          'userManagementPage.profileDetailPage.preferredLanguageLabel'
+                        )}
+                      </FormLabel>
                       <FormControl>
-                        <Input placeholder="English" {...field} />
+                        <Input
+                          placeholder={t(
+                            'userManagementPage.profileDetailPage.languagePlaceholder'
+                          )}
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -198,10 +256,16 @@ export default function ProfileDetail() {
                   name="address"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Permanent Address</FormLabel>
+                      <FormLabel>
+                        {t(
+                          'userManagementPage.profileDetailPage.permanentAddressLabel'
+                        )}
+                      </FormLabel>
                       <FormControl>
                         <Input
-                          placeholder="San Jose, California, USA"
+                          placeholder={t(
+                            'userManagementPage.profileDetailPage.addressPlaceholder'
+                          )}
                           {...field}
                         />
                       </FormControl>
@@ -214,9 +278,18 @@ export default function ProfileDetail() {
                   name="postalCode"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Postal Code</FormLabel>
+                      <FormLabel>
+                        {t(
+                          'userManagementPage.profileDetailPage.postalCodeLabel'
+                        )}
+                      </FormLabel>
                       <FormControl>
-                        <Input placeholder="700012" {...field} />
+                        <Input
+                          placeholder={t(
+                            'userManagementPage.profileDetailPage.postalCodePlaceholder'
+                          )}
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -227,9 +300,16 @@ export default function ProfileDetail() {
                   name="country"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Country</FormLabel>
+                      <FormLabel>
+                        {t('userManagementPage.profileDetailPage.countryLabel')}
+                      </FormLabel>
                       <FormControl>
-                        <Input placeholder="USA" {...field} />
+                        <Input
+                          placeholder={t(
+                            'userManagementPage.profileDetailPage.countryPlaceholder'
+                          )}
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -240,9 +320,16 @@ export default function ProfileDetail() {
                   name="city"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>City</FormLabel>
+                      <FormLabel>
+                        {t('userManagementPage.profileDetailPage.cityLabel')}
+                      </FormLabel>
                       <FormControl>
-                        <Input placeholder="San Jose" {...field} />
+                        <Input
+                          placeholder={t(
+                            'userManagementPage.profileDetailPage.cityPlaceholder'
+                          )}
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -254,11 +341,17 @@ export default function ProfileDetail() {
                   name="password"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Password</FormLabel>
+                      <FormLabel>
+                        {t(
+                          'userManagementPage.profileDetailPage.passwordLabel'
+                        )}
+                      </FormLabel>
                       <FormControl>
                         <div className="relative">
                           <Input
-                            placeholder="************"
+                            placeholder={t(
+                              'userManagementPage.profileDetailPage.passwordInputPlaceholder'
+                            )}
                             type={showPassword ? 'text' : 'password'}
                             {...field}
                           />
@@ -273,7 +366,9 @@ export default function ProfileDetail() {
                             </button>
                             <ChangePasswordDialog>
                               <button
-                                aria-label="Edit Password"
+                                aria-label={t(
+                                  'userManagementPage.profileDetailPage.editPasswordAriaLabel'
+                                )}
                                 className="rounded-full p-1 text-primary hover:bg-primary/10"
                                 type="button"
                               >
@@ -292,7 +387,7 @@ export default function ProfileDetail() {
           </div>
           <div className="mt-4 flex justify-center">
             <Button className="w-1/2 rounded-full bg-primary-gradient font-semibold text-white shadow">
-              Save
+              {t('userManagementPage.profileDetailPage.saveButton')}
             </Button>
           </div>
         </form>

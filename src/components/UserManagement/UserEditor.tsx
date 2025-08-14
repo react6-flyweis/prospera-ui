@@ -1,6 +1,8 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import type { TFunction } from 'i18next';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 import { ProfileImageUploader } from '../ProfileImageUploader';
 import { Button } from '../ui/button';
@@ -14,28 +16,29 @@ import {
 } from '../ui/form';
 import { Input } from '../ui/input';
 
-const userSchema = z.object({
-  name: z.string().min(1, 'Name is required'),
-  email: z.string().email(),
-  joinDate: z.string(),
-  gender: z.string(),
-  address: z.string(),
-  presentAddress: z.string(),
-  postalCode: z.string(),
-  mobile: z.string(),
-  lenderId: z.string(),
-  dob: z.string(),
-  language: z.string(),
-  city: z.string(),
-  country: z.string(),
-  bankName: z.string().optional(),
-  branch: z.string().optional(),
-  accountHolderName: z.string().optional(),
-  accountNumber: z.string().optional(),
-  ifscCode: z.string().optional(),
-});
+const createUserSchema = (t: TFunction) =>
+  z.object({
+    name: z.string().min(1, t('userEditor.validation.nameRequired')),
+    email: z.email(),
+    joinDate: z.string(),
+    gender: z.string(),
+    address: z.string(),
+    presentAddress: z.string(),
+    postalCode: z.string(),
+    mobile: z.string(),
+    lenderId: z.string(),
+    dob: z.string(),
+    language: z.string(),
+    city: z.string(),
+    country: z.string(),
+    bankName: z.string().optional(),
+    branch: z.string().optional(),
+    accountHolderName: z.string().optional(),
+    accountNumber: z.string().optional(),
+    ifscCode: z.string().optional(),
+  });
 
-type UserFormValues = z.infer<typeof userSchema>;
+type UserFormValues = z.infer<ReturnType<typeof createUserSchema>>;
 
 // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation>
 export function UserEditor({
@@ -43,7 +46,9 @@ export function UserEditor({
 }: {
   initialData?: Partial<UserFormValues>;
 }) {
+  const { t } = useTranslation();
   const [profileImage, setProfileImage] = useState<string | File>('');
+  const userSchema = createUserSchema(t);
   const form = useForm<UserFormValues>({
     resolver: zodResolver(userSchema),
     defaultValues: {
@@ -74,99 +79,114 @@ export function UserEditor({
   const userFields = [
     {
       name: 'name',
-      label: 'Name Of The User',
+      label: t('userEditor.profileDetail.nameLabel'),
       type: 'text',
-      placeholder: 'Enter name',
+      placeholder: t('userEditor.profileDetail.namePlaceholder'),
     },
     {
       name: 'email',
-      label: 'Email',
+      label: t('userEditor.profileDetail.emailLabel'),
       type: 'email',
-      placeholder: 'Enter email',
+      placeholder: t('userEditor.profileDetail.emailPlaceholder'),
     },
-    { name: 'joinDate', label: 'Join Date', type: 'date', placeholder: '' },
+    {
+      name: 'joinDate',
+      label: t('userEditor.profileDetail.joinDateLabel'),
+      type: 'date',
+      placeholder: '',
+    },
     {
       name: 'gender',
-      label: 'Gender',
+      label: t('userEditor.profileDetail.genderLabel'),
       type: 'text',
-      placeholder: 'Enter gender',
+      placeholder: t('userEditor.profileDetail.genderPlaceholder'),
     },
     {
       name: 'address',
-      label: 'Permanent Address',
+      label: t('userEditor.profileDetail.permanentAddressLabel'),
       type: 'text',
-      placeholder: 'Enter address',
+      placeholder: t('userEditor.profileDetail.addressPlaceholder'),
     },
     {
       name: 'presentAddress',
-      label: 'Present Address',
+      label: t('userEditor.profileDetail.presentAddressLabel'),
       type: 'text',
-      placeholder: 'Enter address',
+      placeholder: t('userEditor.profileDetail.addressPlaceholder'),
     },
     {
       name: 'postalCode',
-      label: 'Postal Code',
+      label: t('userEditor.profileDetail.postalCodeLabel'),
       type: 'text',
-      placeholder: 'Enter postal code',
+      placeholder: t('userEditor.profileDetail.postalCodePlaceholder'),
     },
     {
       name: 'mobile',
-      label: 'Mobile Number',
+      label: t('userEditor.profileDetail.mobileNumberLabel'),
       type: 'text',
-      placeholder: 'Enter number',
+      placeholder: t('userEditor.profileDetail.mobilePlaceholder'),
     },
     {
       name: 'userId',
-      label: 'Give A ID',
+      label: t('userEditor.profileDetail.giveIdLabel'),
       type: 'text',
-      placeholder: 'Enter ID',
+      placeholder: t('userEditor.profileDetail.idPlaceholder'),
     },
-    { name: 'dob', label: 'Date Of Birth', type: 'date', placeholder: '' },
+    {
+      name: 'dob',
+      label: t('userEditor.profileDetail.dobLabel'),
+      type: 'date',
+      placeholder: '',
+    },
     {
       name: 'language',
-      label: 'Preferred Language',
+      label: t('userEditor.profileDetail.preferredLanguageLabel'),
       type: 'text',
-      placeholder: 'Enter language',
+      placeholder: t('userEditor.profileDetail.languagePlaceholder'),
     },
-    { name: 'city', label: 'City', type: 'text', placeholder: 'Enter city' },
+    {
+      name: 'city',
+      label: t('userEditor.profileDetail.cityLabel'),
+      type: 'text',
+      placeholder: t('userEditor.profileDetail.cityPlaceholder'),
+    },
     {
       name: 'country',
-      label: 'Country',
+      label: t('userEditor.profileDetail.countryLabel'),
       type: 'text',
-      placeholder: 'Enter country',
+      placeholder: t('userEditor.profileDetail.countryPlaceholder'),
     },
   ];
 
   const bankFields = [
     {
       name: 'bankName',
-      label: 'Bank Name',
+      label: t('userEditor.bankDetail.bankNameLabel'),
       type: 'text',
-      placeholder: 'Enter here',
+      placeholder: t('userEditor.bankDetail.bankNamePlaceholder'),
     },
     {
       name: 'branch',
-      label: 'Branch',
+      label: t('userEditor.bankDetail.branchLabel'),
       type: 'text',
-      placeholder: 'Enter here',
+      placeholder: t('userEditor.bankDetail.branchPlaceholder'),
     },
     {
       name: 'accountHolderName',
-      label: 'Account Holder Name',
+      label: t('userEditor.bankDetail.accountHolderNameLabel'),
       type: 'text',
-      placeholder: 'Enter name',
+      placeholder: t('userEditor.bankDetail.accountHolderNamePlaceholder'),
     },
     {
       name: 'accountNumber',
-      label: 'Account Number',
+      label: t('userEditor.bankDetail.accountNumberLabel'),
       type: 'text',
-      placeholder: 'Enter number',
+      placeholder: t('userEditor.bankDetail.accountNumberPlaceholder'),
     },
     {
       name: 'ifscCode',
-      label: 'IFSC Code',
+      label: t('userEditor.bankDetail.ifscCodeLabel'),
       type: 'text',
-      placeholder: 'Enter here',
+      placeholder: t('userEditor.bankDetail.ifscCodePlaceholder'),
     },
   ];
 
@@ -184,7 +204,9 @@ export function UserEditor({
           />
         </div>
         <div className="w-full">
-          <h2 className="mb-4 font-semibold text-lg">User Detail</h2>
+          <h2 className="mb-4 font-semibold text-lg">
+            {t('userEditor.profileDetail.title')}
+          </h2>
           <div className="grid grid-cols-2 gap-5">
             {userFields.map((field) => (
               <FormField
@@ -211,7 +233,10 @@ export function UserEditor({
           {/* Bank Details Section */}
           <div className="mt-10">
             <h2 className="mb-2 font-semibold text-lg">
-              Bank Detail <span className="font-normal text-sm">(if any)</span>
+              {t('userEditor.bankDetail.title')}{' '}
+              <span className="font-normal text-sm">
+                {t('userEditor.bankDetail.ifAny')}
+              </span>
             </h2>
             <div className="grid grid-cols-2 gap-5">
               {bankFields.map((field) => (
@@ -239,7 +264,7 @@ export function UserEditor({
 
           <div className="mt-8 flex justify-center">
             <Button className="w-1/2 rounded-full bg-primary-gradient font-semibold text-white shadow">
-              Add
+              {t('userEditor.addButton')}
             </Button>
           </div>
         </div>

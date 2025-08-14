@@ -1,0 +1,147 @@
+{
+  "userManagementPage": {
+    "title": "User Management",
+    "totalUsers": "Total Users",
+    "addNewUserButton": "Add A New User",
+    "filter": {
+      "all": "All",
+      "verified": "Verified",
+      "blocked": "Blocked",
+      "unblocked": "Unblocked"
+    },
+    "newUsersSection": {
+      "title": "New Users",
+      "last30Days": "Last 30 Days",
+      "last7Days": "Last 7 Days",
+      "last15Days": "Last 15 Days",
+      "allTime": "All Time"
+    }
+  },
+  "addNewUserPage": {
+    "title": "Add a New User"
+  },
+  "editUserPage": {
+    "title": "Edit User"
+  },
+  "userDetailsPage": {
+    "dob": "DOB :",
+    "emailId": "Email ID :",
+    "userId": "User ID:",
+    "bankName": "Bank Name:",
+    "accountNo": "Account No:",
+    "branch": "Branch:",
+    "ifscCode": "IFSC Code:",
+    "joined": "Joined :",
+    "about": "About",
+    "permanentAddress": "Permanent Address",
+    "presentAddress": "Present Address",
+    "postalCode": "Postal Code",
+    "city": "City",
+    "country": "Country"
+  },
+  "changePasswordDialog": {
+    "validation": {
+      "currentPasswordRequired": "Current password is required",
+      "newPasswordMinLength": "New password must be at least 6 characters",
+      "passwordsDontMatch": "Passwords don't match"
+    },
+    "title": "Change Password",
+    "currentPasswordLabel": "Current Password",
+    "newPasswordLabel": "New Password",
+    "reEnterPasswordLabel": "Re-enter Password",
+    "changeButton": "Change",
+    "cancelButton": "Cancel"
+  },
+  "userEditor": {
+    "validation": {
+      "nameRequired": "Name is required"
+    },
+    "profileDetail": {
+      "title": "User Detail",
+      "nameLabel": "Name Of The User",
+      "emailLabel": "Email",
+      "joinDateLabel": "Join Date",
+      "genderLabel": "Gender",
+      "permanentAddressLabel": "Permanent Address",
+      "presentAddressLabel": "Present Address",
+      "postalCodeLabel": "Postal Code",
+      "mobileNumberLabel": "Mobile Number",
+      "giveIdLabel": "Give A ID",
+      "dobLabel": "Date Of Birth",
+      "preferredLanguageLabel": "Preferred Language",
+      "cityLabel": "City",
+      "countryLabel": "Country",
+      "namePlaceholder": "Enter name",
+      "emailPlaceholder": "Enter email",
+      "genderPlaceholder": "Enter gender",
+      "addressPlaceholder": "Enter address",
+      "postalCodePlaceholder": "Enter postal code",
+      "mobilePlaceholder": "Enter number",
+      "idPlaceholder": "Enter ID",
+      "languagePlaceholder": "Enter language",
+      "cityPlaceholder": "Enter city",
+      "countryPlaceholder": "Enter country"
+    },
+    "bankDetail": {
+      "title": "Bank Detail",
+      "ifAny": "(if any)",
+      "bankNameLabel": "Bank Name",
+      "branchLabel": "Branch",
+      "accountHolderNameLabel": "Account Holder Name",
+      "accountNumberLabel": "Account Number",
+      "ifscCodeLabel": "IFSC Code",
+      "bankNamePlaceholder": "Enter here",
+      "branchPlaceholder": "Enter here",
+      "accountHolderNamePlaceholder": "Enter name",
+      "accountNumberPlaceholder": "Enter number",
+      "ifscCodePlaceholder": "Enter here"
+    },
+    "addButton": "Add"
+  },
+  "usersColumns": {
+    "userName": "User Name",
+    "userId": "User ID",
+    "emailAddress": "Email Address",
+    "mobileNumber": "Mobile Number",
+    "documents": "Documents",
+    "action": "Action",
+    "complete": "Complete",
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "profileDetailPage": {
+    "validation": {
+      "nameRequired": "Name is required",
+      "passwordRequired": "Password is required"
+    },
+    "title": "Profile",
+    "profileDetailTitle": "Profile Detail",
+    "nameLabel": "Name",
+    "mobileNumberLabel": "Mobile Number",
+    "emailLabel": "Email",
+    "giveIdLabel": "Give A ID",
+    "genderLabel": "Gender",
+    "dobLabel": "Date Of Birth",
+    "presentAddressLabel": "Present Address",
+    "preferredLanguageLabel": "Preferred language",
+    "permanentAddressLabel": "Permanent Address",
+    "postalCodeLabel": "Postal Code",
+    "countryLabel": "Country",
+    "cityLabel": "City",
+    "passwordLabel": "Password",
+    "namePlaceholder": "Adson Kersgaard",
+    "mobilePlaceholder": "+1 78945 62130",
+    "emailPlaceholder": "example@gmail.com",
+    "idPlaceholder": "AD7778471",
+    "genderPlaceholder": "Female",
+    "dobPlaceholder": "07/07/1987",
+    "addressPlaceholder": "San Jose, California, USA",
+    "languagePlaceholder": "English",
+    "postalCodePlaceholder": "700012",
+    "countryPlaceholder": "USA",
+    "cityPlaceholder": "San Jose",
+    "passwordInputPlaceholder": "************",
+    "editPasswordAriaLabel": "Edit Password",
+    "saveButton": "Save"
+  }
+}

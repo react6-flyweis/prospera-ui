@@ -1,9 +1,10 @@
 import { PlusIcon } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 import { DataTable } from '@/components/DataTable';
 import { PageLayout } from '@/components/Layout/PageLayout';
-import { usersColumns } from '@/components/UserManagement/usersColumns';
+import { getUsersColumns } from '@/components/UserManagement/usersColumns';
 import { Button } from '@/components/ui/button';
 import {
   Select,
@@ -15,15 +16,18 @@ import {
 import { usersData } from '@/data/usersData';
 
 export default function UserManagement() {
+  const { t } = useTranslation();
   const [filter, setFilter] = useState('All');
 
+  const usersColumns = getUsersColumns(t);
+
   return (
-    <PageLayout title="User Management">
+    <PageLayout title={t('userManagementPage.title')}>
       <div className="mb-6">
         <div className="mb-2 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <h2 className="font-bold text-gray-800 text-xl">
-              Total Users{' '}
+              {t('userManagementPage.totalUsers')}{' '}
               <span className="font-normal text-gray-500">
                 ({usersData.length})
               </span>
@@ -35,7 +39,7 @@ export default function UserManagement() {
                 type="button"
                 variant="outline"
               >
-                Add A New User
+                {t('userManagementPage.addNewUserButton')}
                 <div className="flex size-4 items-center justify-center rounded-full border">
                   <PlusIcon className="size-3" />
                 </div>
@@ -47,10 +51,18 @@ export default function UserManagement() {
               <SelectValue placeholder="All" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="All">All</SelectItem>
-              <SelectItem value="Verified">Verified</SelectItem>
-              <SelectItem value="Blocked">Blocked</SelectItem>
-              <SelectItem value="Unblocked">Unblocked</SelectItem>
+              <SelectItem value="All">
+                {t('userManagementPage.filter.all')}
+              </SelectItem>
+              <SelectItem value="Verified">
+                {t('userManagementPage.filter.verified')}
+              </SelectItem>
+              <SelectItem value="Blocked">
+                {t('userManagementPage.filter.blocked')}
+              </SelectItem>
+              <SelectItem value="Unblocked">
+                {t('userManagementPage.filter.unblocked')}
+              </SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -58,17 +70,30 @@ export default function UserManagement() {
         <div className="mt-10">
           <div className="mb-2 flex items-center justify-between">
             <h3 className="font-bold text-gray-800 text-lg">
-              New Users <span className="font-normal text-gray-500">(15)</span>
+              {t('userManagementPage.newUsersSection.title')}{' '}
+              <span className="font-normal text-gray-500">(15)</span>
             </h3>
             <Select defaultValue="30">
               <SelectTrigger className="rounded-full">
-                <SelectValue placeholder="Last 30 Days" />
+                <SelectValue
+                  placeholder={t(
+                    'userManagementPage.newUsersSection.last30Days'
+                  )}
+                />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="7">Last 7 Days</SelectItem>
-                <SelectItem value="15">Last 15 Days</SelectItem>
-                <SelectItem value="30">Last 30 Days</SelectItem>
-                <SelectItem value="all">All Time</SelectItem>
+                <SelectItem value="7">
+                  {t('userManagementPage.newUsersSection.last7Days')}
+                </SelectItem>
+                <SelectItem value="15">
+                  {t('userManagementPage.newUsersSection.last15Days')}
+                </SelectItem>
+                <SelectItem value="30">
+                  {t('userManagementPage.newUsersSection.last30Days')}
+                </SelectItem>
+                <SelectItem value="all">
+                  {t('userManagementPage.newUsersSection.allTime')}
+                </SelectItem>
               </SelectContent>
             </Select>
           </div>

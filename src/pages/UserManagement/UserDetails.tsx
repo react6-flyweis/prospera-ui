@@ -1,4 +1,5 @@
 import { PenLineIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -25,6 +26,7 @@ const USER_MOCK = {
 };
 
 export default function UserDetails() {
+  const { t } = useTranslation();
   return (
     <PageLayout title={USER_MOCK.name} withBack>
       <Card className=" flex items-center gap-6 rounded-2xl p-4 shadow-sm">
@@ -43,37 +45,39 @@ export default function UserDetails() {
               <div className="font-semibold text-lg">{USER_MOCK.name}</div>
               <div className="text-gray-500 text-sm">{USER_MOCK.phone}</div>
               <div className="text-gray-500 text-sm">
-                Country : {USER_MOCK.country}
+                {t('userDetailsPage.country')} {USER_MOCK.country}
               </div>
             </div>
           </div>
           <div>
-            <div className="text-gray-500 text-sm">DOB : {USER_MOCK.dob}</div>
             <div className="text-gray-500 text-sm">
-              Email ID : {USER_MOCK.email}
+              {t('userDetailsPage.dob')} {USER_MOCK.dob}
             </div>
             <div className="text-gray-500 text-sm">
-              User ID: {USER_MOCK.userId}
+              {t('userDetailsPage.emailId')} {USER_MOCK.email}
+            </div>
+            <div className="text-gray-500 text-sm">
+              {t('userDetailsPage.userId')} {USER_MOCK.userId}
             </div>
           </div>
           <div>
             <div className="text-gray-500 text-sm">
-              Bank Name: {USER_MOCK.bank.name}
+              {t('userDetailsPage.bankName')} {USER_MOCK.bank.name}
             </div>
             <div className="text-gray-500 text-sm">
-              Account No: {USER_MOCK.bank.accountNo}
+              {t('userDetailsPage.accountNo')} {USER_MOCK.bank.accountNo}
             </div>
             <div className="text-gray-500 text-sm">
-              Branch: {USER_MOCK.bank.branch}
+              {t('userDetailsPage.branch')} {USER_MOCK.bank.branch}
             </div>
           </div>
           <div className="flex gap-3">
             <div className="">
               <div className="text-gray-500 text-sm">
-                IFSC Code: {USER_MOCK.bank.ifsc}
+                {t('userDetailsPage.ifscCode')} {USER_MOCK.bank.ifsc}
               </div>
               <div className="text-gray-400 text-xs">
-                Joined : {USER_MOCK.joined}
+                {t('userDetailsPage.joined')} {USER_MOCK.joined}
               </div>
             </div>
             <Link to={`/users/${USER_MOCK.userId}/edit`}>
@@ -86,23 +90,37 @@ export default function UserDetails() {
       </Card>
       {/* About Kalyan Card */}
       <Card className="mt-6 rounded-2xl p-6 shadow-sm">
-        <div className="mb-6 font-semibold text-2xl">About Kalyan</div>
+        <div className="mb-6 font-semibold text-2xl">
+          {t('userDetailsPage.about')} {USER_MOCK.name}
+        </div>
 
         <div className="grid grid-cols-2 gap-x-10 gap-y-6">
           {[
             {
-              label: 'Permanent Address',
+              label: t('userDetailsPage.permanentAddress'),
               id: 'permanent-address',
               value: 'San Jose, California, USA',
             },
             {
-              label: 'Present Address',
+              label: t('userDetailsPage.presentAddress'),
               id: 'present-address',
               value: 'San Jose, California, USA',
             },
-            { label: 'Postal Code', id: 'postal-code', value: '700012' },
-            { label: 'City', id: 'city', value: 'San Jose' },
-            { label: 'Country', id: 'country', value: 'USA' },
+            {
+              label: t('userDetailsPage.postalCode'),
+              id: 'postal-code',
+              value: '700012',
+            },
+            {
+              label: t('userDetailsPage.city'),
+              id: 'city',
+              value: 'San Jose',
+            },
+            {
+              label: t('userDetailsPage.country'),
+              id: 'country',
+              value: 'USA',
+            },
           ].map((field) => (
             <div key={field.id}>
               <Label

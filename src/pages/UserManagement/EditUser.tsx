@@ -1,10 +1,13 @@
 // import { useParams } from 'react-router';
+
+import { useTranslation } from 'react-i18next';
 import { PageLayout } from '@/components/Layout/PageLayout';
 import { UserEditor } from '@/components/UserManagement/UserEditor';
 
 // Static mock user data
 
 export default function EditUser() {
+  const { t } = useTranslation();
   // Get userId from route params
   //   const { userId } = useParams();
   const mockUser = {
@@ -29,7 +32,7 @@ export default function EditUser() {
   };
 
   return (
-    <PageLayout title="Edit User" withBack>
+    <PageLayout title={t('editUserPage.title')} withBack>
       <UserEditor initialData={mockUser} />
     </PageLayout>
   );
