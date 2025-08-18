@@ -3,6 +3,7 @@ import type { TFunction } from 'i18next';
 import { EyeIcon } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import {
@@ -25,6 +26,7 @@ type LoginFormValues = z.infer<ReturnType<typeof createLoginSchema>>;
 
 export function LoginForm() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const loginSchema = createLoginSchema(t);
 
@@ -33,8 +35,10 @@ export function LoginForm() {
     defaultValues: { email: '', password: '' },
   });
 
-  const onSubmit = (_data: LoginFormValues) => {
-    // handle login
+  const onSubmit = async (_data: LoginFormValues) => {
+    // simulate submit wait
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    navigate('/');
   };
 
   return (
