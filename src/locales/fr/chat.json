@@ -1,25 +1,25 @@
 {
   "chatPage": {
-    "chatWith": "Chat With",
+    "chatWith": "Discuter avec",
     "chatTypes": {
-      "users": "Users",
-      "employees": "Employees",
-      "corporates": "Corporates",
+      "users": "Utilisateurs",
+      "employees": "Employés",
+      "corporates": "Entreprises",
       "agents": "Agents",
-      "lenders": "Lenders",
-      "vendors": "Vendors"
+      "lenders": "Prêteurs",
+      "vendors": "Fournisseurs"
     }
   },
   "chatInterface": {
-    "selectUserToChat": "Select a user to start chatting",
-    "chooseConversation": "Choose a conversation from the list to begin messaging",
-    "noMessagesYet": "No messages yet. Start the conversation!",
-    "userId": "User ID:",
-    "typeMessage": "Type a message",
-    "you": "You",
-    "users": "Users",
-    "searchById": "Search By Id.",
+    "selectUserToChat": "Sélectionnez un utilisateur pour commencer à discuter",
+    "chooseConversation": "Choisissez une conversation dans la liste pour commencer à envoyer des messages",
+    "noMessagesYet": "Pas encore de messages. Commencez la conversation !",
+    "userId": "ID utilisateur :",
+    "typeMessage": "Tapez un message",
+    "you": "Vous",
+    "users": "Utilisateurs",
+    "searchById": "Rechercher par ID.",
     "chat": "chat",
-    "noMessagesYetFallback": "No messages yet."
+    "noMessagesYetFallback": "Pas encore de messages."
   }
 }
