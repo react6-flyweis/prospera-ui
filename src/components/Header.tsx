@@ -1,6 +1,6 @@
 import { LogOutIcon, ReplyIcon, SearchIcon, UserIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import {
@@ -16,6 +16,7 @@ import { Container } from './ui/Container';
 
 export function Header() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const goBack = useGoBack();
   const { title, showBackButton } = usePageStore();
 
@@ -85,7 +86,10 @@ export function Header() {
                     <span>{t('header.profile')}</span>
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="text-red-500">
+                <DropdownMenuItem
+                  className="text-red-500"
+                  onClick={() => navigate('/login')}
+                >
                   <LogOutIcon className="mr-2 h-4 w-4 text-red-500" />
                   <span>{t('header.logout')}</span>
                 </DropdownMenuItem>
